@@ -18,6 +18,7 @@ class CrearTablaUsuarios extends Migration
 						$table->string('username',30)->unique();
             $table->string('correo')->unique();
             $table->string('password', 60);
+            $table->string('foto',100);
             $table->rememberToken();
             $table->timestamps();
         });
