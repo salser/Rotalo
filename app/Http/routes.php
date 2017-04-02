@@ -34,3 +34,11 @@ Route::group(array('before' => 'auth'), function()
 Route::get('/', function () {
     return view('inicioRotalo');
 });
+
+Route::get('Registro', function()
+{
+  return view('registro');
+});
+
+Route::get('registro', 'ControllerRegistro@mostrarRegistro');
+Route::post('crearUsuario', 'ControllerRegistro@crearUsuario');

@@ -7,6 +7,11 @@
 		@if(Session::has('mensaje_error'))
 			<p class="container" style="color: red;">{!! Session::get('mensaje_error') !!}</p>
 		@endif
+		@if(Session::has('registrado'))
+			<script>
+				mensajeSesion('{!! Session::get('registrado') !!}');
+			</script>
+		@endif
 
 		<div class="row">
 			<form class="col s6 offset-s3" action="inicio" method="POST">

@@ -7,13 +7,13 @@
 				mensajeSesion('{!! Session::get('mensaje_error') !!}')
 			</script>
 		@endif
-		
+
 
 	<div class="parallax-container">
 		<div class="parallax">
 			<img class="" src="{!! 'imgs/indice.jpg' !!}">
 		</div>
-		<a class="hide-on-med-and-down waves-effect waves-ligth btn transparent" >Registrarse</a>
+		<a href="registro" class="hide-on-med-and-down waves-effect waves-ligth btn transparent" >Registrarse</a>
 	</div>
 	<br><br>
 	<div class="container">
