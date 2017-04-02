@@ -14,10 +14,10 @@ class SeederTablaUsuario extends Seeder
     public function run()
     {
         User::create(array(
-					'usuario' 		=> 'RotaloAdmin',
-					'correo'			=> 'RotaloAdmin@rotalo.com',
-					'nombre'			=> 'Administrador',
-					'contrasena'	=> Hash::make('rotaloAdmin')
+					'usuario' 		=> 'henry',
+					'correo'			=> 'henry@rotalo.com',
+					'nombre'			=> 'Henry Salazar',
+					'contrasena'	=> Hash::make('rotalo')
 				));
     }
 }
