@@ -33,10 +33,10 @@ class ControllerRegistro extends Controller
       $usuario = new User;
       $usuario->nombre = Input::get('nombre');
       $usuario->username = Input::get('usuario');
+			$usuario->correo = Input::get('correo');
 
       if(Input::hasFile('foto'))
       {
-        $usuario->correo = Input::get('correo');
         $foto = Input::file('foto');
         $foto->move('/fotos', $foto->getClientOriginalName());
         $usuario->foto = $foto;
