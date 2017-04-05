@@ -14,14 +14,17 @@ main {
 	height: 68px;
 }
 
+.parallax-container{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
 a.btn{
-	margin-left: 40%;
-	margin-top: 30%;
-	font-size: 1.5em;
-	height: 40px;
-	text-align: center;
-	padding-top: 2px;
+	background: rgba(255,255,255, 0.5);
+	margin-bottom: 5em;
 	border: 2px solid;
+	line-height: 2em;
+	width: 300px;
 }
 
 img.logoIntro{
