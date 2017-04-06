@@ -34,26 +34,36 @@ class ControllerRegistro extends Controller
       $usuario->nombre = Input::get('nombre');
       $usuario->username = Input::get('usuario');
 			$usuario->correo = Input::get('correo');
+			$usuario->password = Hash::make(Input::get('contrasena'));
 
-      if(Input::hasFile('foto'))
+			//echo json_encode($request->all());
+
+			//Validación de datos del usuario
+			$existUser= User::where('username', '=', Input::get('usuario'))->count();
+			if ( $existUser > 0 ) {
+				$error = $error.'Usuario ya existe<br>';
+			}
+			$existMail= User::where('correo', '=', Input::get('correo'))->count();
+			if ( $existMail > 0 ) {
+				$error = $error.'Ya hay una cuenta asociada con ese correo<br>';
+			}
+      if(!Input::hasFile('foto'))
       {
-        $foto = Input::file('foto');
-        $foto->move('/fotos', $foto->getClientOriginalName());
-        $usuario->foto = $foto;
-      }else{
         $error = $error.'No hay foto elegida'.'<br>';
       }
-      $usuario->password = Hash::make(Input::get('contrasena'));
-      //Input::get('repetirContra') == Input::get('contrasena') && Input::hasFile('foto')
-       if (true)
+			if(Input::get('repetirContra') != Input::get('contrasena'))
       {
+        $error = $error.'Contraseñas no coinciden'.'<br>';
+      }
+      if (Input::get('repetirContra') == Input::get('contrasena') && Input::hasFile('foto') && $existUser == 0 && $existMail == 0)
+      {
+				$foto = Input::file('foto');
+        $foto->move('fotos', 'USER_'.$usuario->username.".".$foto->getClientOriginalExtension());
+        $usuario->foto = 'fotos/USER_'.$usuario->username.".".$foto->getClientOriginalExtension();
         $usuario->save();
         return Redirect::to('inicio')
                   ->with('registrado', 'Usuario Registrado satisfatoriamente')
                   ->withInput();
-      }else if(Input::get('repetirContra') != Input::get('contrasena'))
-      {
-        $error = $error.'Contraseñas no coinciden'.'<br>';
       }
 
       return Redirect::to('registro')

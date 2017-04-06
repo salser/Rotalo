@@ -7,7 +7,7 @@
 			<h4>Hola {!! Auth::user()->nombre !!} estos son los datos de tu perfil</h4>
 			<ul class="collection">
 		    <li class="collection-item avatar">
-		      <img src="'{!! Auth::user()->foto !!}'" alt="" class="circle">
+		      <img src="{!! Auth::user()->foto !!}" alt="" class="circle">
 		      <span class="title">Nombre</span>
 		      <p>
 						{!! Auth::user()->nombre !!}

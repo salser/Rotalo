@@ -7,10 +7,10 @@
 
   <div class="row container">
     <h2>Registro</h2>
-    <form class="col l10 s12 m12" action="crearUsuario" method="POST">
+    <form class="col l10 s12 m12" action="crearUsuario" method="POST" enctype="multipart/form-data">
       <div class="row">
         <div class="input-field col s12 m6 l6">
-          <input type="text" name="nombre" id="nombre">
+					{!! Form::text('nombre', Input::old('nombre')) !!}
           <label for="nombre">Nombre</label>
         </div>
         <div class="input-field col s12 m6 l6">
@@ -18,7 +18,7 @@
           <label for="correo">Correo</label>
         </div>
         <div class="input-field col s12 m12 l12">
-          {!! Form::text('usuario', Input::old('usuario')) !!}
+          <input type="text" name="usuario" id="usuario">
           <label for="usuario">Nombre de Usuario</label>
         </div>
         <div class="col s12 m12 l12">
