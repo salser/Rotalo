@@ -32,7 +32,9 @@ class ControllerRegistro extends Controller
       $error = '';
       $usuario = new User;
       $usuario->nombre = Input::get('nombre');
+			$usuario->apellido = Input::get('apellido');
       $usuario->username = Input::get('usuario');
+			$usuario->telefono = Input::get('telefono');
 			$usuario->correo = Input::get('correo');
 			$usuario->password = Hash::make(Input::get('contrasena'));
 

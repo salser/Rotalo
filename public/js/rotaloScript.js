@@ -4,11 +4,12 @@
 $(document).ready(function(){
 		 $('.parallax').parallax();
 		 $(".button-collapse").sideNav();
+		 $('.modal').modal();
 		 $('.dropdown-button').dropdown({
 			 hover: true, // Activate on hover
 			 belowOrigin: true, // Displays dropdown below the button
 			 width: 100
-	 }
+	 	}
  );
 	 });
 

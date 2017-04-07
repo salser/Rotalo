@@ -19,6 +19,12 @@ main {
 	justify-content: center;
 	align-items: flex-end;
 }
+
+.bordeModalbtn{
+	border: black solid 0.3px;
+	border-radius: 5%;
+}
+
 a.btn{
 	background: rgba(255,255,255, 0.5);
 	margin-bottom: 5em;

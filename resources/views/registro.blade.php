@@ -13,13 +13,21 @@
 					{!! Form::text('nombre', Input::old('nombre')) !!}
           <label for="nombre">Nombre</label>
         </div>
+				<div class="input-field col s12 m6 l6">
+					{!! Form::text('apellido', Input::old('apellido')) !!}
+          <label for="apellido">Apellido</label>
+        </div>
         <div class="input-field col s12 m6 l6">
           <input type="email" name="correo" id="correo">
           <label for="correo">Correo</label>
         </div>
-        <div class="input-field col s12 m12 l12">
+        <div class="input-field col s12 m6 l6">
           <input type="text" name="usuario" id="usuario">
           <label for="usuario">Nombre de Usuario</label>
+        </div>
+				<div class="input-field col s12 m12 l12">
+					{!! Form::text('telefono', Input::old('telefono')) !!}
+          <label for="telefono">Teléfono</label>
         </div>
         <div class="col s12 m12 l12">
           <label class="archivolbl">Foto de perfil</label><br>
