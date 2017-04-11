@@ -33,6 +33,8 @@
 							<ul id="dropdownSesionM" class="dropdown-content">
 							<li><a href="/perfil">Perfil</a></li>
 							<li><a href="">Historial de trueques</a></li>
+							<li><a href="">Mis productos</a></li>
+
 							<li class="divider"></li>
 							<li><a href="/cerrar">Cerrar Sesión</a></li>
 							</ul>
@@ -47,7 +49,43 @@
 						@if(!Auth::check())
 					 		<li><a href="/inicio">Iniciar Sesi&oacuten</a></li>
 						@endif
-					 	<li><a href="#!">Productos en trueque</a></li>
+
+						<ul id="dropdownProductosM" class="dropdown-content">
+							<ul id="hobbiesM" class="dropdown-content indd">
+								<li><a href="">Literatura</a></li>
+								<li><a href="">Música</a></li>
+								<li><a href="">Arte</a></li>
+							</ul>
+							<li>
+								<a class="dropdown-button" data-activates="hobbiesM">
+									Hobbies
+									<i class="material-icons right">arrow_drop_down</i>
+								</a>
+							</li>
+							<ul id="tecnoM" class="dropdown-content indd">
+								<li><a href="">Tablets</a></li>
+								<li><a href="">Telefonos</a></li>
+								<li><a href="">Computadores</a></li>
+								<li><a href="">Otros</a></li>
+							</ul>
+
+							<li>
+								<a class="dropdown-button" data-activates="tecnoM">
+									Tecnología
+									<i class="material-icons right">arrow_drop_down</i>
+								</a>
+							</li>
+							<li><a href="">Electrodomesticos</a></li>
+							<li><a href="">Vehiculos</a></li>
+							<li><a href="!#">Inmuebles</a></li>
+							<li><a href="!#">VideoJuegos</a></li>
+						</ul>
+						<li>
+							<a class="dropdown-button" data-activates="dropdownProductosM">
+								Productos en trueque
+								<i class="material-icons right">arrow_drop_down</i>
+							</a>
+						</li>
 					 	<li><a href="#!">Cont&aacutectanos</a></li>
 					 	<li><a href="#!">Rótalo</a></li>
 				 	</ul>
@@ -57,6 +95,7 @@
 							<ul id="dropdownSesion" class="dropdown-content">
 							<li><a href="/perfil">Perfil</a></li>
 							<li><a href="">Historial de trueques</a></li>
+							<li><a href="">Mis productos</a></li>
 							<li class="divider"></li>
 							<li><a href="/cerrar">Cerrar Sesión</a></li>
 							</ul>
@@ -71,7 +110,36 @@
 						@if(!Auth::check())
 							<li><a href="/inicio">Iniciar Sesi&oacuten</a></li>
 						@endif
-					 	<li><a href="#!">Productos en trueque</a></li>
+						<ul id="dropdownProductosM" class="dropdown-content">
+							<ul id="hobbiesM" class="dropdown-content indd">
+								<li><a href="">Literatura</a></li>
+								<li><a href="">Música</a></li>
+								<li><a href="">Arte</a></li>
+							</ul>
+							<li>
+								<a class="dropdown-button" data-activates="hobbiesM">
+									Hobbies
+									<i class="material-icons right">arrow_drop_down</i>
+								</a>
+							</li>
+							<ul id="tecnoM" class="dropdown-content indd">
+								<li><a href="">Tablets</a></li>
+								<li><a href="">Telefonos</a></li>
+								<li><a href="">Computadores</a></li>
+								<li><a href="">Otros</a></li>
+							</ul>
+
+							<li>
+								<a class="dropdown-button" data-activates="tecnoM">
+									Tecnología
+									<i class="material-icons right">arrow_drop_down</i>
+								</a>
+							</li>
+							<li><a href="">Electrodomesticos</a></li>
+							<li><a href="">Vehiculos</a></li>
+							<li><a href="!#">Inmuebles</a></li>
+							<li><a href="!#">VideoJuegos</a></li>
+						</ul>
 					 	<li><a href="#!">Cont&aacutectanos</a></li>
 					 	<li><a href="#!">Rótalo</a></li>
 						<li><a href="#!">Registrarse</a></li>

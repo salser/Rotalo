@@ -8,6 +8,8 @@ body {
 main {
 	flex: 1 0 auto;
 }
+
+
 .brand-logo img{
 	padding-left: 10px;
 	width: 60px;
@@ -51,6 +53,16 @@ input.iniciobtn{
 	background: -ms-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(167,215,45,0.66) 100%);
 	background: linear-gradient(to bottom, rgba(210,255,82,1) 0%, rgba(167,215,45,0.66) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#a7d72d', GradientType=0 );
+	min-height: auto;
+	min-width: 200px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.indd{
+	min-height: 100px;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .dropdown-content li > a:hover, .dropdown-content li > span:hover{

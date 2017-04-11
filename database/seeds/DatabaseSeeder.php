@@ -14,8 +14,8 @@ class SeederTablaUsuario extends Seeder
     public function run()
     {
         User::create(array(
-					'username' 		=> 'henry',
-					'correo'			=> 'henry@rotalo.com',
+					'username' 		=> 'henry7',
+					'correo'			=> 'henry2s@rotalo.com',
 					'nombre'			=> 'Henry',
 					'apellido'		=> 'Salazar',
 					'password'	  => Hash::make('rotalo'),
@@ -38,6 +38,28 @@ class DatabaseSeeder extends Seeder
         Model::reguard();
 
 				$this->call(SeederTablaUsuario::class);
+    }
+}
+
+
+class ProductosSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+      DB::table('producto')->truncate();
+      factory(App\Producto::class)->create([
+        'nombre'        =>'Nuevo Producto',
+        'tiempo_uso'    =>'admin',
+        'antiguedad'    => 'admin@admin.com',
+        'foto'          => 'nohay',
+        'descripcion'   =>'1'
+      ]);
+      factory(App\Producto::class, 49)->create();
     }
 }
 ?>

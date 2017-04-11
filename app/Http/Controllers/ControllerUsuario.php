@@ -10,8 +10,9 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Hash;
 use Redirect;
+use Auth;
 
-class ControllerRegistro extends Controller
+class ControllerUsuario extends Controller
 {
 
 		/*
@@ -72,4 +73,22 @@ class ControllerRegistro extends Controller
                 ->with('mensaje_error', $error)
                 ->withInput();
     }
+		public function cambiarFoto(User $user)
+		{
+			$userid = Auth::user()->id;
+			$user = User::find($userid);
+			if(Input::hasFile('foto'))
+			{
+				$foto = Input::file('cFoto');
+				$foto->move('fotos', 'USER_'.$user->username.".".$foto->getClientOriginalExtension());
+				$user->foto= 'fotos/USER_'.$user->username.".".$foto->getClientOriginalExtension();
+				$user->save();
+				return Redirect::to('perfil')
+								->with('cambio', 'Foto cambiada satisfatoriamente')
+								->withInput();
+			}
+			return Redirect::to('perfil')
+							->with('cambio', 'no se cambio la foto por favor verifique el tamaño o que haya elegido correctamente su elección')
+							->withInput();
+		}
 }

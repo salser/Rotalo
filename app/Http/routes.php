@@ -27,6 +27,7 @@ Route::group(array('before' => 'auth'), function()
     });
     // Esta ruta nos servirá para cerrar sesión.
     Route::get('cerrar', 'Controller@cerrar');
+
 });
 
 
@@ -40,5 +41,7 @@ Route::get('Registro', function()
   return view('registro');
 });
 
-Route::get('registro', 'ControllerRegistro@mostrarRegistro');
-Route::post('crearUsuario', 'ControllerRegistro@crearUsuario');
+Route::get('registro', 'ControllerUsuario@mostrarRegistro');
+Route::post('crearUsuario', 'ControllerUsuario@crearUsuario');
+
+Route::post('cambiarFoto', 'ControllerUsuario@cambiarFoto');

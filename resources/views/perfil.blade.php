@@ -5,6 +5,9 @@
 </div>
 		<div class="container">
 			<h4>Hola {!! Auth::user()->nombre !!} estos son los datos de tu perfil</h4>
+			@if(Session::has('cambio'))
+				<p class="" style="color: red;">{!! Session::get('cambio') !!}</p>
+			@endif
 			<ul class="collection">
 		    <li class="collection-item avatar">
 		      <img src="{!! Auth::user()->foto !!}" alt="" class="circle">
@@ -19,7 +22,7 @@
 							<h4>Cambiar Foto</h4>
 							<form action="cambiarFoto" method="POST" enctype="multipart/form-data" class="container">
 								<div class="col s12 m12 l12">
-				          <label class="archivolbl">Foto de perfil</label><br>
+				          <label class="archivolbl">Selecciona</label><br>
 				          <input type="file" name="cFoto" id="cFoto">
 				        </div>
 								<br>
