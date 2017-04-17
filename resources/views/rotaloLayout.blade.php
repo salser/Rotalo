@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Plantilla que se utiliza en todas las interfaces paratener una base en donde se trabajara siempre el frontend -->
 <html>
 	<head>
 				<meta charset="utf-8">

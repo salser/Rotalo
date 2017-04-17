@@ -32,21 +32,28 @@ Route::group(array('before' => 'auth'), function()
 });
 
 
-
+//Ruta que redirige a la pantalla de inicio de rotalo
 Route::get('/', function () {
     return view('inicioRotalo');
 });
 
+//Ruta que redirige ahacia el registro de un usuario
 Route::get('Registro', function()
 {
   return view('registro');
 });
 
+/**
+* Rutas que redirigen y  llaman a las funciones de usuario para las operaciones BREAD
+*/
 Route::get('registro', 'ControllerUsuario@mostrarRegistro');
 Route::post('crearUsuario', 'ControllerUsuario@crearUsuario');
 
 Route::post('cambiarFoto', 'ControllerUsuario@cambiarFoto');
 
+/**
+* Rutas que redirigen y  llaman a las funciones de producto para las operaciones BREAD
+*/
 Route::get('misProductos', function()
 {
   $productos = Producto::all();

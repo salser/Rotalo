@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/*
+* Modelo que representa un Producto dentro de el sistema
+**/
 class Producto extends Model
 {
   /*

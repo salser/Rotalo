@@ -1,3 +1,4 @@
+<!-- Interfaz que extiende el layout de rotalo, y contiene la lista de el usuario autenticado en rotalo-->
 @extends('rotaloLayout')
 
 @section('content')

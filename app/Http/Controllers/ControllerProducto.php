@@ -11,6 +11,10 @@ use Input;
 use Redirect;
 use Auth;
 
+/*
+* Controlador que maneja todos los post y gets en cuanto
+* a el BREAD de productos concierne
+*/
 class ControllerProducto extends Controller
 {
     /**
@@ -49,6 +53,11 @@ class ControllerProducto extends Controller
               ->with('cambio', $cambio)
               ->withInput();
       }
+      
+      /*
+      * Agrega una nueva tupla a la tabla productos, y
+      * se asocia con el id del usuario
+      */
       public function agregar(){
         $agrega = '';
         if(Input::has('nombre') && Input::has('tiempo_uso') && Input::has('antiguedad') && Input::hasFile('fotoP') && Input::has('descripcion'))

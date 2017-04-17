@@ -12,6 +12,10 @@ use Hash;
 use Redirect;
 use Auth;
 
+/*
+* Controlador que maneja todos los post y gets en cuanto
+* a el BREAD del usuario concierne
+*/
 class ControllerUsuario extends Controller
 {
 
@@ -75,7 +79,7 @@ class ControllerUsuario extends Controller
     }
 
 		/*
-		Cambia la foto  de usuario y hace un update de usuario en la base de datos
+		* Cambia la foto  de usuario y hace un update de usuario en la base de datos
 		*/
 		public function cambiarFoto(User $user)
 		{

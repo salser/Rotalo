@@ -1,3 +1,4 @@
+<!-- Interfaz que extiende el layout de rotalo, y contiene el inicio de sesion de un usuario -->
 @extends('rotaloLayout')
 
 @section('content')

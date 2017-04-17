@@ -1,3 +1,4 @@
+<!-- Interfaz que extiende el layout de rotalo, y contiene los datos de perfil de un usuario ya autenticado -->
 @extends('rotaloLayout')
 
 @section('content')

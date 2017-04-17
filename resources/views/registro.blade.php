@@ -1,3 +1,4 @@
+<!-- Interfaz que extiende el layout de rotalo, y contiene el registro en el sistema para un usuario -->
 @extends('rotaloLayout')
 
 @section('content')

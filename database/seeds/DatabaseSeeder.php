@@ -4,6 +4,11 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
 use App\User;
+
+/*
+* Crea una tupla sin foto dentro de la tabla de usuarios
+* Con php artisan db:seed en la cmd
+*/
 class SeederTablaUsuario extends Seeder
 {
     /**
@@ -25,23 +30,10 @@ class SeederTablaUsuario extends Seeder
     }
 }
 
-
-class DatabaseSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        Model::reguard();
-
-				$this->call(SeederTablaUsuario::class);
-    }
-}
-
-
+/*
+* Crea una tupla sin foto dentro de la tabla de productos
+* Con php artisan db:seed en la cmd
+*/
 class ProductosSeeder extends Seeder
 {
     /**
@@ -62,4 +54,21 @@ class ProductosSeeder extends Seeder
       factory(App\Producto::class, 49)->create();
     }
 }
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::reguard();
+
+				$this->call(SeederTablaUsuario::class);
+        $this->call(ProductosSeeder::class);
+    }
+}
+
 ?>
