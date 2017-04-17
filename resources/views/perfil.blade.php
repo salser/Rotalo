@@ -2,8 +2,9 @@
 @extends('rotaloLayout')
 
 @section('content')
-<div class="container">
-</div>
+<main>
+	<div class="container">
+	</div>
 		<div class="container">
 			<h4>Hola {!! Auth::user()->nombre !!} estos son los datos de tu perfil</h4>
 			@if(Session::has('cambio'))
@@ -61,4 +62,5 @@
 		    </li>
 			<a href="/cerrar">Cerrar sesión.</a>
 		</div>
+	</main>
 @endsection

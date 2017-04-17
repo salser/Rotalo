@@ -14,6 +14,7 @@
 				<!-- Compiled and minified JavaScript -->
 				<script src="{!! 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js' !!}"></script>
 				<link href="{!!'https://fonts.googleapis.com/icon?family=Material+Icons' !!}" rel="stylesheet">
+				
 
 				<!-- Own sources -->
 				<script src="{!! 'js/rotaloScript.js' !!}"></script>
@@ -111,7 +112,7 @@
 						@if(!Auth::check())
 							<li><a href="/inicio">Iniciar Sesi&oacuten</a></li>
 						@endif
-						<ul id="dropdownProductosM" class="dropdown-content">
+						<ul id="dropdownProductos" class="dropdown-content">
 							<ul id="hobbies" class="dropdown-content indd">
 								<li><a href="">Literatura</a></li>
 								<li><a href="">Música</a></li>
@@ -123,7 +124,7 @@
 									<i class="material-icons right">arrow_drop_down</i>
 								</a>
 							</li>
-							<ul id="tecnoM" class="dropdown-content indd">
+							<ul id="tecno" class="dropdown-content indd">
 								<li><a href="">Tablets</a></li>
 								<li><a href="">Telefonos</a></li>
 								<li><a href="">Computadores</a></li>
@@ -141,6 +142,12 @@
 							<li><a href="!#">Inmuebles</a></li>
 							<li><a href="!#">VideoJuegos</a></li>
 						</ul>
+						<li>
+  	        	<a href="/todosProductos" class="dropdown-button" data-activates="dropdownProductos">
+  	          	Productos en trueque
+  	          	<i class="material-icons right"> arrow_drop_down</i>
+  	          </a>
+  	        </li>
 					 	<li><a href="#!">Cont&aacutectanos</a></li>
 					 	<li><a href="#!">Rótalo</a></li>
 						<li><a href="#!">Registrarse</a></li>
@@ -148,9 +155,7 @@
 				 </div>
 			 </nav>
 		 </header>
-		<main>
 			@yield('content')
-	 	</main>
 		<footer class="page-footer">
 		    <div class="container">
 		      <div class="row">

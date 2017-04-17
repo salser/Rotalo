@@ -2,6 +2,8 @@
 @extends('rotaloLayout')
 
 @section('content')
+<main>
+
   <div class="container">
     <h1>Mis Productos</h1>
     @if(Session::has('cambio'))
@@ -103,4 +105,5 @@
     </form>
     </div>
   </div>
+</main>
 @endsection

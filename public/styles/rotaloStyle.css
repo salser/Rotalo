@@ -2,10 +2,12 @@
 * Estilos que usa rotalo en su interfaz en su parte de frontend
 */
 body {
+	background-repeat: no-repeat;
+	background-size: 100%;
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	background-color: #d4e0d9;
+	background-color: white;
 }
 
 main {
@@ -25,6 +27,7 @@ li{
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
+	border: #a7d72d  solid;
 }
 
 .bordeModalbtn{
@@ -48,9 +51,16 @@ li{
 .card-content{
 	overflow-y: auto;
 }
+.formas{
+	margin: 50px 10px 10px 50px;
+	padding: 50px 50px 50px 50px;
+	border: 2px solid;
+	border-color: rgba(91, 120, 10, 0.88);
+	border-radius: 5%;
+}
 
 a.btn{
-	background: rgba(255,255,255, 0.5);
+	background: rgba(136, 136, 136, 0.5);
 	margin-bottom: 5em;
 	border: 2px solid;
 	line-height: 2em;
@@ -63,15 +73,21 @@ img.imgCard{
 }
 
 img.logoIntro{
-	width: 50%;
-	height: 60%;
+	width: 500px;
+	height: 150px;
+	display: flex;
+	align-items: center;
 }
+
 
 .iniciobtn{
 	color: black !important;
 	background-color: rgba(210,255,82,1);
 }
-
+.btnreg:hover{
+	background-color: rgba(210, 255, 82, 0.68) !important;
+	color: rgba(0, 0, 0, 0.66) !important;
+}
 .dropdown-content{
 	background: rgba(210,255,82,1);
 	background: -moz-linear-gradient(top, rgba(210,255,82,1) 0%, rgba(167,215,45,0.66) 100%);
