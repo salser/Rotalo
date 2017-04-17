@@ -33,7 +33,7 @@
 							<ul id="dropdownSesionM" class="dropdown-content">
 							<li><a href="/perfil">Perfil</a></li>
 							<li><a href="">Historial de trueques</a></li>
-							<li><a href="">Mis productos</a></li>
+							<li><a href="/misProductos">Mis productos</a></li>
 
 							<li class="divider"></li>
 							<li><a href="/cerrar">Cerrar Sesión</a></li>
@@ -95,7 +95,7 @@
 							<ul id="dropdownSesion" class="dropdown-content">
 							<li><a href="/perfil">Perfil</a></li>
 							<li><a href="">Historial de trueques</a></li>
-							<li><a href="">Mis productos</a></li>
+							<li><a href="/misProductos">Mis productos</a></li>
 							<li class="divider"></li>
 							<li><a href="/cerrar">Cerrar Sesión</a></li>
 							</ul>
@@ -111,13 +111,13 @@
 							<li><a href="/inicio">Iniciar Sesi&oacuten</a></li>
 						@endif
 						<ul id="dropdownProductosM" class="dropdown-content">
-							<ul id="hobbiesM" class="dropdown-content indd">
+							<ul id="hobbies" class="dropdown-content indd">
 								<li><a href="">Literatura</a></li>
 								<li><a href="">Música</a></li>
 								<li><a href="">Arte</a></li>
 							</ul>
 							<li>
-								<a class="dropdown-button" data-activates="hobbiesM">
+								<a class="dropdown-button" data-activates="hobbies">
 									Hobbies
 									<i class="material-icons right">arrow_drop_down</i>
 								</a>
@@ -130,7 +130,7 @@
 							</ul>
 
 							<li>
-								<a class="dropdown-button" data-activates="tecnoM">
+								<a class="dropdown-button" data-activates="tecno">
 									Tecnología
 									<i class="material-icons right">arrow_drop_down</i>
 								</a>

@@ -13,7 +13,7 @@
 		<div class="parallax">
 			<img class="" src="{!! 'imgs/indice.jpg' !!}">
 		</div>
-		@if(Auth::check())
+		@if(!Auth::check())
 			<a href="registro" class="hide-on-med-and-down waves-effect waves-ligth btn transparent" >Registrarse</a>
 		@endif
 	</div>

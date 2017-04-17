@@ -42,7 +42,7 @@
           <label for="repetirContra">Repetir Contraseña</label>
         </div>
       </div>
-      <input class="btn iniciobtn transparent waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit" value="Rótalo">
+      <input class="btn iniciobtn waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit" value="Rótalo">
       <input type="hidden" name="_token" value="{!! csrf_token() !!}">
     </form>
   </div>

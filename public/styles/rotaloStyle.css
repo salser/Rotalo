@@ -40,8 +40,9 @@ img.logoIntro{
 	height: 60%;
 }
 
-input.iniciobtn{
+.iniciobtn{
 	color: black !important;
+	background-color: rgba(210,255,82,1);
 }
 
 .dropdown-content{
@@ -73,6 +74,28 @@ label.archivolbl{
 	color:  black;
 	font-size: inherit;
 }
+.collection li.collection-item:hover:not(.active){
+	background-color: rgba(167, 215, 45, 0.5);
+}
+.btn, .btn-large{
+	background-color: rgba(210,255,82,0.7);
+}
+.btn:hover{
+	background-color: rgba(210,255,82,1);
+}
+a.btn-mine{
+	background-color: rgba(210,255,82,0.7);
+	border: 0px;
+}
+a.btn-mine:hover{
+	background-color: rgba(210,255,82,1);
+}
+
+.imgCambio{
+	height: 200px;
+	width: 200px;
+}
+
 /*================================== materialize changes ==============================================*/
 
 .dropdown-content li > a, .dropdown-content li > span{
@@ -129,10 +152,6 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 	nav{
 		background-color: #a7d72d !important;
 	}
-}
-
-.btn, .btn-large{
-	background-color: #0018ff;
 }
 
 footer.page-footer{

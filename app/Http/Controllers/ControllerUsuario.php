@@ -73,11 +73,15 @@ class ControllerUsuario extends Controller
                 ->with('mensaje_error', $error)
                 ->withInput();
     }
+
+		/*
+		Cambia la foto  de usuario y hace un update de usuario en la base de datos
+		*/
 		public function cambiarFoto(User $user)
 		{
 			$userid = Auth::user()->id;
 			$user = User::find($userid);
-			if(Input::hasFile('foto'))
+			if(Input::hasFile('cFoto'))
 			{
 				$foto = Input::file('cFoto');
 				$foto->move('fotos', 'USER_'.$user->username.".".$foto->getClientOriginalExtension());

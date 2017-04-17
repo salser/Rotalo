@@ -1,5 +1,6 @@
 <?php
 
+use App\Producto;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -45,3 +46,12 @@ Route::get('registro', 'ControllerUsuario@mostrarRegistro');
 Route::post('crearUsuario', 'ControllerUsuario@crearUsuario');
 
 Route::post('cambiarFoto', 'ControllerUsuario@cambiarFoto');
+
+Route::get('misProductos', function()
+{
+  $productos = Producto::all();
+  return view('misproductos', compact('productos'));
+});
+
+Route::post('editarProducto','ControllerProducto@editar');
+Route::post('agregarProducto', 'ControllerProducto@agregar');

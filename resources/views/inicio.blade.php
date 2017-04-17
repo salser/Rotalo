@@ -25,7 +25,7 @@
 						<label for="contrasena">Contraseña</label>
 					</div>
 				</div>
-				<input class="btn iniciobtn transparent waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit" value="Iniciar Sesión">
+				<input class="btn iniciobtn waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit" value="Iniciar Sesión">
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 			</form>
 		</div>
