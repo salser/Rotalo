@@ -1,6 +1,8 @@
 <?php
 
 use App\Producto;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -62,3 +64,13 @@ Route::get('misProductos', function()
 
 Route::post('editarProducto','ControllerProducto@editar');
 Route::post('agregarProducto', 'ControllerProducto@agregar');
+
+Route::get('todosProductos', function(){
+  $productos = Producto::all();
+  $usuarios = User::all();
+  $data = [
+            'productos' => $productos,
+            'usuarios'  => $usuarios
+          ];
+  return View::make('productostodos')->with($data);
+});

@@ -12,7 +12,9 @@ main {
 	flex: 1 0 auto;
 }
 
-
+li{
+	list-style: none;
+}
 .brand-logo img{
 	padding-left: 10px;
 	width: 60px;
@@ -30,12 +32,34 @@ main {
 	border-radius: 5%;
 }
 
+.card .card-image .card-title{
+	color: rgb(0, 0, 0);
+}
+.card .card-image{
+	margin-left: 4px;
+	margin-bottom: 4px;
+	margin-top: 6px;
+	margin-right: 4px;
+}
+.card{
+	height: 500px;
+}
+
+.card-content{
+	overflow-y: auto;
+}
+
 a.btn{
 	background: rgba(255,255,255, 0.5);
 	margin-bottom: 5em;
 	border: 2px solid;
 	line-height: 2em;
 	width: 300px;
+}
+
+img.imgCard{
+	height: 300px;
+	width: 400px;
 }
 
 img.logoIntro{

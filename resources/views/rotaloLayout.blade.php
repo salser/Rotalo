@@ -82,7 +82,7 @@
 							<li><a href="!#">VideoJuegos</a></li>
 						</ul>
 						<li>
-							<a class="dropdown-button" data-activates="dropdownProductosM">
+							<a href="/todosProductos" class="dropdown-button" data-activates="dropdownProductosM">
 								Productos en trueque
 								<i class="material-icons right">arrow_drop_down</i>
 							</a>
