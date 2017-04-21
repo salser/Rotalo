@@ -19,13 +19,13 @@ class SeederTablaUsuario extends Seeder
     public function run()
     {
         User::create(array(
-					'username' 		=> 'henry7',
-					'correo'			=> 'henry2s@rotalo.com',
-					'nombre'			=> 'Henry',
-					'apellido'		=> 'Salazar',
+					'username' 		=> 'Casmkill',
+					'correo'			=> 'Casmkill@rotalo.com',
+					'nombre'			=> 'Carlos',
+					'apellido'		=> 'Saldarriaga',
 					'password'	  => Hash::make('rotalo'),
           'foto'        => "No foto aun",
-					'telefono'		=> '3186346954'
+					'telefono'		=> '3218007103'
 				));
     }
 }

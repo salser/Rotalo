@@ -18,7 +18,7 @@
               </div>
               <div class="card-content">
                 <span class="card-title">{!! $p->nombre !!}</span>
-                <p>Años de uso: {!! $p->tiempo_uso !!}</p>
+                <p>Descripción: {!! $p->descripcion !!}</p>
               </div>
               <div class="card-action">
                 <?php $usuario; ?>
