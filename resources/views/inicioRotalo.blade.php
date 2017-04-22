@@ -21,12 +21,12 @@
 	<br><br><br><br>
 	<div class="container">
 		<div class="row">
-			<div class="col s12 m12 l12">
+			<div class="col s12">
 				<div class="row">
 					<a class="col l4 s12" style="color: #112293; font-size: 3em;"><i class="material-icons medium">announcement</i>Conoce</a>
 					<a class="col l4 s12" style="color: #9c0000; font-size: 3em;"><i class="material-icons medium">motorcycle</i>Diviertete</a>
 					<div class="col l4 s12">
-						<img src="{!! 'imgs/collagemarcas.jpg' !!}" alt="">
+						<img class="responsive-img" src="{!! 'imgs/collagemarcas.jpg' !!}" alt="">
 					</div>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 						</div>
 						<br><br><br><br>
 						<div class="col l8 offset-l3 s12" style="">
-							<img class="logoIntro" src="{!! 'imgs/logoRotalo.png' !!}" alt="">
+							<img class="logoIntro responsive-img" src="{!! 'imgs/logoRotalo.png' !!}" alt="">
 						</div>
 					</div>
 				</div>

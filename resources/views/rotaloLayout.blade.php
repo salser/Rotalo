@@ -4,6 +4,7 @@
 	<head>
 				<meta charset="utf-8">
 
+				<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
 				<!-- JQuery CDN Source -->
 				<script type="text/javascript" src="{!! 'https://code.jquery.com/jquery-3.1.1.min.js' !!}"></script>
 				<script src="{!! 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.js' !!}"></script>
@@ -14,7 +15,7 @@
 				<!-- Compiled and minified JavaScript -->
 				<script src="{!! 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js' !!}"></script>
 				<link href="{!!'https://fonts.googleapis.com/icon?family=Material+Icons' !!}" rel="stylesheet">
-				
+
 
 				<!-- Own sources -->
 				<script src="{!! 'js/rotaloScript.js' !!}"></script>
