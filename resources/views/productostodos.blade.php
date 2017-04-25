@@ -4,7 +4,7 @@
 <main style="background-repeat: round; background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url({!! 'imgs/pdtodos.jpg' !!})">
 
   <div class="container">
-    <h1>Productos en Rótalo todos</h1>
+    <h1>Productos en Rótalo</h1>
     <div class="row">
       <div class="col s12">
         <div class="row">
