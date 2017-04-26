@@ -10,6 +10,7 @@ use App\Producto;
 use Input;
 use Redirect;
 use Auth;
+use File;
 
 /*
 * Controlador que maneja todos los post y gets en cuanto
@@ -87,6 +88,8 @@ class ControllerProducto extends Controller
       }
 			public function eliminar(){
 				$id = Input::get('idp');
+				$producto = Producto::find($id);
+				File::delete($producto->foto);
 				Producto::where('id', $id)->delete();
 				return Redirect::to('misProductos')
 								->with('eliminado', 'Producto se eliminó satisfactoriamente')
