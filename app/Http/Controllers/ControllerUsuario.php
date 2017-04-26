@@ -100,7 +100,7 @@ class ControllerUsuario extends Controller
 								->withInput();
 			}
 			return Redirect::to('perfil')
-							->with('cambio', 'no se cambio la foto por favor verifique el tamaño o que haya elegido correctamente su elección')
+							->with('noCambio', 'No se cambio la foto por favor verifique el tamaño o que haya elegido correctamente su elección')
 							->withInput();
 		}
 }

@@ -8,7 +8,22 @@
 		<div class="container">
 			<h4>Hola {!! Auth::user()->nombre !!} estos son los datos de tu perfil</h4>
 			@if(Session::has('cambio'))
-				<p class="" style="color: red;">{!! Session::get('cambio') !!}</p>
+				<div class="row">
+					<div class="col s12">
+						<div class="col s12 l4 m6">
+							<p class="change">{!! Session::get('cambio') !!}</p>
+						</div>
+					</div>
+				</div>
+			@endif
+			@if(Session::has('noCambio'))
+				<div class="row">
+					<div class="col s12">
+						<div class="col s12 l9 m12">
+							<p class="nChange">{!! Session::get('noCambio') !!}</p>
+						</div>
+					</div>
+				</div>
 			@endif
 			<ul class="collection">
 		    <li class="collection-item avatar">
