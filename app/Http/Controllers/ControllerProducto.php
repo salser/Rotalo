@@ -29,12 +29,13 @@ class ControllerProducto extends Controller
       $cambio = '';
       if(Input::has('nombreP') && Input::has('tiempo_uso_a') && Input::has('antiguedad_a'))
       {
-        if(Input::hasFile('cFotoP'))
-        {
-          $foto = Input::file('cFotoP');
-          $foto->move('productos', 'PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
-          $producto->foto= 'productos/PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
-        }
+
+				if(Input::hasFile('cFotoP'))
+				{
+					$foto = Input::file('cFotoP');
+					$foto->move('productos', 'PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+					$producto->foto= 'productos/PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+				}
         $producto->nombre = Input::get('nombreP');
         $producto->tiempo_uso= Input::get('tiempo_uso_a');
         $producto->antiguedad = Input::get('antiguedad_a');
@@ -50,10 +51,10 @@ class ControllerProducto extends Controller
       }
       $cambio = 'Cambio no realizado verifique campos';
       return Redirect::to('misProductos')
-              ->with('cambio', $cambio)
+              ->with('noCambio', $cambio)
               ->withInput();
       }
-      
+
       /*
       * Agrega una nueva tupla a la tabla productos, y
       * se asocia con el id del usuario
@@ -81,7 +82,14 @@ class ControllerProducto extends Controller
         }
         $cambio = 'Cambio no realizado verifique campos';
         return Redirect::to('misProductos')
-                ->with('agregarProductos', $cambio)
+                ->with('nAgregarProductos', $cambio)
                 ->withInput();
       }
+			public function eliminar(){
+				$id = Input::get('idp');
+				Producto::where('id', $id)->delete();
+				return Redirect::to('misProductos')
+								->with('eliminado', 'Producto se eliminó satisfactoriamente')
+								->withInput();
+			}
     }

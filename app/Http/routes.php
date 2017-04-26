@@ -74,3 +74,4 @@ Route::get('todosProductos', function(){
           ];
   return View::make('productostodos')->with($data);
 });
+Route::post('eliminarP', 'ControllerProducto@eliminar');

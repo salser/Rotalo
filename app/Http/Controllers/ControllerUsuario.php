@@ -45,6 +45,10 @@ class ControllerUsuario extends Controller
 
 			//echo json_encode($request->all());
 
+			if(!Input::has('telefono'))
+			{
+				$error = $error.'No digite un número de teléfono valido'.'<br>';
+			}
 			//Validación de datos del usuario
 			$existUser= User::where('username', '=', Input::get('usuario'))->count();
 			if ( $existUser > 0 ) {
@@ -62,7 +66,7 @@ class ControllerUsuario extends Controller
       {
         $error = $error.'Contraseñas no coinciden'.'<br>';
       }
-      if (Input::get('repetirContra') == Input::get('contrasena') && Input::hasFile('foto') && $existUser == 0 && $existMail == 0)
+      if (Input::has('telefono') && Input::get('repetirContra') == Input::get('contrasena') && Input::hasFile('foto') && $existUser == 0 && $existMail == 0)
       {
 				$foto = Input::file('foto');
         $foto->move('fotos', 'USER_'.$usuario->username.".".$foto->getClientOriginalExtension());

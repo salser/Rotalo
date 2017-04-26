@@ -7,11 +7,50 @@
   <div class="container">
     <h1>Mis Productos</h1>
     @if(Session::has('cambio'))
-      <p class="container" style="color: red;">{!! Session::get('cambio') !!}</p>
+		<div class="row">
+			<div class="col s12">
+				<div class="col s12 l3 m6">
+					<p class="change">{!! Session::get('cambio') !!}</p>
+				</div>
+			</div>
+		</div>
     @endif
+		@if(Session::has('noCambio'))
+		<div class="row">
+			<div class="col s12">
+				<div class="col s12 l4 m6">
+					<p class="nChange">{!! Session::get('noCambio') !!}</p>
+				</div>
+			</div>
+		</div>
+		@endif
     @if(Session::has('agregarProductos'))
-      <p class="container" style="color: red;">{!! Session::get('agregarProductos') !!}</p>
+			<div class="row">
+				<div class="col s12">
+					<div class="col s12 l4 m6">
+						<p class="change">{!! Session::get('agregarProductos') !!}</p>
+					</div>
+				</div>
+			</div>
     @endif
+		@if(Session::has('nAgregarProductos'))
+			<div class="row">
+				<div class="col s12">
+					<div class="col s12 l4 m6">
+						<p class="nChange">{!! Session::get('nAgregarProductos') !!}</p>
+					</div>
+				</div>
+			</div>
+	 	@endif
+		@if(Session::has('eliminado'))
+			<div class="row">
+				<div class="col s12">
+					<div class="col s12 l4 m6">
+						<p class="change">{!! Session::get('eliminado') !!}</p>
+					</div>
+				</div>
+			</div>
+		@endif
     <div class="collection">
     @foreach ($productos as $p)
       @if(Auth::user()->id == $p->id_usuario)
@@ -57,8 +96,30 @@
                 </div>
   						</div>
   					</div>
+						<div id="modaleliminarP{!! $p->id !!}" class="modal">
+  						<div class="modal-content">
+  							<h4>Esta seguro que quiere eliminar el producto:</h4>
+                <br>
+                <div class="row">
+                  <form action="eliminarP" method="POST" class="container col s12 m12 l12">
+                    <div class="row">
+											<div class="">
+												<b>{!! $p->nombre !!}</b> con descripción: <i>{!! $p->descripcion !!}</i>
+											</div>
+                      <br>
+                      <div class="modal-footer">
+                        <input class="bordeModalbtn modal-action modal-close waves-effect waves-red btn-flat" onclick="" type="submit" name="submit" id="submit" value="Eliminar">
+                      </div>
+                      <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                      <input type="hidden" name="idp" id="idp" value="{!! $p->id !!}">
+                    </div>
+                  </form>
+                </div>
+  						</div>
+  					</div>
             {!! $p->nombre !!}
-            <a href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+						<a href="#modaleliminarP{!! $p->id !!}" class="secondary-content"><i style="color:red"class="material-icons">delete</i></a>
+						<a href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
           </div>
         </li>
       @endif

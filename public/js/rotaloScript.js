@@ -2,6 +2,8 @@
 * funcion de onload de la página que inicializa todos los objetos de materialize de javascript
 */
 $(document).ready(function(){
+		 $('.change').fadeTo(2000, 1);
+		 $('.nChange').fadeTo(2000, 1);
 		 $('.parallax').parallax();
 		 $(".button-collapse").sideNav();
 		 $('.modal').modal();
