@@ -21,7 +21,7 @@
               <label for="apellido">Apellido</label>
             </div>
             <div class="input-field col s12 m6 l6">
-              <input type="email" name="correo" id="correo">
+              <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" type="email" name="correo" id="correo">
               <label for="correo">Correo</label>
             </div>
             <div class="input-field col s12 m6 l6">
@@ -29,7 +29,7 @@
               <label for="usuario">Nombre de Usuario</label>
             </div>
             <div class="input-field col s12 m12 l12">
-              {!! Form::text('telefono', Input::old('telefono')) !!}
+              {!! Form::number('telefono', Input::old('telefono')) !!}
               <label for="telefono">Teléfono</label>
             </div>
             <div class="col s12 m12 l12">
