@@ -37,6 +37,7 @@
 					<div id="modalFoto" class="modal">
 						<div class="modal-content">
 							<h4>Cambiar Foto</h4>
+							<img class="imgCambio" src="{!! Auth::user()->foto !!}" alt="">
 							<form action="cambiarFoto" method="POST" enctype="multipart/form-data" class="container">
 								<div class="col s12 m12 l12">
 				          <label class="archivolbl">Selecciona</label><br>

@@ -161,6 +161,10 @@ a.btn-mine:hover{
 	opacity: 0;
 }
 
+.fotoP{
+	display: none;
+}
+
 /*================================== materialize changes ==============================================*/
 
 .dropdown-content li > a, .dropdown-content li > span{

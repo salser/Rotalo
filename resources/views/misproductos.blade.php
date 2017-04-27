@@ -3,7 +3,12 @@
 
 @section('content')
 <main>
-
+  <!-- <script type="text/javascript">
+  <?php //echo 'inicio('.$productos.')'; ?>
+  </script> -->
+  <div style="display:none" class="productos">
+    <?php echo $productos; ?>
+  </div>
   <div class="container">
     <h1>Mis Productos</h1>
     @if(Session::has('cambio'))
@@ -81,9 +86,12 @@
                         <p>Descripción actual: {!! $p->descripcion !!}</p>
                       </div>
                       <div class="col s12 m12 l12">
-                        <img class="imgCambio" src="{!! $p->foto !!}" alt=""><br>
-                        <label class="archivolbl">Selecciona Foto</label><br>
-                        <input type="file" name="cFotoP" id="cFotoP">
+                        <div id="btnfile">
+                          <img class="imgCambio" src="{!! $p->foto !!}" alt=""><br>
+                        </div>
+                        <div class="fotoP">
+                             <input type="file" id="cFotoP" name="cFotoP" />
+                        </div>
                       </div>
                       <br>
                       <div class="modal-footer">
