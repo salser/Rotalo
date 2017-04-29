@@ -30,12 +30,47 @@ class ControllerProducto extends Controller
       $cambio = '';
       if(Input::has('nombreP') && Input::has('tiempo_uso_a') && Input::has('antiguedad_a'))
       {
-
 				if(Input::hasFile('cFotoP'))
 				{
+					File::delete($producto->foto);
 					$foto = Input::file('cFotoP');
 					$foto->move('productos', 'PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
 					$producto->foto= 'productos/PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+				}
+				if(Input::hasFile('cFotoP2'))
+				{
+					File::delete($producto->foto2);
+					$foto = Input::file('cFotoP2');
+					$foto->move('productos', 'PD_2'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+					$producto->foto2= 'productos/PD_2'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+				}
+				if(Input::hasFile('cFotoP3'))
+				{
+					File::delete($producto->foto3);
+					$foto = Input::file('cFotoP3');
+					$foto->move('productos', 'PD_3'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+					$producto->foto3= 'productos/PD_3'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+				}
+				if(Input::hasFile('cFotoP4'))
+				{
+					File::delete($producto->foto4);
+					$foto = Input::file('cFotoP4');
+					$foto->move('productos', 'PD_4'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+					$producto->foto4= 'productos/PD_4'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+				}
+				if(Input::hasFile('cFotoP5'))
+				{
+					File::delete($producto->foto5);
+					$foto = Input::file('cFotoP5');
+					$foto->move('productos', 'PD_5'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+					$producto->foto5= 'productos/PD_5'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+				}
+				if(Input::hasFile('cFotoP6'))
+				{
+					File::delete($producto->foto6);
+					$foto = Input::file('cFotoP6');
+					$foto->move('productos', 'PD_6'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+					$producto->foto6= 'productos/PD_6'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
 				}
         $producto->nombre = Input::get('nombreP');
         $producto->tiempo_uso= Input::get('tiempo_uso_a');
@@ -62,16 +97,49 @@ class ControllerProducto extends Controller
       */
       public function agregar(){
         $agrega = '';
-        if(Input::has('nombre') && Input::has('tiempo_uso') && Input::has('antiguedad') && Input::hasFile('fotoP') && Input::has('descripcion'))
+        if(Input::has('nombre') && Input::has('tiempo_uso') && Input::has('antiguedad') && Input::has('descripcion'))
         {
           $producto = new Producto;
           $user = Auth::user();
           $userid = $user->id;
+					if(Input::hasFile('fotoP'))
+					{
+						$foto = Input::file('fotoP');
+						$foto->move('productos', 'PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+						$producto->foto= 'productos/PD_'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+					}
+					if(Input::hasFile('fotoP2'))
+					{
+						$foto = Input::file('fotoP2');
+						$foto->move('productos', 'PD_2'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+						$producto->foto2= 'productos/PD_2'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+					}
+					if(Input::hasFile('fotoP3'))
+					{
+						$foto = Input::file('fotoP3');
+						$foto->move('productos', 'PD_3'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+						$producto->foto3= 'productos/PD_3'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+					}
+					if(Input::hasFile('fotoP4'))
+					{
+						$foto = Input::file('fotoP4');
+						$foto->move('productos', 'PD_4'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+						$producto->foto4= 'productos/PD_4'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+					}
+					if(Input::hasFile('fotoP5'))
+					{
+						$foto = Input::file('fotoP5');
+						$foto->move('productos', 'PD_5'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+						$producto->foto5= 'productos/PD_5'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+					}
+					if(Input::hasFile('fotoP6'))
+					{
+						$foto = Input::file('fotoP6');
+						$foto->move('productos', 'PD_6'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension());
+						$producto->foto6= 'productos/PD_6'.$user->nombre.$producto->usuario.".".$foto->getClientOriginalExtension();
+					}
           $producto->nombre = Input::get('nombre');
           $producto->id_usuario = $userid;
-          $foto = Input::file('fotoP');
-          $foto->move('productos', 'PD_'.$user->nombre.$producto->nombre.".".$foto->getClientOriginalExtension());
-          $producto->foto= 'productos/PD_'.$user->nombre.$producto->nombre.".".$foto->getClientOriginalExtension();
           $producto->tiempo_uso= Input::get('tiempo_uso');
           $producto->antiguedad = Input::get('antiguedad');
           $producto->descripcion = Input::get('descripcion');

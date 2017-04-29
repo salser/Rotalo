@@ -30,31 +30,6 @@ class SeederTablaUsuario extends Seeder
     }
 }
 
-/*
-* Crea una tupla sin foto dentro de la tabla de productos
-* Con php artisan db:seed en la cmd
-*/
-class ProductosSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-      DB::table('producto')->truncate();
-      factory(App\Producto::class)->create([
-        'nombre'        =>'Nuevo Producto',
-        'tiempo_uso'    =>'admin',
-        'antiguedad'    => 'admin@admin.com',
-        'foto'          => 'nohay',
-        'descripcion'   =>'1'
-      ]);
-      factory(App\Producto::class, 49)->create();
-    }
-}
-
 class DatabaseSeeder extends Seeder
 {
     /**

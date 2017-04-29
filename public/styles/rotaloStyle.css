@@ -135,8 +135,10 @@ a.btn-mine:hover{
 }
 
 .imgCambio{
-	height: 200px;
-	width: 200px;
+	height: 100px;
+	width: 100px;
+	border-radius: 5%;
+	border: 0.8px solid rgba(113, 113, 113, 0.83);
 }
 
 .change{
@@ -161,8 +163,20 @@ a.btn-mine:hover{
 	opacity: 0;
 }
 
-.fotoP{
-	display: none;
+input[type=file].cFotoP{
+	display: none
+}
+
+.archivos{
+	/*background-color: rgba(28, 255, 0, 0.5);
+	border: 0.8px solid rgb(0, 254, 71);*/
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0.74);
+}
+.archivos:hover{
+	color: rgb(48, 255, 23)
 }
 
 /*================================== materialize changes ==============================================*/

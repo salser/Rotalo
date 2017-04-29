@@ -151,7 +151,7 @@
   	        </li>
 					 	<li><a href="#!">Cont&aacutectanos</a></li>
 					 	<li><a href="#!">Rótalo</a></li>
-						<li><a href="#!">Registrarse</a></li>
+						<li><a href="/registro">Registrarse</a></li>
 				 	</ul>
 				 </div>
 			 </nav>

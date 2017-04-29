@@ -1,7 +1,7 @@
 /*
 * funcion de onload de la página que inicializa todos los objetos de materialize de javascript
 */
-//var json;
+var json;
 $(document).ready(function(){
 	// var str = $('.productos').text();
 	// var p = JSON.stringify(eval("("+str+")"));
@@ -15,18 +15,9 @@ $(document).ready(function(){
 		 belowOrigin: true, // Displays dropdown below the button
  	 });
 	//  p = JSON.parse(str);
-	//  console.log(p);
-	//  json = p;
-	//  for (var i = 0; i < p.length; i++) {
-	// 	 var btn = "" + p[i].id + "";
-	// 	 console.log(btn);
-	// 	 $("#btnfile" + i).click(function () {
-	// 		 $("#cFotoP" + i).click();
-	// 	 });
-	//  }
-	 $("#btnfile").click(function () {
-		 $("#cFotoP").click();
-	 });
+	//  $('div[class^="btnfile"]').click(function () {
+	// 	 $('input[class^="cFotoP"]').click();
+	//  });
 });
 
 /*
