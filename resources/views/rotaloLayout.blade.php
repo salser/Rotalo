@@ -3,8 +3,12 @@
 <html>
 	<head>
 				<meta charset="utf-8">
-
 				<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+				<!-- Tab Icon -->
+				<link rel="icon" href="{!! 'imgs/rotalo-icono.png' !!}">
+				<link rel="apple-touch-icon" href="{!! 'imgs/rotalo-icono.png' !!}">
+
 				<!-- JQuery CDN Source -->
 				<script type="text/javascript" src="{!! 'https://code.jquery.com/jquery-3.1.1.min.js' !!}"></script>
 				<script src="{!! 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.js' !!}"></script>

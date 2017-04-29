@@ -168,8 +168,6 @@ input[type=file].cFotoP{
 }
 
 .archivos{
-	/*background-color: rgba(28, 255, 0, 0.5);
-	border: 0.8px solid rgb(0, 254, 71);*/
 	width: 100px;
 	height: 100px;
 	cursor: pointer;

@@ -158,7 +158,7 @@
 															<div class="col offset-s4 s2">
 																<div class="row">
 																	<i class="material-icons">camera_enhance</i>
-																	<input type="file" id="cFoto4" name="cFotoP4" class="cFotoP"/>
+																	<input type="file" id="cFotoP4" name="cFotoP4" class="cFotoP"/>
 																</div>
 															</div>
 														</div>
