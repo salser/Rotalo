@@ -18,4 +18,9 @@ class Producto extends Model
   *Atributos que son modificable por el usuario
   */
   protected $fillable = ['nombre', 'tiempo_uso', 'antiguedad', 'descripcion', 'id_usuario' ];
+
+	public function categoria()
+	{
+		return $this->hasOne('App\Categoria');
+	}
 }

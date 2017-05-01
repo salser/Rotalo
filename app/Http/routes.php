@@ -2,6 +2,7 @@
 
 use App\Producto;
 use App\User;
+use App\Categoria;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,7 +60,12 @@ Route::post('cambiarFoto', 'ControllerUsuario@cambiarFoto');
 Route::get('misProductos', function()
 {
   $productos = Producto::all();
-  return view('misproductos', compact('productos'));
+	$categorias = Categoria::all();
+	$data = [
+            'productos' => $productos,
+            'categorias'  => $categorias
+          ];
+  return View::make('misproductos')->with($data);
 });
 
 Route::post('editarProducto','ControllerProducto@editar');

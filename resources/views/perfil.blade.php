@@ -1,6 +1,8 @@
 <!-- Interfaz que extiende el layout de rotalo, y contiene los datos de perfil de un usuario ya autenticado -->
 @extends('rotaloLayout')
-
+@section('title')
+<title>Perfil {!! Auth::user()->nombre !!}</title>
+@endsection
 @section('content')
 <main>
 	<div class="container">
@@ -32,7 +34,7 @@
 		      <p>
 						{!! Auth::user()->nombre !!} {!! Auth::user()->apellido !!}
 		      </p>
-		      <a href="#modalFoto" class="secondary-content"><i class="material-icons">grade</i></a>
+		      <a href="#modalFoto" class="secondary-content"><i class="material-icons">edit</i></a>
 					<!-- Modal Structure -->
 					<div id="modalFoto" class="modal">
 						<div class="modal-content">
@@ -58,7 +60,7 @@
 		      <p>
 						{!! Auth::user()->username !!}
 		      </p>
-		      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		      <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 		    </li>
 		    <li class="collection-item avatar">
 		      <i class="material-icons circle red">mail</i>
@@ -66,7 +68,7 @@
 		      <p>
 						{!! Auth::user()->correo !!}
 		      </p>
-		      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		      <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 		    </li>
 				<li class="collection-item avatar">
 		      <i class="material-icons circle green">phone</i>
@@ -74,7 +76,7 @@
 		      <p>
 						{!! Auth::user()->telefono !!}
 		      </p>
-		      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		      <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 		    </li>
 			<a href="/cerrar">Cerrar sesión.</a>
 		</div>

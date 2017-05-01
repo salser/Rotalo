@@ -1,6 +1,8 @@
 <!-- Interfaz que extiende el layout de rotalo, y contiene la lista de el usuario autenticado en rotalo-->
 @extends('rotaloLayout')
-
+@section('title')
+<title>Mis productos</title>
+@endsection
 @section('content')
 <main>
   <div style="display:none" class="productos">
@@ -81,8 +83,33 @@
                         <textarea name="descripcion_a" id="descripcion_A" rows="8" cols="80" class="materialize-textarea"></textarea>
                         <label for="descripcion_a">Descripción (si no desea cambiarla deje el campo vacio)</label>
                         <p>Descripción actual: {!! $p->descripcion !!}</p>
-												<br><br><br>
+												<br>
                       </div>
+											<div class="input-field col s8">
+												<select class="selectCatEdit{!! $p->id !!} icons" name="categoria" id="categoria">
+													<option value="0" disabled selected>Seleccione categoría</option>
+													<option value="Electrodomésticos" 			data-icon="imgs/electro.jpg" class="circle">Electrodomésticos</option>
+													<option value="Vehículos" 							data-icon="imgs/vehi.jpg" class="circle">Vehículos</option>
+													<option value="Literatura" 							data-icon="imgs/lite.jpg" class="circle">Literatura</option>
+													<option value="Arte" 					 					data-icon="imgs/art.jpg" class="circle">Arte</option>
+													<option value="Música" 									data-icon="imgs/music.jpg" class="circle">Música</option>
+													<option value="Inmuebles"    						data-icon="imgs/inm.jpg" class="circle">Inmuebles</option>
+													<option value="Tablets/Teléfonos" 			data-icon="imgs/phone.jpg" class="circle">Tablets/Teléfonos</option>
+													<option value="Computadores"        		 data-icon="imgs/pc.jpg" class="circle">Computadores</option>
+													<option value="Consolas de Vidéo Juegos" data-icon="imgs/vg.jpg" class="circle">Consolas de Vidéo Juegos</option>
+												</select>
+												<label>Categoría</label>
+											</div>
+											@foreach($categorias as $c)
+												@if($c->id_producto == $p->id)
+													<div class="col s4">
+														<a onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' style="width:auto" class="btn iniciobtn waves-effect waves-ligth waves-input-wrapper" href="#">mostrar</a>
+													</div>
+												@endif
+											@endforeach
+											<div class="catedit{!! $p->id !!}">
+
+				              </div>
 											<div class="container">
 												<div class="col s12 m6 l4">
 													<img class="imgCambio" src="
@@ -264,9 +291,27 @@
                 <input type="text" name="antiguedad" id="antiguedad">
                 <label for="antiguedad">Antigueda (en años)</label>
               </div>
-              <div class="input-field col s12 m6 l6">
+              <div class="input-field col s12">
                 <textarea name="descripcion" id="descripcion" rows="8" cols="80" class="materialize-textarea"></textarea>
                 <label for="descripcion">Descripción</label>
+              </div>
+							<div class="input-field col s12">
+								<select class="selectCat icons" name="categoria" id="categoria">
+									<option value="0" disabled selected>Seleccione categoría</option>
+									<option value="Electrodomésticos" 			data-icon="imgs/electro.jpg" class="circle">Electrodomésticos</option>
+									<option value="Vehículos" 							data-icon="imgs/vehi.jpg" class="circle">Vehículos</option>
+									<option value="Literatura" 							data-icon="imgs/lite.jpg" class="circle">Literatura</option>
+									<option value="Arte" 					 					data-icon="imgs/art.jpg" class="circle">Arte</option>
+									<option value="Música" 									data-icon="imgs/music.jpg" class="circle">Música</option>
+									<option value="Inmuebles"    						data-icon="imgs/inm.jpg" class="circle">Inmuebles</option>
+									<option value="Tablets/Teléfonos" 			data-icon="imgs/phone.jpg" class="circle">Tablets/Teléfonos</option>
+									<option value="Computadores"        		 data-icon="imgs/pc.jpg" class="circle">Computadores</option>
+									<option value="Consolas de Vidéo Juegos" data-icon="imgs/vg.jpg" class="circle">Consolas de Vidéo Juegos</option>
+								</select>
+								<label>Categoría</label>
+							</div>
+							<div class="cat">
+
               </div>
               <div class="col s12 m12 l12">
                 <label class="archivolbl">Selecciona Foto</label><br>

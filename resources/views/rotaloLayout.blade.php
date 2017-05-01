@@ -25,8 +25,7 @@
 				<script src="{!! 'js/rotaloScript.js' !!}"></script>
 				<link rel="stylesheet" href="{!! 'styles/rotaloStyle.css' !!}">
 
-
-				<title>R&oacutetalo</title>
+				@yield('title')
 	</head>
 	<body>
 		<header>

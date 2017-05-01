@@ -99,6 +99,7 @@ img.logoIntro{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#a7d72d', GradientType=0 );
 	min-height: auto;
 	min-width: 200px;
+	max-height: auto;
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
@@ -175,6 +176,16 @@ input[type=file].cFotoP{
 }
 .archivos:hover{
 	color: rgb(48, 255, 23)
+}
+
+.cat{
+	margin: 5px 5px 5px 5px;
+}
+input[type=color]{
+	width: 100%;
+	background-color: rgba(142, 142, 142, 0.3);
+	border: 1px solid black;
+	cursor: pointer;
 }
 
 /*================================== materialize changes ==============================================*/

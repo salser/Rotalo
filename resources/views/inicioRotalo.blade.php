@@ -1,6 +1,8 @@
 <!-- Interfaz que extiende el layout de rotalo, y contiene la interfazde inicio del sistema -->
 @extends('rotaloLayout')
-
+@section('title')
+<title>Rótalo</title>
+@endsection
 @section('content')
 <main>
 

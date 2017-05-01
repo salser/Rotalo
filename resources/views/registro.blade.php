@@ -1,6 +1,8 @@
 <!-- Interfaz que extiende el layout de rotalo, y contiene el registro en el sistema para un usuario -->
 @extends('rotaloLayout')
-
+@section('title')
+<title>Registro</title>
+@endsection
 @section('content')
 <main style="background-repeat: round; background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url({!! 'imgs/registroBG.JPG' !!})">
   <div class="row">

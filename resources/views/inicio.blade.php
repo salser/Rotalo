@@ -1,6 +1,8 @@
 <!-- Interfaz que extiende el layout de rotalo, y contiene el inicio de sesion de un usuario -->
 @extends('rotaloLayout')
-
+@section('title')
+<title>Inicio de Sesión</title>
+@endsection
 @section('content')
 		@if(Session::has('registrado'))
 			<script>

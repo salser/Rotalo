@@ -11,6 +11,7 @@ use App\User;
 use Hash;
 use Redirect;
 use Auth;
+use File;
 
 /*
 * Controlador que maneja todos los post y gets en cuanto
@@ -92,6 +93,7 @@ class ControllerUsuario extends Controller
 			if(Input::hasFile('cFoto'))
 			{
 				$foto = Input::file('cFoto');
+				File::delete($user->foto);
 				$foto->move('fotos', 'USER_'.$user->username.".".$foto->getClientOriginalExtension());
 				$user->foto= 'fotos/USER_'.$user->username.".".$foto->getClientOriginalExtension();
 				$user->save();

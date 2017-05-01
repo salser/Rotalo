@@ -1,5 +1,8 @@
 <!-- Interfaz que extiende el layout de rotalo, y contiene todos los productos dentro del sistema -->
 @extends('rotaloLayout')
+@section('title')
+<title>Productos|Todos</title>
+@endsection
 @section('content')
 <main style="background-repeat: round; background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url({!! 'imgs/pdtodos.jpg' !!})">
 
