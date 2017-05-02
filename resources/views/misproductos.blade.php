@@ -58,7 +58,7 @@
     <div class="collection">
     @foreach ($productos as $p)
       @if(Auth::user()->id == $p->id_usuario)
-        <li href="#!" class="collection-item black-text col s12 m8 l8">
+        <li href="#!" class="collection-item avatar black-text col s12 m8 l8">
           <div class="">
             <div id="modalEditarProducto{!! $p->id !!}" class="modal modal-fixed-footer">
   						<div class="modal-content">
@@ -269,13 +269,14 @@
                 </div>
   						</div>
   					</div>
+						<img src="{!! $p->foto !!}" alt="" class="circle">
             {!! $p->nombre !!}
-						<a href="#modaleliminarP{!! $p->id !!}" class="secondary-content"><i style="color:red"class="material-icons">delete</i></a>
 						@foreach($categorias as $c)
 							@if($c->id_producto == $p->id)
-							<a onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+							<a style="margin-right: 30px" onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
 							@endif
 						@endforeach
+						<a href="#modaleliminarP{!! $p->id !!}" class="secondary-content"><i style="color:red"class="material-icons">delete</i></a>
           </div>
         </li>
       @endif
