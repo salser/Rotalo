@@ -193,162 +193,193 @@ function mensajeSesion(mensaje){
 
 function mostrarCat(c)
 {
-	//var cat = JSON.stringify(eval("("+c+")"));
-	// c = JSON.parse(str);
-	$('.catedit').empty();
+	$('.catedit'+c.id_producto).empty();
 	if (c.nombre_cat === "Electrodomésticos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l5'>"+
-			 "<input type='text' name='marca' id='marca'>"+
-				"<label for='marca'>Marca</label>"+
+			 "<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
+				"<label class='active' for='marca'>Marca</label>"+
 		"</div>" +
 		"<div class='input-field col s12 m6 l5'>"+
-			 "<input type='text' name='tipo' id='tipo'>"+
-				"<label for='tipo'>Tipo</label>"+
+			 "<input type='text' name='tipo' id='tipo' value='"+ c.tipo +"'>"+
+				"<label class='active' for='tipo'>Tipo</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Vehículos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
-			 "<input type='text' name='placa' id='placa'>"+
-				"<label for='placa'>Placa</label>"+
+			 "<input type='text' name='placa' id='placa' value='"+ c.placa +"'>"+
+				"<label class='active' for='placa'>Placa</label>"+
 		"</div>" +
 		"<div class='input-field col s12 m6 l3'>"+
-			 "<input type='number' name='modelo' id='modelo'>"+
-				"<label for='modelo'>Modelo</label>"+
+			 "<input type='number' name='modelo' id='modelo' value='"+ c.modelo +"'>"+
+				"<label class='active' for='modelo'>Modelo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l4'>"+
-			 "<input type='text' name='marca' id='marca'>"+
-			 "<label for='marca'>Marca</label>"+
+			 "<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
+			 "<label class='active' for='marca'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
-			 "<input type='number' name='km' id='km'>"+
-				"<label for='km'>Kilometraje</label>"+
+			 "<input type='number' name='km' id='km' value='"+ c.km +"'>"+
+				"<label class='active' for='km'>Kilometraje</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l3'>"+
-			 "Color:<input type='color' name='color' id='color' value='#33ff00'>"+
+			 "Color:<input type='color' name='color' id='color' value='"+ c.color +"'>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l4'>"+
-			"<select class='comb' name='comb' id='comb'>"+
+			"<select class='comb' name='comb' id='comb'>";
+			if (c.comb === 'Gasolina') {
+				str = str +
+				"<option value='' disabled selected>Choose your option</option>"+
+				"<option value='Gasolina' selected='selected'>Gasolina</option>"+
+				"<option value='Gas'>Gas</option>"+
+				"<option value='Diesel'>Diesel</option>"+
+				"<option value='ACPM'>ACPM</option>"+
+				"</select>"+
+				"<label>Combustible</label>"+
+				"</div>";
+			}else if (c.comb === 'Gas') {
+				str = str +
+				"<option value='' disabled selected>Choose your option</option>"+
+				"<option value='Gasolina'>Gasolina</option>"+
+				"<option value='Gas' selected='selected'>Gas</option>"+
+				"<option value='Diesel'>Diesel</option>"+
+				"<option value='ACPM'>ACPM</option>"+
+				"</select>"+
+				"<label>Combustible</label>"+
+				"</div>";
+			} else if (c.comb === 'Diesel') {
+				str = str +
+				"<option value='' disabled selected>Choose your option</option>"+
+				"<option value='Gasolina'>Gasolina</option>"+
+				"<option value='Gas'>Gas</option>"+
+				"<option value='Diesel' selected='selected'>Diesel</option>"+
+				"<option value='ACPM'>ACPM</option>"+
+				"</select>"+
+				"<label>Combustible</label>"+
+				"</div>";
+			}else if (c.comb === 'ACPM') {
+				str = str +
 				"<option value='' disabled selected>Choose your option</option>"+
 				"<option value='Gasolina'>Gasolina</option>"+
 				"<option value='Gas'>Gas</option>"+
 				"<option value='Diesel'>Diesel</option>"+
-				"<option value='ACPM'>ACPM</option>"+
-			"</select>"+
-			"<label>Combustible</label>"+
-		"</div>";
+				"<option value='ACPM' selected='selected'>ACPM</option>"+
+				"</select>"+
+				"<label>Combustible</label>"+
+				"</div>";
+			}
 	}
 	else if (c.nombre_cat === "Literatura") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			 "<input type='number' name='edicion' id='edicion'>"+
-				"<label for='edicion'>Edición</label>"+
+			 "<input type='number' name='edicion' id='edicion' value='"+ c.edicion +"'>"+
+				"<label class='active' for='edicion'>Edición</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			 "<input type='text' name='editorial' id='editorial'>"+
-				"<label for='editorial'>Editorial</label>"+
+			 "<input type='text' name='editorial' id='editorial' value='"+ c.editorial +"'>"+
+				"<label class='active' for='editorial'>Editorial</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			 "<input type='text' name='autor' id='autor'>"+
-				"<label for='autor'>Autor</label>"+
+			 "<input type='text' name='autor' id='autor' value='"+ c.autor +"'>"+
+				"<label class='active' for='autor'>Autor</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Arte") {
 		str=
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			 "<input type='number' name='anio' id='anio'>"+
-				"<label for='anio'>Año</label>"+
+			 "<input type='number' name='anio' id='anio' value='"+ c.año +"'>"+
+				"<label class='active' for='anio'>Año</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			 "<input type='text' name='tipo' id='tipo'>"+
-				"<label for='tipo'>Tipo</label>"+
+			 "<input type='text' name='tipo' id='tipo' value='"+ c.tipo +"'>"+
+				"<label class='active' for='tipo'>Tipo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			 "<input type='text' name='autor' id='autor'>"+
-				"<label for='autor'>Autor</label>"+
+			 "<input type='text' name='autor' id='autor' value='"+ c.autor +"'>"+
+				"<label class='active' for='autor'>Autor</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Música") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='album' id='album'>"+
-			"<label for='album'>Album</label>"+
+			"<input type='text' name='album' id='album' value='"+ c.album +"'>"+
+			"<label class='active' for='album'>Album</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='genero' id='genero'>"+
-			"<label for='genero'>Género</label>"+
+			"<input type='text' name='genero' id='genero' value='"+ c.genero +"'>"+
+			"<label class='active' for='genero'>Género</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='autor' id='autor'>"+
-			"<label for='autor'>Autor</label>"+
+			"<input type='text' name='autor' id='autor' value='"+ c.autor +"'>"+
+			"<label class='active' for='autor'>Autor</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Inmuebles") {
 		str =
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
-			"<input type='text' name='dir' id='dir'>"+
-			"<label for='dir'>Dirección</label>"+
+			"<input type='text' name='dir' id='dir' value='"+ c.direccion +"'>"+
+			"<label class='active' for='dir'>Dirección</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l5'>"+
-			"<input type='number' name='bano' id='bano'>"+
-			"<label for='bano'>#Baños</label>"+
+			"<input type='number' name='bano' id='bano' value='"+ c.bano +"'>"+
+			"<label class='active' for='bano'>#Baños</label>"+
 		"</div>"+
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
-			"<input type='number' name='room' id='room'>"+
-			"<label for='room'>#Alcobas</label>"+
+			"<input type='number' name='room' id='room' value='"+ c.alcobas +"'>"+
+			"<label class='active' for='room'>#Alcobas</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m12 l5'>"+
-			"<input type='number' name='anio' id='anio'>"+
-			"<label for='anio'>Año</label>"+
+			"<input type='number' name='anio' id='anio' value='"+ c.año +"'>"+
+			"<label class='active' for='anio'>Año</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Tablets/Teléfonos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca'>"+
-			"<label for='marca'>Marca</label>"+
+			"<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
+			"<label class='active' for='marca'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='os' id='os'>"+
-			"<label for='os'>Sistema Operativo</label>"+
+			"<input type='text' name='os' id='os' value='"+ c.os +"'>"+
+			"<label class='active' for='os'>Sistema Operativo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia'>"+
-			"<label for='referencia'>Referencia</label>"+
+			"<input type='text' name='referencia' id='referencia' value='"+ c.referencia +"'>"+
+			"<label class='active' for='referencia'>Referencia</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Computadores") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca'>"+
-			"<label for='marca'>Marca</label>"+
+			"<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
+			"<label class='active' for='marca'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='os' id='os'>"+
-			"<label for='os'>Sistema Operativo</label>"+
+			"<input type='text' name='os' id='os' value='"+ c.os +"'>"+
+			"<label class='active' for='os'>Sistema Operativo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia'>"+
-			"<label for='referencia'>Referencia</label>"+
+			"<input type='text' name='referencia' id='referencia' value='"+ c.referencia +"'>"+
+			"<label class='active' for='referencia'>Referencia</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Consolas de Vidéo Juegos") {
 		str =
-		"<div class='input-field offset-l1 col s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca'>"+
-			"<label for='marca'>Marca</label>"+
+		"<div class='input-field col offset-l1 s12 m4 l3'>"+
+			"<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
+			"<label class='active' for='marca'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='storage' id='storage'>"+
-			"<label for='storage'>Almacenamiento</label>"+
+			"<input type='text' name='storage' id='storage' value='"+ c.almacenamiento +"'>"+
+			"<label class='active' for='storage'>Almacenamiento</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia'>"+
-			"<label for='referencia'>Referencia</label>"+
+			"<input type='text' name='referencia' id='referencia' value='"+ c.referencia +"'>"+
+			"<label class='active' for='referencia'>Referencia</label>"+
 		"</div>";
 	}
-console.log(str);
+// console.log(str);
 $( ".catedit"+c.id_producto ).append( str );
 $('select').material_select();
 }

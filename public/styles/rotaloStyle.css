@@ -188,7 +188,58 @@ input[type=color]{
 	cursor: pointer;
 }
 
+[type="checkbox"]+label{
+	margin-top: 38px;
+	margin-left: 5px;
+	color: black;
+}
+
+/*================================== w3s ==============================================*/
+
+.tooltipW {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipW .tooltiptextW {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(151, 244, 0, 0.63);
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltipW .tooltiptextW::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(151, 244, 0, 0.63) transparent transparent transparent;
+}
+
+.tooltipW:hover .tooltiptextW {
+    visibility: visible;
+    opacity: 1;
+}
+
 /*================================== materialize changes ==============================================*/
+[type="checkbox"]:checked+label:before{
+	border-right: 2px solid #a7d72d;
+	border-bottom: 2px solid #a7d72d;
+}
+
 
 .dropdown-content li > a, .dropdown-content li > span{
 	color: #000000;

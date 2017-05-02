@@ -84,32 +84,37 @@
                         <label for="descripcion_a">Descripción (si no desea cambiarla deje el campo vacio)</label>
                         <p>Descripción actual: {!! $p->descripcion !!}</p>
 												<br>
+												@foreach($categorias as $c)
+													@if($c->id_producto == $p->id)
+														<input type="hidden" name="nombreCategoria" id="nombreCategoria" value="{!! $c->nombre_cat !!}">
+														<input type="hidden" name="catid" id="catid" value="{!! $c->id !!}">
+														<?php echo 'Categoría '.$c->nombre_cat; ?>
+													@endif
+												@endforeach
+												<br><br>
+												<div class="catedit{!! $p->id !!}"></div>
                       </div>
-											<div class="input-field col s8">
-												<select class="selectCatEdit{!! $p->id !!} icons" name="categoria" id="categoria">
-													<option value="0" disabled selected>Seleccione categoría</option>
-													<option value="Electrodomésticos" 			data-icon="imgs/electro.jpg" class="circle">Electrodomésticos</option>
-													<option value="Vehículos" 							data-icon="imgs/vehi.jpg" class="circle">Vehículos</option>
-													<option value="Literatura" 							data-icon="imgs/lite.jpg" class="circle">Literatura</option>
-													<option value="Arte" 					 					data-icon="imgs/art.jpg" class="circle">Arte</option>
-													<option value="Música" 									data-icon="imgs/music.jpg" class="circle">Música</option>
-													<option value="Inmuebles"    						data-icon="imgs/inm.jpg" class="circle">Inmuebles</option>
-													<option value="Tablets/Teléfonos" 			data-icon="imgs/phone.jpg" class="circle">Tablets/Teléfonos</option>
-													<option value="Computadores"        		 data-icon="imgs/pc.jpg" class="circle">Computadores</option>
-													<option value="Consolas de Vidéo Juegos" data-icon="imgs/vg.jpg" class="circle">Consolas de Vidéo Juegos</option>
-												</select>
-												<label>Categoría</label>
+											<div class=" tooltipW input-field col s10">
+													<select class="selectCatEdit{!! $p->id !!} icons" name="categoria" id="categoria">
+														<option value="0" disabled selected>Seleccione categoría</option>
+														<option value="Electrodomésticos" 			data-icon="imgs/electro.jpg" class="circle">Electrodomésticos</option>
+														<option value="Vehículos" 							data-icon="imgs/vehi.jpg" class="circle">Vehículos</option>
+														<option value="Literatura" 							data-icon="imgs/lite.jpg" class="circle">Literatura</option>
+														<option value="Arte" 					 					data-icon="imgs/art.jpg" class="circle">Arte</option>
+														<option value="Música" 									data-icon="imgs/music.jpg" class="circle">Música</option>
+														<option value="Inmuebles"    						data-icon="imgs/inm.jpg" class="circle">Inmuebles</option>
+														<option value="Tablets/Teléfonos" 			data-icon="imgs/phone.jpg" class="circle">Tablets/Teléfonos</option>
+														<option value="Computadores"        		 data-icon="imgs/pc.jpg" class="circle">Computadores</option>
+														<option value="Consolas de Vidéo Juegos" data-icon="imgs/vg.jpg" class="circle">Consolas de Vidéo Juegos</option>
+													</select>
+													<label>Cambiar Categoría</label>
+													<span class="tooltiptextW">Para cambiar categoria seleccione la casilla</span>
 											</div>
-											@foreach($categorias as $c)
-												@if($c->id_producto == $p->id)
-													<div class="col s4">
-														<a onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' style="width:auto" class="btn iniciobtn waves-effect waves-ligth waves-input-wrapper" href="#">mostrar</a>
-													</div>
-												@endif
-											@endforeach
-											<div class="catedit{!! $p->id !!}">
-
-				              </div>
+											<div class=" tooltipW col s2">
+												<input type="checkbox" id="cCat{!! $p->id !!}"  value='1' name="cCat"/>
+      									<label class="" for="cCat{!! $p->id !!}">Cambiar</label>
+												<span class="tooltiptextW">Para cambiar categoria seleccione la casilla</span>
+											</div>
 											<div class="container">
 												<div class="col s12 m6 l4">
 													<img class="imgCambio" src="
@@ -266,7 +271,11 @@
   					</div>
             {!! $p->nombre !!}
 						<a href="#modaleliminarP{!! $p->id !!}" class="secondary-content"><i style="color:red"class="material-icons">delete</i></a>
-						<a href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+						@foreach($categorias as $c)
+							@if($c->id_producto == $p->id)
+							<a onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+							@endif
+						@endforeach
           </div>
         </li>
       @endif
