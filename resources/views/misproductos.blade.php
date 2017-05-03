@@ -94,27 +94,35 @@
 												<br><br>
 												<div class="catedit{!! $p->id !!}"></div>
                       </div>
-											<div class=" tooltipW input-field col s10">
-													<select class="selectCatEdit{!! $p->id !!} icons" name="categoria" id="categoria">
+											<div class=" tooltipW input-field col s12 m8">
+													<select class="selectCatEdit{!! $p->id !!} icons" name="categoriaCambio" id="categoriaCambio">
 														<option value="0" disabled selected>Seleccione categoría</option>
-														<option value="Electrodomésticos" 			data-icon="imgs/electro.jpg" class="circle">Electrodomésticos</option>
-														<option value="Vehículos" 							data-icon="imgs/vehi.jpg" class="circle">Vehículos</option>
-														<option value="Literatura" 							data-icon="imgs/lite.jpg" class="circle">Literatura</option>
-														<option value="Arte" 					 					data-icon="imgs/art.jpg" class="circle">Arte</option>
-														<option value="Música" 									data-icon="imgs/music.jpg" class="circle">Música</option>
-														<option value="Inmuebles"    						data-icon="imgs/inm.jpg" class="circle">Inmuebles</option>
-														<option value="Tablets/Teléfonos" 			data-icon="imgs/phone.jpg" class="circle">Tablets/Teléfonos</option>
-														<option value="Computadores"        		 data-icon="imgs/pc.jpg" class="circle">Computadores</option>
-														<option value="Consolas de Vidéo Juegos" data-icon="imgs/vg.jpg" class="circle">Consolas de Vidéo Juegos</option>
+														<option value="Electrodomésticos" 			>Electrodomésticos</option>
+														<option value="Vehículos" 							>Vehículos</option>
+														<option value="Literatura" 							>Literatura</option>
+														<option value="Arte" 					 					>Arte</option>
+														<option value="Música" 									>Música</option>
+														<option value="Inmuebles"    						>Inmuebles</option>
+														<option value="Tablets/Teléfonos" 			>Tablets/Teléfonos</option>
+														<option value="Computadores"        		>Computadores</option>
+														<option value="Consolas de Vidéo Juegos">Consolas de Vidéo Juegos</option>
 													</select>
 													<label>Cambiar Categoría</label>
-													<span class="tooltiptextW">Para cambiar categoria seleccione la casilla</span>
+													<span class="tooltiptextW">Para cambiar categoria: <br>1. Seleccione la categoria que desea.<br>2. Luego seleccione la casilla.<br>3. Haga click en ítems</span>
 											</div>
-											<div class=" tooltipW col s2">
-												<input type="checkbox" id="cCat{!! $p->id !!}"  value='1' name="cCat"/>
+											<div class=" tooltipW col s12 m2">
+												<input class="cCat" type="checkbox" id="cCat{!! $p->id !!}"  value='1' name="cCat{!! $p->id !!}"/>
       									<label class="" for="cCat{!! $p->id !!}">Cambiar</label>
 												<span class="tooltiptextW">Para cambiar categoria seleccione la casilla</span>
 											</div>
+											<div class="col s12 m2">
+												<a onclick="cambioCategoria({!! $p->id !!})" style="width: auto; margin-top: 30px;" class="btn iniciobtn waves-effect waves-ligth">Items</a>
+											</div>
+											<br>
+											<div class="cambioCat{!! $p->id !!}">
+
+											</div>
+											<br>
 											<div class="container">
 												<div class="col s12 m6 l4">
 													<img class="imgCambio" src="
@@ -255,8 +263,15 @@
                 <div class="row">
                   <form action="eliminarP" method="POST" class="container col s12 m12 l12">
                     <div class="row">
-											<div class="">
-												<b>{!! $p->nombre !!}</b> con descripción: <i>{!! $p->descripcion !!}</i>
+											<div class="container">
+												<b>{!! $p->nombre !!}</b>
+												<br>Descripción: <i>{!! $p->descripcion !!}</i><br>
+												<i>Antiguedad:</i><br>
+												{!! $p->antiguedad !!} años <br>
+												<i>Tiempo de uso:</i><br>
+												{!! $p->tiempo_uso !!} años <br>
+												<i>Foto principal:</i><br>
+												<img class="imgCambio" src="{!! $p->foto !!}" alt="">
 											</div>
                       <br>
                       <div class="modal-footer">
@@ -270,7 +285,7 @@
   						</div>
   					</div>
 						<img src="{!! $p->foto !!}" alt="" class="circle">
-            {!! $p->nombre !!}
+            <b>{!! $p->nombre !!}</b><br><i>Descripción: </i>{!! $p->descripcion !!}
 						@foreach($categorias as $c)
 							@if($c->id_producto == $p->id)
 							<a style="margin-right: 30px" onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>

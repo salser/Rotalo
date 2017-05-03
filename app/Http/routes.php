@@ -53,6 +53,7 @@ Route::get('registro', 'ControllerUsuario@mostrarRegistro');
 Route::post('crearUsuario', 'ControllerUsuario@crearUsuario');
 
 Route::post('cambiarFoto', 'ControllerUsuario@cambiarFoto');
+Route::post('cambiarTelefono', 'ControllerUsuario@cambiarTelefono');
 
 /**
 * Rutas que redirigen y  llaman a las funciones de producto para las operaciones BREAD

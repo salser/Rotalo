@@ -29,18 +29,18 @@
 			@endif
 			<ul class="collection">
 		    <li class="collection-item avatar">
-		      <img src="{!! Auth::user()->foto !!}" alt="" class="circle">
+					<a title="Para cambiar foto de perfil haga click sobre la imagen" href="#modalFoto"><img src="{!! Auth::user()->foto !!}" alt="" class="circle cambioFoto"></a>
 		      <span class="title">Nombre y Apellido</span>
 		      <p>
 						{!! Auth::user()->nombre !!} {!! Auth::user()->apellido !!}
 		      </p>
-		      <a href="#modalFoto" class="secondary-content"><i class="material-icons">edit</i></a>
+		      <a class="secondary-content"><i class="material-icons">grid_off</i></a>
 					<!-- Modal Structure -->
 					<div id="modalFoto" class="modal">
 						<div class="modal-content">
-							<h4>Cambiar Foto</h4>
-							<img class="imgCambio" src="{!! Auth::user()->foto !!}" alt="">
+							<h4 class="container">Cambiar Foto</h4>
 							<form action="cambiarFoto" method="POST" enctype="multipart/form-data" class="container">
+								<img class="imgCambio" src="{!! Auth::user()->foto !!}" alt="">
 								<div class="col s12 m12 l12">
 				          <label class="archivolbl">Selecciona</label><br>
 				          <input type="file" name="cFoto" id="cFoto">
@@ -60,7 +60,7 @@
 		      <p>
 						{!! Auth::user()->username !!}
 		      </p>
-		      <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+		      <a class="secondary-content"><i class="material-icons">grid_off</i></a>
 		    </li>
 		    <li class="collection-item avatar">
 		      <i class="material-icons circle red">mail</i>
@@ -68,7 +68,7 @@
 		      <p>
 						{!! Auth::user()->correo !!}
 		      </p>
-		      <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+		      <a class="secondary-content"><i class="material-icons">grid_off</i></a>
 		    </li>
 				<li class="collection-item avatar">
 		      <i class="material-icons circle green">phone</i>
@@ -76,7 +76,25 @@
 		      <p>
 						{!! Auth::user()->telefono !!}
 		      </p>
-		      <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+		      <a href="#modalTelefono" class="secondary-content"><i class="material-icons">edit</i></a>
+					<!-- Modal Structure -->
+					<div id="modalTelefono" class="modal">
+						<div class="modal-content">
+							<h4 class="container">Cambiar #Teléfono</h4>
+							<form action="cambiarTelefono" method="POST" enctype="multipart/form-data" class="container">
+								<p>Número de teléfono atual: {!! Auth::user()->telefono !!}</p>
+								<div class="input-field col s12 m12 l12">
+				          <input type="number" name="tel" id="tel">
+									<label for="tel">Nuevo Número de teléfono</label><br>
+				        </div>
+								<br>
+								<div class="modal-footer">
+									<input class="bordeModalbtn modal-action modal-close waves-effect waves-green btn-flat" onclick="" type="submit" name="submit" id="submit" value="Cambiar">
+								</div>
+								<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+							</form>
+						</div>
+					</div>
 		    </li>
 			<a href="/cerrar">Cerrar sesión.</a>
 		</div>

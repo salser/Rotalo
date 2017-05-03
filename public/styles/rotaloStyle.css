@@ -194,6 +194,22 @@ input[type=color]{
 	color: black;
 }
 
+.cambioFoto{
+	cursor: pointer;
+}
+/*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
+
+.image-upload > input
+{
+		display: none;
+}
+
+.image-upload img
+{
+		width: 80px;
+		cursor: pointer;
+}
+
 /*================================== w3s ==============================================*/
 
 .tooltipW {

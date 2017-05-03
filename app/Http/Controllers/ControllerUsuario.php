@@ -105,4 +105,25 @@ class ControllerUsuario extends Controller
 							->with('noCambio', 'No se cambio la foto por favor verifique el tamaño o que haya elegido correctamente su elección')
 							->withInput();
 		}
+
+		/*
+		* Cambia el numero de telefono del usuario y hace un update de usuario en la base de datos
+		*/
+		public function cambiarTelefono(User $user)
+		{
+			$userid = Auth::user()->id;
+			$user = User::find($userid);
+			if(Input::has('tel'))
+			{
+				$telefono = Input::get('tel');
+				$user->telefono = $telefono;
+				$user->save();
+				return Redirect::to('perfil')
+								->with('cambio', 'Teléfono cambiado satisfatoriamente')
+								->withInput();
+			}
+			return Redirect::to('perfil')
+							->with('noCambio', 'No se cambio el número de teléfono adecuadamente por favor verifique que el formato sea adecuado')
+							->withInput();
+		}
 }
