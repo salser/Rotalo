@@ -78,10 +78,6 @@ class ControllerProducto extends Controller
         $producto->nombre = Input::get('nombreP');
         $producto->tiempo_uso= Input::get('tiempo_uso_a');
         $producto->antiguedad = Input::get('antiguedad_a');
-        if(Input::has('descripcion_a'))
-        {
-          $producto->descripcion = Input::get('descripcion_a');
-        }
 				if(Input::has('cCat'.$pdid))
 				{
 					$c = Input::get('categoriaCambio');
@@ -313,6 +309,10 @@ class ControllerProducto extends Controller
 						}
 					}
 				}
+				if(Input::has('descripcion_a'))
+        {
+          $producto->descripcion = Input::get('descripcion_a');
+        }
 
 				$categoria->save();
         $producto->save();
