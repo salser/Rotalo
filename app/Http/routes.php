@@ -40,10 +40,13 @@ Route::get('/', function () {
     return view('inicioRotalo');
 });
 
-//Ruta que redirige ahacia el registro de un usuario
-Route::get('Registro', function()
+Route::group(array('after' => 'auth'), function()
 {
-  return view('registro');
+	//Ruta que redirige ahacia el registro de un usuario
+	Route::get('Registro', function()
+	{
+		return view('registro');
+	});
 });
 
 /**
@@ -82,3 +85,5 @@ Route::get('todosProductos', function(){
   return View::make('productostodos')->with($data);
 });
 Route::post('eliminarP/{idE}', 'ControllerProducto@eliminar');
+
+Route::get('produtoXcategoria/{categoriaBuscar}', 'ControllerProducto@pXc');

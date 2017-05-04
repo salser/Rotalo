@@ -525,4 +525,15 @@ class ControllerProducto extends Controller
 			{
 				$cat = Categoria::find($id);
 			}
+
+			public function pXc($categoriaBuscar)
+			{
+				$productos = Producto::all();
+				$categoria = Categoria::where('nombre_cat', $categoriaBuscar);
+				$data = [
+			            'productos' => $productos,
+			            'categorias'  => $categoria
+			          ];
+				return View::make('produtoXcategoria')->with($data);
+			}
     }
