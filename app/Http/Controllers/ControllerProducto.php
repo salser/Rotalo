@@ -12,6 +12,7 @@ use Input;
 use Redirect;
 use Auth;
 use File;
+use Crypt;
 
 /*
 * Controlador que maneja todos los post y gets en cuanto
@@ -23,88 +24,90 @@ class ControllerProducto extends Controller
      * Actualiza la tupla en la base de datos de un producto.
      *
      */
-    public function editar(Request $request)
+    public function editar($id, $ncat, $catid)
     {
-      $pdid = Input::get('id');
+      $pdid = Crypt::decrypt($id);
       $user = Auth::user();
       $producto = Producto::find($pdid);
-			$catid = Input::get('catid');
+			$catid = Crypt::decrypt($catid);
 			$categoria = Categoria::find($catid);
+			$ncat = Crypt::decrypt($ncat);
       $cambio = '';
-      if(Input::has('nombreP') && Input::has('tiempo_uso_a') && Input::has('antiguedad_a'))
+      if(Input::has('nombreP'.$pdid) && Input::has('tiempo_uso_a'.$pdid) && Input::has('antiguedad_a'.$pdid))
       {
-				if(Input::hasFile('cFotoP'))
+				if(Input::hasFile('cFotoP'.$pdid))
 				{
 					File::delete($producto->foto);
-					$foto = Input::file('cFotoP');
+					$foto = Input::file('cFotoP'.$pdid);
 					$foto->move('productos', 'PD_'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension());
 					$producto->foto= 'productos/PD_'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension();
 				}
-				if(Input::hasFile('cFotoP2'))
+				if(Input::hasFile('cFotoP2'.$pdid))
 				{
 					File::delete($producto->foto2);
-					$foto = Input::file('cFotoP2');
+					$foto = Input::file('cFotoP2'.$pdid);
 					$foto->move('productos', 'PD_2'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension());
 					$producto->foto2= 'productos/PD_2'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension();
 				}
-				if(Input::hasFile('cFotoP3'))
+				if(Input::hasFile('cFotoP3'.$pdid))
 				{
 					File::delete($producto->foto3);
-					$foto = Input::file('cFotoP3');
+					$foto = Input::file('cFotoP3'.$pdid);
 					$foto->move('productos', 'PD_3'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension());
 					$producto->foto3= 'productos/PD_3'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension();
 				}
-				if(Input::hasFile('cFotoP4'))
+				if(Input::hasFile('cFotoP4'.$pdid))
 				{
 					File::delete($producto->foto4);
-					$foto = Input::file('cFotoP4');
+					$foto = Input::file('cFotoP4'.$pdid);
 					$foto->move('productos', 'PD_4'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension());
 					$producto->foto4= 'productos/PD_4'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension();
 				}
-				if(Input::hasFile('cFotoP5'))
+				if(Input::hasFile('cFotoP5'.$pdid))
 				{
 					File::delete($producto->foto5);
-					$foto = Input::file('cFotoP5');
+					$foto = Input::file('cFotoP5'.$pdid);
 					$foto->move('productos', 'PD_5'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension());
 					$producto->foto5= 'productos/PD_5'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension();
 				}
-				if(Input::hasFile('cFotoP6'))
+				if(Input::hasFile('cFotoP6'.$pdid))
 				{
 					File::delete($producto->foto6);
-					$foto = Input::file('cFotoP6');
+					$foto = Input::file('cFotoP6'.$pdid);
 					$foto->move('productos', 'PD_6'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension());
 					$producto->foto6= 'productos/PD_6'.$user->nombre.$producto->id.".".$foto->getClientOriginalExtension();
 				}
-        $producto->nombre = Input::get('nombreP');
-        $producto->tiempo_uso= Input::get('tiempo_uso_a');
-        $producto->antiguedad = Input::get('antiguedad_a');
-        if(Input::has('descripcion_a'))
+        $producto->nombre = Input::get('nombreP'.$pdid);
+        $producto->tiempo_uso= Input::get('tiempo_uso_a'.$pdid);
+        $producto->antiguedad = Input::get('antiguedad_a'.$pdid);
+        if(Input::has('descripcion_a'.$pdid))
         {
-          $producto->descripcion = Input::get('descripcion_a');
+          $producto->descripcion = Input::get('descripcion_a'.$pdid);
         }
 				if(Input::has('cCat'.$pdid))
 				{
-					$c = Input::get('categoriaCambio');
-					if ($c == 'Electrodomésticos') {
-						if (Input::has('marca') && Input::has('tipo')) {
-							$categoria->marca = Input::get('marca');
-							$categoria->tipo = Input::get('tipo');
+					$c = Input::get('categoriaCambio'.$pdid);
+					if ($c == 'Electrodomésticos')
+					{
+						if (Input::has('marcaC'.$categoria->id_producto) && Input::has('tipoC'.$categoria->id_producto)) {
+							$categoria->marca = Input::get('marcaC'.$categoria->id_producto);
+							$categoria->tipo = Input::get('tipoC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}elseif ($c == 'Vehículos') {
-						if(Input::has('placa') && Input::has('modelo') && Input::has('marca') && Input::has('km') && Input::has('color') && Input::has('comb'))
+						if(Input::has('placaC'.$categoria->id_producto) && Input::has('modeloC'.$categoria->id_producto) && Input::has('marcaC'.$categoria->id_producto) && Input::has('kmC'.$categoria->id_producto) && Input::has('colorC'.$categoria->id_producto) && Input::has('combC'.$categoria->id_producto))
 						{
-							$categoria->placa = Input::get('placa');
-							$categoria->modelo = Input::get('modelo');
-							$categoria->marca = Input::get('marca');
-							$categoria->km = Input::get('km');
-							$categoria->color = Input::get('color');
-							$categoria->combustible = Input::get('comb');
+							$categoria->placa = Input::get('placaC'.$categoria->id_producto);
+							$categoria->modelo = Input::get('modeloC'.$categoria->id_producto);
+							$categoria->marca = Input::get('marcaC'.$categoria->id_producto);
+							$categoria->km = Input::get('kmC'.$categoria->id_producto);
+							$categoria->color = Input::get('colorC'.$categoria->id_producto);
+							$categoria->combustible = Input::get('combC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
@@ -113,98 +116,98 @@ class ControllerProducto extends Controller
 											->withInput();
 						}
 					}elseif ($c == 'Literatura') {
-						if (Input::has('edicion') && Input::has('edtorial') && Input::has('autor')) {
-							$categoria->edicion = Input::get('edicion');
-							$categoria->editorial = Input::get('editorial');
-							$categoria->autor = Input::get('autor');
+						if (Input::has('edicionC'.$categoria->id_producto) && Input::has('editorialC'.$categoria->id_producto) && Input::has('autorC'.$categoria->id_producto)) {
+							$categoria->edicion = Input::get('edicionC'.$categoria->id_producto);
+							$categoria->editorial = Input::get('editorialC'.$categoria->id_producto);
+							$categoria->autor = Input::get('autorC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}elseif ($c == 'Arte') {
-						if (Input::has('tipo') && Input::has('anio') && Input::has('autor')) {
-							$categoria->tipo = Input::get('tipo');
-							$categoria->año = Input::get('anio');
-							$categoria->autor = Input::get('autor');
+						if (Input::has('tipoC'.$categoria->id_producto) && Input::has('anioC'.$categoria->id_producto) && Input::has('autorC'.$categoria->id_producto)) {
+							$categoria->tipo = Input::get('tipoC'.$categoria->id_producto);
+							$categoria->año = Input::get('anioC'.$categoria->id_producto);
+							$categoria->autor = Input::get('autorC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}
 					elseif ($c == 'Música') {
-						if (Input::has('album') && Input::has('genero') && Input::has('autor')) {
-							$categoria->album = Input::get('album');
-							$categoria->genero = Input::get('genero');
-							$categoria->autor = Input::get('autor');
+						if (Input::has('albumC'.$categoria->id_producto) && Input::has('generoC'.$categoria->id_producto) && Input::has('autorC'.$categoria->id_producto)) {
+							$categoria->album = Input::get('albumC'.$categoria->id_producto);
+							$categoria->genero = Input::get('generoC'.$categoria->id_producto);
+							$categoria->autor = Input::get('autorC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}
 					elseif ($c == 'Inmuebles') {
-						if (Input::has('dir') && Input::has('bano') && Input::has('room') && Input::has('anio')) {
-							$categoria->direccion = Input::get('dir');
-							$categoria->bano = Input::get('bano');
-							$categoria->año = Input::get('anio');
-							$categoria->alcobas = Input::get('room');
+						if (Input::has('dirC'.$categoria->id_producto) && Input::has('banoC'.$categoria->id_producto) && Input::has('roomC'.$categoria->id_producto) && Input::has('anioC'.$categoria->id_producto)) {
+							$categoria->direccion = Input::get('dirC'.$categoria->id_producto);
+							$categoria->bano = Input::get('banoC'.$categoria->id_producto);
+							$categoria->año = Input::get('anioC'.$categoria->id_producto);
+							$categoria->alcobas = Input::get('roomC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}elseif ($c == 'Tablets/Teléfonos') {
-						if (Input::has('marca') && Input::has('referencia') && Input::has('os')) {
-							$categoria->marca = Input::get('marca');
-							$categoria->referencia = Input::get('referencia');
-							$categoria->os = Input::get('os');
+						if (Input::has('marcaC'.$categoria->id_producto) && Input::has('referenciaC'.$categoria->id_producto) && Input::has('osC'.$categoria->id_producto)) {
+							$categoria->marca = Input::get('marcaC'.$categoria->id_producto);
+							$categoria->referencia = Input::get('referenciaC'.$categoria->id_producto);
+							$categoria->os = Input::get('osC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}elseif ($c == 'Computadores') {
-						if (Input::has('marca') && Input::has('referencia') && Input::has('os')) {
-							$categoria->marca = Input::get('marca');
-							$categoria->referencia = Input::get('referencia');
-							$categoria->os = Input::get('os');
+						if (Input::has('marcaC'.$categoria->id_producto) && Input::has('referenciaC'.$categoria->id_producto) && Input::has('osC'.$categoria->id_producto)) {
+							$categoria->marca = Input::get('marcaC'.$categoria->id_producto);
+							$categoria->referencia = Input::get('referenciaC'.$categoria->id_producto);
+							$categoria->os = Input::get('osC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}elseif ($c == 'Consolas de Vidéo Juegos') {
-						if (Input::has('marca') && Input::has('referencia') && Input::has('storage')) {
-							$categoria->marca = Input::get('marca');
-							$categoria->referencia = Input::get('referencia');
-							$categoria->almacenamiento = Input::get('storage');
+						if (Input::has('marcaC'.$categoria->id_producto) && Input::has('referenciaC'.$categoria->id_producto) && Input::has('storageC'.$categoria->id_producto)) {
+							$categoria->marca = Input::get('marcaC'.$categoria->id_producto);
+							$categoria->referencia = Input::get('referenciaC'.$categoria->id_producto);
+							$categoria->almacenamiento = Input::get('storageC'.$categoria->id_producto);
 							$categoria->nombre_cat = $c;
 						}else{
 							$cambio = 'Cambio no realizado verifique cambios de la categoria a cambiar';
-			        return Redirect::to('misProductos')
-			                ->with('nAgregarProductos', $cambio)
-			                ->withInput();
+							return Redirect::to('misProductos')
+											->with('nAgregarProductos', $cambio)
+											->withInput();
 						}
 					}
 				}else {
-					if (Input::get('nombreCategoria') == "Electrodomésticos") {
-						if(Input::has('marca') && Input::has('tipo')){
-							$categoria->marca = Input::get('marca');
-							$categoria->tipo = Input::get('tipo');
+					if ($ncat == "Electrodomésticos") {
+						if(Input::has('marcaM'.$categoria->id_producto) && Input::has('tipoM'.$categoria->id_producto)){
+							$categoria->marca = Input::get('marcaM'.$categoria->id_producto);
+							$categoria->tipo = Input::get('tipoM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -212,14 +215,14 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Vehículos") {
-						if(Input::has('placa') && Input::has('modelo') && Input::has('marca') && Input::has('km') && Input::has('color') && Input::has('comb')){
-							$categoria->placa = Input::get('placa');
-							$categoria->modelo = Input::get('modelo');
-							$categoria->marca = Input::get('marca');
-							$categoria->km = Input::get('km');
-							$categoria->color = Input::get('color');
-							$categoria->combustible = Input::get('comb');
+					else if ($ncat == "Vehículos") {
+						if(Input::has('placaM'.$categoria->id_producto) && Input::has('modeloM'.$categoria->id_producto) && Input::has('marcaM'.$categoria->id_producto) && Input::has('kmM'.$categoria->id_producto) && Input::has('colorM'.$categoria->id_producto) && Input::has('combM'.$categoria->id_producto)){
+							$categoria->placa = Input::get('placaM'.$categoria->id_producto);
+							$categoria->modelo = Input::get('modeloM'.$categoria->id_producto);
+							$categoria->marca = Input::get('marcaM'.$categoria->id_producto);
+							$categoria->km = Input::get('kmM'.$categoria->id_producto);
+							$categoria->color = Input::get('colorM'.$categoria->id_producto);
+							$categoria->combustible = Input::get('combM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -227,11 +230,11 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Literatura") {
-						if(Input::has('edicion') && Input::has('editorial') && Input::has('autor')){
-							$categoria->edicion = Input::get('edicion');
-							$categoria->editorial = Input::get('editorial');
-							$categoria->autor = Input::get('autor');
+					else if ($ncat == "Literatura") {
+						if(Input::has('edicionM'.$categoria->id_producto) && Input::has('editorialM'.$categoria->id_producto) && Input::has('autorM'.$categoria->id_producto)){
+							$categoria->edicion = Input::get('edicionM'.$categoria->id_producto);
+							$categoria->editorial = Input::get('editorialM'.$categoria->id_producto);
+							$categoria->autor = Input::get('autorM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -239,11 +242,11 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Arte") {
-						if(Input::has('tipo') && Input::has('anio') && Input::has('autor')){
-							$categoria->tipo = Input::get('tipo');
-							$categoria->año = Input::get('anio');
-							$categoria->autor = Input::get('autor');
+					else if ($ncat == "Arte") {
+						if(Input::has('tipoM'.$categoria->id_producto) && Input::has('anioM'.$categoria->id_producto) && Input::has('autorM'.$categoria->id_producto)){
+							$categoria->tipo = Input::get('tipoM'.$categoria->id_producto);
+							$categoria->año = Input::get('anioM'.$categoria->id_producto);
+							$categoria->autor = Input::get('autorM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -251,11 +254,11 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Música") {
-						if(Input::has('album') && Input::has('genero') && Input::has('autor')){
-							$categoria->album = Input::get('album');
-							$categoria->genero = Input::get('genero');
-							$categoria->autor = Input::get('autor');
+					else if ($ncat == "Música") {
+						if(Input::has('albumM'.$categoria->id_producto) && Input::has('generoM'.$categoria->id_producto) && Input::has('autorM'.$categoria->id_producto)){
+							$categoria->album = Input::get('albumM'.$categoria->id_producto);
+							$categoria->genero = Input::get('generoM'.$categoria->id_producto);
+							$categoria->autor = Input::get('autorM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -263,12 +266,12 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Inmuebles") {
-						if(Input::has('bano') && Input::has('room') && Input::has('dir') && Input::has('anio')){
-							$categoria->bano = Input::get('bano');
-							$categoria->room = Input::get('room');
-							$categoria->direccion = Input::get('dir');
-							$categoria->año = Input::get('anio');
+					else if ($ncat == "Inmuebles") {
+						if(Input::has('banoM'.$categoria->id_producto) && Input::has('roomM'.$categoria->id_producto) && Input::has('dirM'.$categoria->id_producto) && Input::has('anioM'.$categoria->id_producto)){
+							$categoria->bano = Input::get('banoM'.$categoria->id_producto);
+							$categoria->room = Input::get('roomM'.$categoria->id_producto);
+							$categoria->direccion = Input::get('dirM'.$categoria->id_producto);
+							$categoria->año = Input::get('anioM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -276,11 +279,11 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Tablets/Teléfonos") {
-						if(Input::has('referencia') && Input::has('os') && Input::has('marca')){
-							$categoria->referencia = Input::get('referencia');
-							$categoria->os = Input::get('os');
-							$categoria->marca = Input::get('marca');
+					else if ($ncat == "Tablets/Teléfonos") {
+						if(Input::has('referenciaM'.$categoria->id_producto) && Input::has('osM'.$categoria->id_producto) && Input::has('marcaM'.$categoria->id_producto)){
+							$categoria->referencia = Input::get('referenciaM'.$categoria->id_producto);
+							$categoria->os = Input::get('osM'.$categoria->id_producto);
+							$categoria->marca = Input::get('marcaM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -288,11 +291,11 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Computadores") {
-						if(Input::has('referencias') && Input::has('os') && Input::has('marca')){
-							$categoria->referencia = Input::get('referencia');
-							$categoria->os = Input::get('os');
-							$categoria->marca = Input::get('marca');
+					else if ($ncat == "Computadores") {
+						if(Input::has('referenciaM'.$categoria->id_producto) && Input::has('osM'.$categoria->id_producto) && Input::has('marcaM'.$categoria->id_producto)){
+							$categoria->referencia = Input::get('referenciaM'.$categoria->id_producto);
+							$categoria->os = Input::get('osM'.$categoria->id_producto);
+							$categoria->marca = Input::get('marcaM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -300,11 +303,11 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if (Input::get('nombreCategoria') == "Consolas de Vidéo Juegos") {
-						if(Input::has('referencias') && Input::has('storage') && Input::has('marca')){
-							$categoria->referencia = Input::get('referencia');
-							$categoria->os = Input::get('storage');
-							$categoria->marca = Input::get('marca');
+					else if ($ncat == "Consolas de Vidéo Juegos") {
+						if(Input::has('referenciaM'.$categoria->id_producto) && Input::has('storageM'.$categoria->id_producto) && Input::has('marcaM'.$categoria->id_producto)){
+							$categoria->referencia = Input::get('referenciaM'.$categoria->id_producto);
+							$categoria->almacenamiento = Input::get('storageM'.$categoria->id_producto);
+							$categoria->marca = Input::get('marcaM'.$categoria->id_producto);
 						}else {
 							$cambio = 'Cambio no realizado verifique campos categoría (quedaron vacios)';
 							return Redirect::to('misProductos')
@@ -313,6 +316,7 @@ class ControllerProducto extends Controller
 						}
 					}
 				}
+
 
 				$categoria->save();
         $producto->save();
@@ -503,8 +507,8 @@ class ControllerProducto extends Controller
                 ->with('nAgregarProductos', $cambio)
                 ->withInput();
       }
-			public function eliminar(){
-				$id = Input::get('idp');
+			public function eliminar($idE){
+				$id = Crypt::decrypt($idE);
 				$producto = Producto::find($id);
 				File::delete($producto->foto);
 				File::delete($producto->foto2);

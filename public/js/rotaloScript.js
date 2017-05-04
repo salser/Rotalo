@@ -197,38 +197,38 @@ function mostrarCat(c)
 	if (c.nombre_cat === "Electrodomésticos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l5'>"+
-			 "<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
-				"<label class='active' for='marca'>Marca</label>"+
+			 "<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
+				"<label class='active' for='marcaM"+ c.id_producto +"'>Marca</label>"+
 		"</div>" +
 		"<div class='input-field col s12 m6 l5'>"+
-			 "<input type='text' name='tipo' id='tipo' value='"+ c.tipo +"'>"+
-				"<label class='active' for='tipo'>Tipo</label>"+
+			 "<input type='text' name='tipoM"+ c.id_producto + "' id='tipoM"+ c.id_producto +"' value='"+ c.tipo +"'>"+
+				"<label class='active' for='tipoM"+ c.id_producto +"'>Tipo</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Vehículos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
-			 "<input type='text' name='placa' id='placa' value='"+ c.placa +"'>"+
-				"<label class='active' for='placa'>Placa</label>"+
+			 "<input type='text' name='placaM"+ c.id_producto + "' id='placaM"+ c.id_producto +"' value='"+ c.placa +"'>"+
+				"<label class='active' for='placaM"+ c.id_producto +"'>Placa</label>"+
 		"</div>" +
 		"<div class='input-field col s12 m6 l3'>"+
-			 "<input type='number' name='modelo' id='modelo' value='"+ c.modelo +"'>"+
-				"<label class='active' for='modelo'>Modelo</label>"+
+			 "<input type='number' name='modeloM"+ c.id_producto + "' id='modeloM"+ c.id_producto +"' value='"+ c.modelo +"'>"+
+				"<label class='active' for='modeloM"+ c.id_producto +"'>Modelo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l4'>"+
-			 "<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
-			 "<label class='active' for='marca'>Marca</label>"+
+			 "<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
+			 "<label class='active' for='marcaM"+ c.id_producto +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
-			 "<input type='number' name='km' id='km' value='"+ c.km +"'>"+
-				"<label class='active' for='km'>Kilometraje</label>"+
+			 "<input type='number' name='kmM"+ c.id_producto + "' id='kmM"+ c.id_producto +"' value='"+ c.km +"'>"+
+				"<label class='active' for='kmM"+ c.id_producto +"'>Kilometraje</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l3'>"+
-			 "Color:<input type='color' name='color' id='color' value='"+ c.color +"'>"+
+			 "Color:<input type='color' name='colorM"+ c.id_producto + "' id='colorM"+ c.id_producto +"' value='"+ c.color +"'>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l4'>"+
-			"<select class='comb' name='comb' id='comb'>";
-			if (c.comb === 'Gasolina') {
+			"<select class='comb' name='combM"+ c.id_producto + "' id='combM"+ c.id_producto +"'>";
+			if (c.comb === 'Gasolina'){
 				str = str +
 				"<option value='' disabled selected>Choose your option</option>"+
 				"<option value='Gasolina' selected='selected'>Gasolina</option>"+
@@ -273,110 +273,110 @@ function mostrarCat(c)
 	else if (c.nombre_cat === "Literatura") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			 "<input type='number' name='edicion' id='edicion' value='"+ c.edicion +"'>"+
-				"<label class='active' for='edicion'>Edición</label>"+
+			 "<input type='number' name='edicionM"+ c.id_producto + "' id='edicionM"+ c.id_producto +"' value='"+ c.edicion +"'>"+
+				"<label class='active' for='edicionM"+ c.id_producto +"'>Edición</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			 "<input type='text' name='editorial' id='editorial' value='"+ c.editorial +"'>"+
-				"<label class='active' for='editorial'>Editorial</label>"+
+			 "<input type='text' name='editorialM"+ c.id_producto + "' id='editorialM"+ c.id_producto +"' value='"+ c.editorial +"'>"+
+				"<label class='active' for='editorialM"+ c.id_producto +"'>Editorial</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			 "<input type='text' name='autor' id='autor' value='"+ c.autor +"'>"+
-				"<label class='active' for='autor'>Autor</label>"+
+			 "<input type='text' name='autorM"+ c.id_producto + "' id='autorM"+ c.id_producto +"' value='"+ c.autor +"'>"+
+				"<label class='active' for='autorM"+ c.id_producto +"'>Autor</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Arte") {
 		str=
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			 "<input type='number' name='anio' id='anio' value='"+ c.año +"'>"+
-				"<label class='active' for='anio'>Año</label>"+
+			 "<input type='number' name='anioM"+ c.id_producto + "' id='anioM"+ c.id_producto +"' value='"+ c.año +"'>"+
+				"<label class='active' for='anioM"+ c.id_producto +"'>Año</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			 "<input type='text' name='tipo' id='tipo' value='"+ c.tipo +"'>"+
-				"<label class='active' for='tipo'>Tipo</label>"+
+			 "<input type='text' name='tipoM"+ c.id_producto + "' id='tipoM"+ c.id_producto +"' value='"+ c.tipo +"'>"+
+				"<label class='active' for='tipoM"+ c.id_producto +"'>Tipo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			 "<input type='text' name='autor' id='autor' value='"+ c.autor +"'>"+
-				"<label class='active' for='autor'>Autor</label>"+
+			 "<input type='text' name='autorM"+ c.id_producto + "' id='autorM"+ c.id_producto +"' value='"+ c.autor +"'>"+
+				"<label class='active' for='autorM"+ c.id_producto +"'>Autor</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Música") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='album' id='album' value='"+ c.album +"'>"+
-			"<label class='active' for='album'>Album</label>"+
+			"<input type='text' name='albumM"+ c.id_producto + "' id='albumM"+ c.id_producto +"' value='"+ c.album +"'>"+
+			"<label class='active' for='albumM"+ c.id_producto +"'>Album</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='genero' id='genero' value='"+ c.genero +"'>"+
-			"<label class='active' for='genero'>Género</label>"+
+			"<input type='text' name='generoM"+ c.id_producto + "' id='generoM"+ c.id_producto +"' value='"+ c.genero +"'>"+
+			"<label class='active' for='generoM"+ c.id_producto +"'>Género</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='autor' id='autor' value='"+ c.autor +"'>"+
-			"<label class='active' for='autor'>Autor</label>"+
+			"<input type='text' name='autorM"+ c.id_producto + "' id='autorM"+ c.id_producto +"' value='"+ c.autor +"'>"+
+			"<label class='active' for='autorM"+ c.id_producto +"'>Autor</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Inmuebles") {
 		str =
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
-			"<input type='text' name='dir' id='dir' value='"+ c.direccion +"'>"+
-			"<label class='active' for='dir'>Dirección</label>"+
+			"<input type='text' name='dirM"+ c.id_producto + "' id='dirM"+ c.id_producto +"' value='"+ c.direccion +"'>"+
+			"<label class='active' for='dirM"+ c.id_producto +"'>Dirección</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l5'>"+
-			"<input type='number' name='bano' id='bano' value='"+ c.bano +"'>"+
-			"<label class='active' for='bano'>#Baños</label>"+
+			"<input type='number' name='banoM"+ c.id_producto + "' id='banoM"+ c.id_producto +"' value='"+ c.bano +"'>"+
+			"<label class='active' for='banoM"+ c.id_producto +"'>#Baños</label>"+
 		"</div>"+
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
-			"<input type='number' name='room' id='room' value='"+ c.alcobas +"'>"+
-			"<label class='active' for='room'>#Alcobas</label>"+
+			"<input type='number' name='roomM"+ c.id_producto + "' id='roomM"+ c.id_producto +"' value='"+ c.alcobas +"'>"+
+			"<label class='active' for='roomM"+ c.id_producto +"'>#Alcobas</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m12 l5'>"+
-			"<input type='number' name='anio' id='anio' value='"+ c.año +"'>"+
-			"<label class='active' for='anio'>Año</label>"+
+			"<input type='number' name='anioM"+ c.id_producto + "' id='anioM"+ c.id_producto +"' value='"+ c.año +"'>"+
+			"<label class='active' for='anioM"+ c.id_producto +"'>Año</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Tablets/Teléfonos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
-			"<label class='active' for='marca'>Marca</label>"+
+			"<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
+			"<label class='active' for='marcaM"+ c.id_producto +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='os' id='os' value='"+ c.os +"'>"+
-			"<label class='active' for='os'>Sistema Operativo</label>"+
+			"<input type='text' name='osM"+ c.id_producto + "' id='osM"+ c.id_producto +"' value='"+ c.os +"'>"+
+			"<label class='active' for='osM"+ c.id_producto +"'>Sistema Operativo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia' value='"+ c.referencia +"'>"+
-			"<label class='active' for='referencia'>Referencia</label>"+
+			"<input type='text' name='referenciaM"+ c.id_producto + "' id='referenciaM"+ c.id_producto +"' value='"+ c.referencia +"'>"+
+			"<label class='active' for='referenciaM"+ c.id_producto +"'>Referencia</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Computadores") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
-			"<label class='active' for='marca'>Marca</label>"+
+			"<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
+			"<label class='active' for='marcaM"+ c.id_producto +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='os' id='os' value='"+ c.os +"'>"+
-			"<label class='active' for='os'>Sistema Operativo</label>"+
+			"<input type='text' name='osM"+ c.id_producto + "' id='osM"+ c.id_producto +"' value='"+ c.os +"'>"+
+			"<label class='active' for='osM"+ c.id_producto +"'>Sistema Operativo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia' value='"+ c.referencia +"'>"+
-			"<label class='active' for='referencia'>Referencia</label>"+
+			"<input type='text' name='referenciaM"+ c.id_producto + "' id='referenciaM"+ c.id_producto +"' value='"+ c.referencia +"'>"+
+			"<label class='active' for='referenciaM"+ c.id_producto +"'>Referencia</label>"+
 		"</div>";
 	}
 	else if (c.nombre_cat === "Consolas de Vidéo Juegos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca' value='"+ c.marca +"'>"+
-			"<label class='active' for='marca'>Marca</label>"+
+			"<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
+			"<label class='active' for='marcaM"+ c.id_producto +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='storage' id='storage' value='"+ c.almacenamiento +"'>"+
-			"<label class='active' for='storage'>Almacenamiento</label>"+
+			"<input type='text' name='storageM"+ c.id_producto + "' id='storageM"+ c.id_producto +"' value='"+ c.almacenamiento +"'>"+
+			"<label class='active' for='storageM"+ c.id_producto +"'>Almacenamiento</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia' value='"+ c.referencia +"'>"+
-			"<label class='active' for='referencia'>Referencia</label>"+
+			"<input type='text' name='referenciaM"+ c.id_producto + "' id='referenciaM"+ c.id_producto +"' value='"+ c.referencia +"'>"+
+			"<label class='active' for='referenciaM"+ c.id_producto +"'>Referencia</label>"+
 		"</div>";
 	}
 // console.log(str);
@@ -390,38 +390,38 @@ function cambioCategoria(p){
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l5'>"+
-			 "<input type='text' name='marca' id='marca'>"+
-				"<label for='marca'>Marca</label>"+
+			 "<input type='text' name='marcaC"+ p +"' id='marcaC"+ p +"'>"+
+				"<label for='marcaC"+ p +"'>Marca</label>"+
 		"</div>" +
 		"<div class='input-field col s12 m6 l5'>"+
-			 "<input type='text' name='tipo' id='tipo'>"+
-				"<label for='tipo'>Tipo</label>"+
+			 "<input type='text' name='tipoC"+ p +"' id='tipoC"+ p +"'>"+
+				"<label for='tipoC"+ p +"'>Tipo</label>"+
 		"</div>";
 	}
 	else if (c === "Vehículos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
-			 "<input type='text' name='placa' id='placa'>"+
-				"<label for='placa'>Placa</label>"+
+			 "<input type='text' name='placaC"+ p +"' id='placaC"+ p +"'>"+
+				"<label for='placaC"+ p +"'>Placa</label>"+
 		"</div>" +
 		"<div class='input-field col s12 m6 l3'>"+
-			 "<input type='number' name='modelo' id='modelo'>"+
-				"<label for='modelo'>Modelo</label>"+
+			 "<input type='number' name='modeloC"+ p +"' id='modeloC"+ p +"'>"+
+				"<label for='modeloC"+ p +"'>Modelo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l4'>"+
-			 "<input type='text' name='marca' id='marca'>"+
-			 "<label for='marca'>Marca</label>"+
+			 "<input type='text' name='marcaC"+ p +"' id='marcaC"+ p +"'>"+
+			 "<label for='marcaC"+ p +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
-			 "<input type='number' name='km' id='km'>"+
-				"<label for='km'>Kilometraje</label>"+
+			 "<input type='number' name='km"+ p +"' id='km"+ p +"'>"+
+				"<label for='km"+ p +"'>Kilometraje</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l3'>"+
-			 "Color:<input type='color' name='color' id='color' value='#33ff00'>"+
+			 "Color:<input type='color' name='colorC"+ p +"' id='colorC"+ p +"' value='#33ff00'>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l4'>"+
-			"<select class='comb' name='comb' id='comb'>"+
+			"<select class='comb' name='combC"+ p +"' id='combC"+ p +"'>"+
 				"<option value='' disabled selected>Choose your option</option>"+
 				"<option value='Gasolina'>Gasolina</option>"+
 				"<option value='Gas'>Gas</option>"+
@@ -435,116 +435,116 @@ function cambioCategoria(p){
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			 "<input type='number' name='edicion' id='edicion'>"+
-				"<label for='edicion'>Edición</label>"+
+			 "<input type='number' name='edicionC"+ p +"' id='edicionC"+ p +"'>"+
+				"<label for='edicionC"+ p +"'>Edición</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			 "<input type='text' name='editorial' id='editorial'>"+
-				"<label for='editorial'>Editorial</label>"+
+			 "<input type='text' name='editorialC"+ p +"' id='editorialC"+ p +"'>"+
+				"<label for='editorialC"+ p +"'>Editorial</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			 "<input type='text' name='autor' id='autor'>"+
-				"<label for='autor'>Autor</label>"+
+			 "<input type='text' name='autorC"+ p +"' id='autorC"+ p +"'>"+
+				"<label for='autorC"+ p +"'>Autor</label>"+
 		"</div>";
 	}
 	else if (c === "Arte") {
 		$( ".cambioCat"+p ).empty();
 		str=
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			 "<input type='number' name='anio' id='anio'>"+
-				"<label for='anio'>Año</label>"+
+			 "<input type='number' name='anioC"+ p +"' id='anioC"+ p +"'>"+
+				"<label for='anioC"+ p +"'>Año</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			 "<input type='text' name='tipo' id='tipo'>"+
-				"<label for='tipo'>Tipo</label>"+
+			 "<input type='text' name='tipoC"+ p +"' id='tipoC"+ p +"'>"+
+				"<label for='tipoC"+ p +"'>Tipo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			 "<input type='text' name='autor' id='autor'>"+
-				"<label for='autor'>Autor</label>"+
+			 "<input type='text' name='autorC"+ p +"' id='autorC"+ p +"'>"+
+				"<label for='autorC"+ p +"'>Autor</label>"+
 		"</div>";
 	}
 	else if (c === "Música") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='album' id='album'>"+
-			"<label for='album'>Album</label>"+
+			"<input type='text' name='albCum"+ p +"' id='album"+ p +"'>"+
+			"<label for='album"+ p +"'>Album</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='genero' id='genero'>"+
-			"<label for='genero'>Género</label>"+
+			"<input type='text' name='generoC"+ p +"' id='generoC"+ p +"'>"+
+			"<label for='generoC"+ p +"'>Género</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='autor' id='autor'>"+
-			"<label for='autor'>Autor</label>"+
+			"<input type='text' name='autorC"+ p +"' id='autorC"+ p +"'>"+
+			"<label for='autorC"+ p +"'>Autor</label>"+
 		"</div>";
 	}
 	else if (c === "Inmuebles") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
-			"<input type='text' name='dir' id='dir'>"+
-			"<label for='dir'>Dirección</label>"+
+			"<input type='text' name='dirC"+ p +"' id='dirC"+ p +"'>"+
+			"<label for='dirC"+ p +"'>Dirección</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m6 l5'>"+
-			"<input type='number' name='bano' id='bano'>"+
-			"<label for='bano'>#Baños</label>"+
+			"<input type='number' name='banoC"+ p +"' id='banoC"+ p +"'>"+
+			"<label for='banoC"+ p +"'>#Baños</label>"+
 		"</div>"+
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
-			"<input type='number' name='room' id='room'>"+
-			"<label for='room'>#Alcobas</label>"+
+			"<input type='number' name='roomC"+ p +"' id='roomC"+ p +"'>"+
+			"<label for='roomC"+ p +"'>#Alcobas</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m12 l5'>"+
-			"<input type='number' name='anio' id='anio'>"+
-			"<label for='anio'>Año</label>"+
+			"<input type='number' name='anioC"+ p +"' id='anioC"+ p +"'>"+
+			"<label for='anioC"+ p +"'>Año</label>"+
 		"</div>";
 	}
 	else if (c === "Tablets/Teléfonos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca'>"+
-			"<label for='marca'>Marca</label>"+
+			"<input type='text' name='marcaC"+ p +"' id='marcaC"+ p +"'>"+
+			"<label for='marcaC"+ p +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='os' id='os'>"+
-			"<label for='os'>Sistema Operativo</label>"+
+			"<input type='text' name='osC"+ p +"' id='osC"+ p +"'>"+
+			"<label for='osC"+ p +"'>Sistema Operativo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia'>"+
-			"<label for='referencia'>Referencia</label>"+
+			"<input type='text' name='referenciaC"+ p +"' id='referenciaC"+ p +"'>"+
+			"<label for='referenciaC"+ p +"'>Referencia</label>"+
 		"</div>";
 	}
 	else if (c === "Computadores") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca'>"+
-			"<label for='marca'>Marca</label>"+
+			"<input type='text' name='marcaC"+ p +"' id='marcaC"+ p +"'>"+
+			"<label for='marcaC"+ p +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='os' id='os'>"+
-			"<label for='os'>Sistema Operativo</label>"+
+			"<input type='text' name='osC"+ p +"' id='osC"+ p +"'>"+
+			"<label for='osC"+ p +"'>Sistema Operativo</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia'>"+
-			"<label for='referencia'>Referencia</label>"+
+			"<input type='text' name='referenciaC"+ p +"' id='referenciaC"+ p +"'>"+
+			"<label for='referenciaC"+ p +"'>Referencia</label>"+
 		"</div>";
 	}
 	else if (c === "Consolas de Vidéo Juegos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field offset-l1 col s12 m4 l3'>"+
-			"<input type='text' name='marca' id='marca'>"+
-			"<label for='marca'>Marca</label>"+
+			"<input type='text' name='marcaC"+ p +"' id='marcaC"+ p +"'>"+
+			"<label for='marcaC"+ p +"'>Marca</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l3'>"+
-			"<input type='text' name='storage' id='storage'>"+
-			"<label for='storage'>Almacenamiento</label>"+
+			"<input type='text' name='storageC"+ p +"' id='storageC"+ p +"'>"+
+			"<label for='storageC"+ p +"'>Almacenamiento</label>"+
 		"</div>"+
 		"<div class='input-field col s12 m4 l4'>"+
-			"<input type='text' name='referencia' id='referencia'>"+
-			"<label for='referencia'>Referencia</label>"+
+			"<input type='text' name='referenciaC"+ p +"' id='referenciaC"+ p +"'>"+
+			"<label for='referenciaC"+ p +"'>Referencia</label>"+
 		"</div>";
 	}
 	$( ".cambioCat"+p ).append( str );

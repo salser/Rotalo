@@ -65,37 +65,45 @@
   							<h4>Editar Producto {!! $p->nombre !!}</h4>
                 <br>
                 <div class="row">
-                  <form id="cambiarP" action="editarProducto" method="POST" enctype="multipart/form-data" class="container col s12 m12 l12">
+									<?php
+												$id = $p->id;
+												$id= Crypt::encrypt($id);
+												$catid;
+												$ncat;
+									?>
+									@foreach($categorias as $c)
+										@if($c->id_producto == $p->id)
+											<?php
+												$ncat = Crypt::encrypt($c->nombre_cat);
+												$catid = Crypt::encrypt($c->id);
+											?>
+										@endif
+									@endforeach
+                  <form id="cambiarP{!! $p->id !!}" action="editarProducto/{!! $id !!}/{!! $ncat !!}/{!! $catid !!}" method="POST" enctype="multipart/form-data" class="container col s12 m12 l12">
                     <div class="row">
                       <div class="input-field col s12 m6 l6">
-                        <input type="text" name="nombreP" value="{!! $p->nombre !!}" id="nombreP">
-                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombreP{!! $p->id !!}" value="{!! $p->nombre !!}" id="nombreP{!! $p->id !!}">
+                        <label for="nombreP{!! $p->id !!}">Nombre</label>
                       </div>
                       <div class="input-field col s12 m6 l6">
-                        <input type="text" name="tiempo_uso_a" value="{!! $p->tiempo_uso !!}" id="tiempo_uso_a">
-                        <label for="tiempo_uso_a">Tiempo de uso (en años)</label>
+                        <input type="text" name="tiempo_uso_a{!! $p->id !!}" value="{!! $p->tiempo_uso !!}" id="tiempo_uso_a{!! $p->id !!}">
+                        <label for="tiempo_uso_a{!! $p->id !!}">Tiempo de uso (en años)</label>
                       </div>
                       <div class="input-field col s12 m12 l12">
-                        <input type="text" name="antiguedad_a" value="{!! $p->antiguedad !!}" id="antiguedad_a">
-                        <label for="antiguedad_a">Antigueda (en años)</label>
+                        <input type="text" name="antiguedad_a{!! $p->id !!}" value="{!! $p->antiguedad !!}" id="antiguedad_a{!! $p->id !!}">
+                        <label for="antiguedad_a{!! $p->id !!}">Antigueda (en años)</label>
                       </div>
                       <div class="input-field col s12 m12 l12">
-                        <textarea name="descripcion_a" id="descripcion_A" rows="8" cols="80" class="materialize-textarea"></textarea>
-                        <label for="descripcion_a">Descripción (si no desea cambiarla deje el campo vacio)</label>
+                        <textarea name="descripcion_a{!! $p->id !!}" id="descripcion_a{!! $p->id !!}" rows="8" cols="80" class="materialize-textarea"></textarea>
+                        <label for="descripcion_a{!! $p->id !!}">Descripción (si no desea cambiarla deje el campo vacio)</label>
                         <p>Descripción actual: {!! $p->descripcion !!}</p>
 												<br>
-												@foreach($categorias as $c)
-													@if($c->id_producto == $p->id)
-														<input type="hidden" name="nombreCategoria" id="nombreCategoria" value="{!! $c->nombre_cat !!}">
-														<input type="hidden" name="catid" id="catid" value="{!! $c->id !!}">
-														<?php echo 'Categoría '.$c->nombre_cat; ?>
-													@endif
-												@endforeach
+												<?php echo 'Categoría '.$c->nombre_cat; ?>
 												<br><br>
 												<div class="catedit{!! $p->id !!}"></div>
                       </div>
-											<div class=" tooltipW input-field col s12 m8">
-													<select class="selectCatEdit{!! $p->id !!} icons" name="categoriaCambio" id="categoriaCambio">
+											<div class="tooltipW input-field col s12 m8">
+													<select class="selectCatEdit{!! $p->id !!} icons" name="categoriaCambio{!! $p->id !!}" id="categoriaCambio{!! $p->id !!}">
 														<option value="0" disabled selected>Seleccione categoría</option>
 														<option value="Electrodomésticos" 			>Electrodomésticos</option>
 														<option value="Vehículos" 							>Vehículos</option>
@@ -125,11 +133,11 @@
 											<br>
 											<div class="container">
 												<div class="col s12 m6 l4">
-													<img class="imgCambio" src="
+													<img class="imgCambio"  src="
+
 													@if($p->foto != '')
 														{!! $p->foto !!}
-													@endif
-													@if($p->foto == '')
+													@else
 														{!! 'productos/default.jpg' !!}
 													@endif
 													" alt=""><br>
@@ -138,7 +146,7 @@
 															<div class="col offset-s4 s2">
 																<div class="row">
 																	<i class="material-icons">camera_enhance</i>
-																	<input type="file" id="cFotoP" name="cFotoP" class="cFotoP"/>
+																	<input type="file" id="cFotoP{!! $p->id !!}" name="cFotoP{!! $p->id !!}" class="cFotoP"/>
 																</div>
 															</div>
 														</div>
@@ -148,8 +156,7 @@
 													<img class="imgCambio" src="
 													@if($p->foto2 != '')
 														{!! $p->foto2 !!}
-													@endif
-													@if($p->foto2 == '')
+													@else
 														{!! 'productos/default.jpg' !!}
 													@endif
 													" alt=""><br>
@@ -158,7 +165,7 @@
 															<div class="col offset-s4 s2">
 																<div class="row">
 																	<i class="material-icons">camera_enhance</i>
-																	<input type="file" id="cFotoP2" name="cFotoP2" class="cFotoP"/>
+																	<input type="file" id="cFotoP2{!! $p->id !!}" name="cFotoP2{!! $p->id !!}" class="cFotoP"/>
 																</div>
 															</div>
 														</div>
@@ -168,8 +175,7 @@
 													<img class="imgCambio" src="
 													@if($p->foto3 != '')
 														{!! $p->foto3 !!}
-													@endif
-													@if($p->foto3 == '')
+													@else
 														{!! 'productos/default.jpg' !!}
 													@endif
 													" alt=""><br>
@@ -178,7 +184,7 @@
 															<div class="col offset-s4 s2">
 																<div class="row">
 																	<i class="material-icons">camera_enhance</i>
-																	<input type="file" id="cFotoP3" name="cFotoP3" class="cFotoP"/>
+																	<input type="file" id="cFotoP3{!! $p->id !!}" name="cFotoP3{!! $p->id !!}" class="cFotoP"/>
 																</div>
 															</div>
 														</div>
@@ -188,8 +194,7 @@
 													<img class="imgCambio" src="
 													@if($p->foto4 != '')
 														{!! $p->foto4 !!}
-													@endif
-													@if($p->foto4 == '')
+													@else
 														{!! 'productos/default.jpg' !!}
 													@endif
 													" alt=""><br>
@@ -198,7 +203,7 @@
 															<div class="col offset-s4 s2">
 																<div class="row">
 																	<i class="material-icons">camera_enhance</i>
-																	<input type="file" id="cFotoP4" name="cFotoP4" class="cFotoP"/>
+																	<input type="file" id="cFotoP4{!! $p->id !!}" name="cFotoP4{!! $p->id !!}" class="cFotoP"/>
 																</div>
 															</div>
 														</div>
@@ -208,8 +213,7 @@
 													<img class="imgCambio" src="
 													@if($p->foto5 != '')
 														{!! $p->foto5 !!}
-													@endif
-													@if($p->foto5 == '')
+													@else
 														{!! 'productos/default.jpg' !!}
 													@endif
 													" alt=""><br>
@@ -218,7 +222,7 @@
 															<div class="col offset-s4 s2">
 																<div class="row">
 																	<i class="material-icons">camera_enhance</i>
-																	<input type="file" id="cFotoP5" name="cFotoP5" class="cFotoP"/>
+																	<input type="file" id="cFotoP5{!! $p->id !!}" name="cFotoP5{!! $p->id !!}" class="cFotoP"/>
 																</div>
 															</div>
 														</div>
@@ -228,8 +232,7 @@
 													<img class="imgCambio" src="
 													@if($p->foto6 != '')
 														{!! $p->foto6 !!}
-													@endif
-													@if($p->foto6 == '')
+													@else
 														{!! 'productos/default.jpg' !!}
 													@endif
 													" alt=""><br>
@@ -238,7 +241,7 @@
 															<div class="col offset-s4 s2">
 																<div class="row">
 																	<i class="material-icons">camera_enhance</i>
-																	<input type="file" id="cFotoP6" name="cFotoP6" class="cFotoP"/>
+																	<input type="file" id="cFotoP6{!! $p->id !!}" name="cFotoP6{!! $p->id !!}" class="cFotoP"/>
 																</div>
 															</div>
 														</div>
@@ -247,13 +250,12 @@
 											</div>
                       <br><br>
                       <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                      <input type="hidden" name="id" id="id" value="{!! $p->id !!}">
                     </div>
                   </form>
                 </div>
   						</div>
 							<div class="modal-footer">
-								<a class="bordeModalbtn modal-action modal-close waves-effect waves-green btn-flat" onclick="$('#cambiarP').submit()">Cambiar</a>
+								<a class="bordeModalbtn modal-action modal-close waves-effect waves-green btn-flat" onclick="$('#cambiarP{!! $p->id !!}').submit()">Cambiar</a>
 							</div>
   					</div>
 						<div id="modaleliminarP{!! $p->id !!}" class="modal">
@@ -261,7 +263,10 @@
   							<h4>Esta seguro que quiere eliminar el producto:</h4>
                 <br>
                 <div class="row">
-                  <form action="eliminarP" method="POST" class="container col s12 m12 l12">
+									<?php
+											$idE = Crypt::encrypt($p->id);
+									 ?>
+                  <form action="eliminarP/{!! $idE !!}" method="POST" class="container col s12 m12 l12">
                     <div class="row">
 											<div class="container">
 												<b>{!! $p->nombre !!}</b>
@@ -278,7 +283,7 @@
                         <input class="bordeModalbtn modal-action modal-close waves-effect waves-red btn-flat" onclick="" type="submit" name="submit" id="submit" value="Eliminar">
                       </div>
                       <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                      <input type="hidden" name="idp" id="idp" value="{!! $p->id !!}">
+                      <input type="hidden" name="idp{!! $p->id !!}" id="idp{!! $p->id !!}" value="{!! $p->id !!}">
                     </div>
                   </form>
                 </div>

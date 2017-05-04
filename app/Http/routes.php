@@ -69,7 +69,7 @@ Route::get('misProductos', function()
   return View::make('misproductos')->with($data);
 });
 
-Route::post('editarProducto','ControllerProducto@editar');
+Route::post('editarProducto/{id}/{ncat}/{catid}','ControllerProducto@editar');
 Route::post('agregarProducto', 'ControllerProducto@agregar');
 
 Route::get('todosProductos', function(){
@@ -81,4 +81,4 @@ Route::get('todosProductos', function(){
           ];
   return View::make('productostodos')->with($data);
 });
-Route::post('eliminarP', 'ControllerProducto@eliminar');
+Route::post('eliminarP/{idE}', 'ControllerProducto@eliminar');
