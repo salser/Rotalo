@@ -86,4 +86,62 @@ Route::get('todosProductos', function(){
 });
 Route::post('eliminarP/{idE}', 'ControllerProducto@eliminar');
 
-Route::get('produtoXcategoria/{categoriaBuscar}', 'ControllerProducto@pXc');
+Route::get('categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
+{
+		$productos = Producto::all();
+		if ($categoriaBuscar == "Tablets-Telefonos") {
+			$categoriaBuscar = 'Tablets-Teléfonos';
+		}
+		if ($categoriaBuscar == "Electrodomesticos") {
+			$categoriaBuscar = 'Electrodomésticos';
+		}
+		if ($categoriaBuscar == "Vehiculos") {
+			$categoriaBuscar = 'Vehículos';
+		}
+		if ($categoriaBuscar == "Musica") {
+			$categoriaBuscar = 'Música';
+		}
+		if ($categoriaBuscar == "Tablets-Telefonos") {
+			$categoriaBuscar = 'Tablets-Teléfonos';
+		}
+		if ($categoriaBuscar == "Consolas de Video Juegos") {
+			$categoriaBuscar = 'Consolas de Vidéo Juegos';
+		}
+		$categorias = array();
+		$cat = Categoria::all();
+		$user = User::all();
+		for ($i = 0; $i<sizeof($cat); $i++) {
+			if($cat[$i]->nombre_cat == $categoriaBuscar)
+			{
+				$categorias[$i] = Producto::find($cat[$i]->id_producto);
+			}
+		}
+		// foreach ($categorias as $c) {
+		// 	echo $c->nombre;
+		// }
+	  // return view('productoXcategoria')->with($data);
+		return Redirect::to('productoXcategoria')
+								->with('categorias',$categorias)
+								->with('nombre_cat', $categoriaBuscar)
+								->with('usuarios', $user);
+});
+
+// Route::get('categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
+// {
+// 	$productos = Producto::all();
+// 	$categoria = Categoria::where('nombre_cat', $categoriaBuscar);
+// 	$data = [
+// 						'productos' => $productos,
+// 						'categorias'  => $categoria
+// 					];
+// 	$categoriaBuscar = explode("{", $categoriaBuscar);
+// 	$categoriaBuscar = $categoriaBuscar[sizeof($categoriaBuscar)-1];
+// 	$categoriaBuscar = explode("}", $categoriaBuscar);
+// 	$categoriaBuscar = $categoriaBuscar[0];
+// 	$var = 'productoXcategoria/'.$categoriaBuscar;
+// 	return Redirect::to($var);
+// });
+Route::get('productoXcategoria', function()
+{
+	return view("productoXcategoria")->with('name', 'value');
+});

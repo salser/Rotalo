@@ -131,7 +131,7 @@ $(document).ready(function(){
 					"<label for='anio'>Año</label>"+
 				"</div>";
 			}
-			else if ($( this ).val() === "Tablets/Teléfonos") {
+			else if ($( this ).val() === "Tablets-Teléfonos") {
 				str =
 				"<div class='input-field col offset-l1 s12 m4 l3'>"+
 					"<input type='text' name='marca' id='marca'>"+
@@ -334,7 +334,7 @@ function mostrarCat(c)
 			"<label class='active' for='anioM"+ c.id_producto +"'>Año</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Tablets/Teléfonos") {
+	else if (c.nombre_cat === "Tablets-Teléfonos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
 			"<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
@@ -499,7 +499,7 @@ function cambioCategoria(p){
 			"<label for='anioC"+ p +"'>Año</label>"+
 		"</div>";
 	}
-	else if (c === "Tablets/Teléfonos") {
+	else if (c === "Tablets-Teléfonos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+

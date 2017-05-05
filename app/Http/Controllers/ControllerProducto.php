@@ -166,7 +166,7 @@ class ControllerProducto extends Controller
 											->with('nAgregarProductos', $cambio)
 											->withInput();
 						}
-					}elseif ($c == 'Tablets/Teléfonos') {
+					}elseif ($c == 'Tablets-Teléfonos') {
 						if (Input::has('marcaC'.$categoria->id_producto) && Input::has('referenciaC'.$categoria->id_producto) && Input::has('osC'.$categoria->id_producto)) {
 							$categoria->marca = Input::get('marcaC'.$categoria->id_producto);
 							$categoria->referencia = Input::get('referenciaC'.$categoria->id_producto);
@@ -279,7 +279,7 @@ class ControllerProducto extends Controller
 							->withInput();
 						}
 					}
-					else if ($ncat == "Tablets/Teléfonos") {
+					else if ($ncat == "Tablets-Teléfonos") {
 						if(Input::has('referenciaM'.$categoria->id_producto) && Input::has('osM'.$categoria->id_producto) && Input::has('marcaM'.$categoria->id_producto)){
 							$categoria->referencia = Input::get('referenciaM'.$categoria->id_producto);
 							$categoria->os = Input::get('osM'.$categoria->id_producto);
@@ -422,7 +422,7 @@ class ControllerProducto extends Controller
 			                ->with('nAgregarProductos', $cambio)
 			                ->withInput();
 						}
-					}elseif ($c == 'Tablets/Teléfonos') {
+					}elseif ($c == 'Tablets-Teléfonos') {
 						if (Input::has('marca') && Input::has('referencia') && Input::has('os')) {
 							$cat->marca = Input::get('marca');
 							$cat->referencia = Input::get('referencia');
@@ -524,16 +524,5 @@ class ControllerProducto extends Controller
 			public function categoria($id)
 			{
 				$cat = Categoria::find($id);
-			}
-
-			public function pXc($categoriaBuscar)
-			{
-				$productos = Producto::all();
-				$categoria = Categoria::where('nombre_cat', $categoriaBuscar);
-				$data = [
-			            'productos' => $productos,
-			            'categorias'  => $categoria
-			          ];
-				return View::make('produtoXcategoria')->with($data);
 			}
     }

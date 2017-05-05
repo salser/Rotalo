@@ -111,7 +111,7 @@
 														<option value="Arte" 					 					>Arte</option>
 														<option value="Música" 									>Música</option>
 														<option value="Inmuebles"    						>Inmuebles</option>
-														<option value="Tablets/Teléfonos" 			>Tablets/Teléfonos</option>
+														<option value="Tablets-Teléfonos" 			>Tablets-Teléfonos</option>
 														<option value="Computadores"        		>Computadores</option>
 														<option value="Consolas de Vidéo Juegos">Consolas de Vidéo Juegos</option>
 													</select>
@@ -334,7 +334,7 @@
 									<option value="Arte" 					 					data-icon="imgs/art.jpg" class="circle">Arte</option>
 									<option value="Música" 									data-icon="imgs/music.jpg" class="circle">Música</option>
 									<option value="Inmuebles"    						data-icon="imgs/inm.jpg" class="circle">Inmuebles</option>
-									<option value="Tablets/Teléfonos" 			data-icon="imgs/phone.jpg" class="circle">Tablets/Teléfonos</option>
+									<option value="Tablets-Teléfonos" 			data-icon="imgs/phone.jpg" class="circle">Tablets-Teléfonos</option>
 									<option value="Computadores"        		 data-icon="imgs/pc.jpg" class="circle">Computadores</option>
 									<option value="Consolas de Vidéo Juegos" data-icon="imgs/vg.jpg" class="circle">Consolas de Vidéo Juegos</option>
 								</select>

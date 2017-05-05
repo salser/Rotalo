@@ -57,15 +57,15 @@
 						@endif
 
 						<ul id="dropdownProductosM" class="dropdown-content">
-							<li><a href="productoXcategoria/Electrodomesticos">Electrodomesticos</a></li>
-							<li><a href="productoXcategoria/Vehiculos">Vehículos</a></li>
-							<li><a href="productoXcategoria/Inmuebles">Inmuebles</a></li>
-							<li><a href="productoXcategoria/Literatura">Literatura</a></li>
-							<li><a href="productoXcategoria/Musica">Música</a></li>
-							<li><a href="productoXcategoria/Arte">Arte</a></li>
-							<li><a href="productoXcategoria/Tablets-Telefonos">Tablets-Teléfonos</a></li>
-							<li><a href="productoXcategoria/Computadores">Computadores</a></li>
-							<li><a href="productoXcategoria/VideoJuegos">VideoJuegos</a></li>
+							<li><a href="categoriasENproductos/Electrodomesticos">Electrodomésticos</a></li>
+							<li><a href="categoriasENproductos/Vehiculos">Vehículos</a></li>
+							<li><a href="categoriasENproductos/Inmuebles">Inmuebles</a></li>
+							<li><a href="categoriasENproductos/Literatura">Literatura</a></li>
+							<li><a href="categoriasENproductos/Musica">Música</a></li>
+							<li><a href="categoriasENproductos/Arte">Arte</a></li>
+							<li><a href="categoriasENproductos/Tablets-Telefonos">Tablets-Teléfonos</a></li>
+							<li><a href="categoriasENproductos/Computadores">Computadores</a></li>
+							<li><a href="categoriasENproductos/VideoJuegos">VideoJuegos</a></li>
 						</ul>
 						<li>
 							<a href="/todosProductos" class="dropdown-button" data-activates="dropdownProductosM">
@@ -98,15 +98,15 @@
 							<li><a href="/inicio">Iniciar Sesi&oacuten</a></li>
 						@endif
 						<ul id="dropdownProductos" class="dropdown-content">
-							<li><a href="productoXcategoria/Electrodomesticos">Electrodomesticos</a></li>
-							<li><a href="productoXcategoria/Vehiculos">Vehículos</a></li>
-							<li><a href="productoXcategoria/Inmuebles">Inmuebles</a></li>
-							<li><a href="productoXcategoria/Literatura">Literatura</a></li>
-							<li><a href="productoXcategoria/Musica">Música</a></li>
-							<li><a href="productoXcategoria/Arte">Arte</a></li>
-							<li><a href="productoXcategoria/Tablets-Telefonos">Tablets-Teléfonos</a></li>
-							<li><a href="productoXcategoria/Computadores">Computadores</a></li>
-							<li><a href="productoXcategoria/VideoJuegos">VideoJuegos</a></li>
+							<li><a href="categoriasENproductos/Electrodomesticos">Electrodomésticos</a></li>
+							<li><a href="categoriasENproductos/Vehiculos">Vehículos</a></li>
+							<li><a href="categoriasENproductos/Inmuebles">Inmuebles</a></li>
+							<li><a href="categoriasENproductos/Literatura">Literatura</a></li>
+							<li><a href="categoriasENproductos/Musica">Música</a></li>
+							<li><a href="categoriasENproductos/Arte">Arte</a></li>
+							<li><a href="categoriasENproductos/Tablets-Telefonos">Tablets-Teléfonos</a></li>
+							<li><a href="categoriasENproductos/Computadores">Computadores</a></li>
+							<li><a href="categoriasENproductos/VideoJuegos">VideoJuegos</a></li>
 						</ul>
 						<li>
   	        	<a href="/todosProductos" class="dropdown-button" data-activates="dropdownProductos">
