@@ -107,41 +107,28 @@ Route::get('categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
 		if ($categoriaBuscar == "Consolas de Video Juegos") {
 			$categoriaBuscar = 'Consolas de Vidéo Juegos';
 		}
-		$categorias = array();
+		// $categorias = array();
 		$cat = Categoria::all();
 		$user = User::all();
-		for ($i = 0; $i<sizeof($cat); $i++) {
-			if($cat[$i]->nombre_cat == $categoriaBuscar)
-			{
-				$categorias[$i] = Producto::find($cat[$i]->id_producto);
-			}
-		}
+		// for ($i = 0; $i<sizeof($cat); $i++) {
+		// 	if($cat[$i]->nombre_cat == $categoriaBuscar)
+		// 	{
+		// 		$categorias[$i] = Producto::find($cat[$i]->id_producto);
+		// 	}
+		// }
 		// foreach ($categorias as $c) {
 		// 	echo $c->nombre;
 		// }
 	  // return view('productoXcategoria')->with($data);
 		return Redirect::to('productoXcategoria')
-								->with('categorias',$categorias)
+								->with('categorias',$cat)
 								->with('nombre_cat', $categoriaBuscar)
-								->with('usuarios', $user);
+								->with('usuarios', $user)
+								->with('productos', $productos)->withInput();
+		// return View::make('productoXcategoria');
 });
 
-// Route::get('categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
-// {
-// 	$productos = Producto::all();
-// 	$categoria = Categoria::where('nombre_cat', $categoriaBuscar);
-// 	$data = [
-// 						'productos' => $productos,
-// 						'categorias'  => $categoria
-// 					];
-// 	$categoriaBuscar = explode("{", $categoriaBuscar);
-// 	$categoriaBuscar = $categoriaBuscar[sizeof($categoriaBuscar)-1];
-// 	$categoriaBuscar = explode("}", $categoriaBuscar);
-// 	$categoriaBuscar = $categoriaBuscar[0];
-// 	$var = 'productoXcategoria/'.$categoriaBuscar;
-// 	return Redirect::to($var);
-// });
 Route::get('productoXcategoria', function()
 {
-	return view("productoXcategoria")->with('name', 'value');
+	return view("productoXcategoria");
 });

@@ -29,11 +29,25 @@
 	</head>
 	<body>
 		<header>
-			<nav>
+			<div class="navbar-fixed">
+				<nav>
 			 	<div class="nav-wrapper">
 				 	<a href="/" class="brand-logo"><img src="{!! 'imgs/rotalo-icono.png' !!}" alt=""></a>
 				 	<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				 	<ul class="right hide-on-med-and-down">
+						<li>
+							<div class="row">
+								<div class="col s10">
+									<div class="row">
+										<div class="input-field col s12">
+											<i class="material-icons prefix" style="color: rgba(0, 56, 255, 0.81)">search</i>
+											<input placeholder="Buscar en Rótalo" class="inputbuscar validate" id="buscar" type="text" >
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li></li>
 						@if(Auth::check())
 							<!-- Dropdown Structure -->
 							<ul id="dropdownSesionM" class="dropdown-content">
@@ -122,6 +136,7 @@
 				 	</ul>
 				 </div>
 			 </nav>
+			</div>
 		 </header>
 			@yield('content')
 		<footer class="page-footer">

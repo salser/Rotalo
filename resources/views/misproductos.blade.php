@@ -98,7 +98,11 @@
                         <label for="descripcion_a{!! $p->id !!}">Descripción (si no desea cambiarla deje el campo vacio)</label>
                         <p>Descripción actual: {!! $p->descripcion !!}</p>
 												<br>
-												<?php echo 'Categoría '.$c->nombre_cat; ?>
+												@foreach($categorias as $c)
+													@if($c->id_producto == $p->id)
+														<?php echo 'Categoría '.$c->nombre_cat; ?>
+													@endif
+												@endforeach
 												<br><br>
 												<div class="catedit{!! $p->id !!}"></div>
                       </div>

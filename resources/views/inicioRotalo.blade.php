@@ -17,7 +17,7 @@
 			<img class="" src="{!! 'imgs/indice.jpg' !!}">
 		</div>
 		@if(!Auth::check())
-			<a href="registro" class="hide-on-med-and-down waves-effect waves-ligth btn btnreg" >Registrarse</a>
+			<a href="registro" class="hide-on-med-and-down waves-effect waves-ligth btn btnreg" ><b>Registrarse</b></a>
 		@endif
 	</div>
 	<br><br><br><br>
