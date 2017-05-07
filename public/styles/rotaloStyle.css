@@ -199,6 +199,8 @@ input[type=color]{
 
 .categoriaNombre{
 	font-size: 35px;
+	margin-top: 50px;
+	color: white;
 }
 
 .input-field .prefix.active{
@@ -209,6 +211,26 @@ input[type=text].inputbuscar{
 	background-color: #fff;
 	border-radius: 10%;
 	color:black;
+}
+
+.productosEspecifico{
+	border: 1px solid rgba(255, 151, 0, 0.63);
+	height: 500px;
+	margin-top: 50px;
+	border-radius: 10%;
+}
+
+.userProduct{
+	text-align: center;
+	margin-top: 50px;
+	color: white;
+}
+
+.imgUserPd{
+	border: 1px solid rgba(255, 151, 0, 0.63);
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
 
@@ -221,6 +243,20 @@ input[type=text].inputbuscar{
 {
 		width: 80px;
 		cursor: pointer;
+}
+
+/*================================== Swipper ==============================================*/
+.swiper-container {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 50%;
+	height: 250px;
 }
 
 /*================================== w3s ==============================================*/
@@ -264,6 +300,11 @@ input[type=text].inputbuscar{
 }
 
 /*================================== materialize changes ==============================================*/
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+	text-transform: none;
+	color: #fd7b00;
+}
 [type="checkbox"]:checked+label:before{
 	border-right: 2px solid #a7d72d;
 	border-bottom: 2px solid #a7d72d;

@@ -110,25 +110,25 @@ Route::get('categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
 		// $categorias = array();
 		$cat = Categoria::all();
 		$user = User::all();
-		// for ($i = 0; $i<sizeof($cat); $i++) {
-		// 	if($cat[$i]->nombre_cat == $categoriaBuscar)
-		// 	{
-		// 		$categorias[$i] = Producto::find($cat[$i]->id_producto);
-		// 	}
-		// }
-		// foreach ($categorias as $c) {
-		// 	echo $c->nombre;
-		// }
-	  // return view('productoXcategoria')->with($data);
 		return Redirect::to('productoXcategoria')
 								->with('categorias',$cat)
 								->with('nombre_cat', $categoriaBuscar)
 								->with('usuarios', $user)
 								->with('productos', $productos)->withInput();
-		// return View::make('productoXcategoria');
 });
 
 Route::get('productoXcategoria', function()
 {
 	return view("productoXcategoria");
+});
+Route::get('productoEspecifico/{id}', function($id){
+	$productos = Producto::all();
+	$users =User::all();
+	return Redirect::to('productoEspecifico')
+								->with('id', $id)
+								->with('productos', $productos)
+								->with('usuarios', $users);
+});
+Route::get('productoEspecifico', function(){
+	return view('productoEspecifico');
 });

@@ -9,6 +9,9 @@
 				<link rel="icon" href="{!! 'imgs/rotalo-icono.png' !!}">
 				<link rel="apple-touch-icon" href="{!! 'imgs/rotalo-icono.png' !!}">
 
+				<!-- Link Swiper's CSS -->
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+
 				<!-- JQuery CDN Source -->
 				<script type="text/javascript" src="{!! 'https://code.jquery.com/jquery-3.1.1.min.js' !!}"></script>
 				<script src="{!! 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.js' !!}"></script>
@@ -169,5 +172,6 @@
 				</div>
 			</div>
 	  </footer>
+		@yield('Swipper')
 	</body>
 </html>
