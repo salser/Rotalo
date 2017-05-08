@@ -124,10 +124,12 @@ Route::get('productoXcategoria', function()
 Route::get('productoEspecifico/{id}', function($id){
 	$productos = Producto::all();
 	$users =User::all();
+	$categorias = Categoria::all();
 	return Redirect::to('productoEspecifico')
 								->with('id', $id)
 								->with('productos', $productos)
-								->with('usuarios', $users);
+								->with('usuarios', $users)
+								->with('categorias', $categorias);
 });
 Route::get('productoEspecifico', function(){
 	return view('productoEspecifico');

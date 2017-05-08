@@ -1,13 +1,18 @@
 @extends('rotaloLayout')
-@section('title')
-	<title>Producto | </title>
-@endsection
 <?php
 	$productos = Session::get('productos');
 	$id = Session::get('id');
 	$id = substr($id, 1, sizeof($id)-2);
 	$usuarios = Session::get('usuarios');
+	$categorias = Session::get('categorias');
  ?>
+ @for ($i=0; $i < sizeof($productos); $i++)
+ 	@if ($productos[$i]->id == $id)
+		@section('title')
+			<title>Producto | {!! $productos[$i]->nombre !!}</title>
+		@endsection
+ 	@endif
+ @endfor
 @section('content')
 	<main style="background-repeat: round; background-image: url({!! 'imgs/pdtodos.jpg' !!})">
 		@for ($i=0; $i < sizeof($productos) ; $i++)
@@ -16,7 +21,7 @@
 				<div class="row">
 					<div class="col s12">
 						<div class="row">
-							<div class="productosEspecifico col s12 m12 l8">
+							<div style="border: 2px solid rgba(255, 151, 0, 0.63)" class="productosEspecifico col s12 m12 l8">
 								<h1 class="categoriaNombre">{!! $productos[$i]->nombre !!}</h1>
 								<?php
 									$aux = explode(" ", $productos[$i]->created_at)[0];
@@ -41,48 +46,141 @@
 								<!-- Swiper -->
 								<div class="swiper-container">
 									<div class="swiper-wrapper">
-										@if ($productos[$i]->foto != "")
+										@if ($productos[$i]->foto != "" &&
+												($productos[$i]->foto2 == "" &&
+												 $productos[$i]->foto3 == "" &&
+												 $productos[$i]->foto4 == "" &&
+												 $productos[$i]->foto5 == "" &&
+												 $productos[$i]->foto6 == ""))
+									 		 <img class="imgSola" src="{!! $productos[$i]->foto !!}" alt="">
+										@elseif ($productos[$i]->foto != "")
 											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto !!})"></div>
-										@else
-											<div class="swiper-slide" style="background-image:url({!! 'productos/default.jpg' !!})"></div>
 										@endif
 										@if ($productos[$i]->foto2 != "")
 											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto2 !!})"></div>
-										@else
-											<div class="swiper-slide" style="background-image:url({!! 'productos/default.jpg' !!})"></div>
 										@endif
 										@if ($productos[$i]->foto3 != "")
 											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto3 !!})"></div>
-										@else
-											<div class="swiper-slide" style="background-image:url({!! 'productos/default.jpg' !!})"></div>
 										@endif
 										@if ($productos[$i]->foto4 != "")
 											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto4 !!})"></div>
-										@else
-											<div class="swiper-slide" style="background-image:url({!! 'productos/default.jpg' !!})"></div>
 										@endif
 										@if ($productos[$i]->foto5 != "")
 											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto5 !!})"></div>
-										@else
-											<div class="swiper-slide" style="background-image:url({!! 'productos/default.jpg' !!})"></div>
 										@endif
 										@if ($productos[$i]->foto6 != "")
 											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto6 !!})"></div>
-										@else
-											<div class="swiper-slide" style="background-image:url({!! 'productos/default.jpg' !!})"></div>
 										@endif
-										</div>
+									</div>
 									<!-- Add Pagination -->
 									<div class="swiper-pagination"></div>
+									<!-- If we need navigation buttons -->
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+								</div>
+								<div class="">
+									<div style="margin-left: 10px" class="nombreCategoria col s12">
+
+									</div>
+									<br><br><br>
+											<form class="col s12 l12">
+												<div class="categoriaProducto row">
+
+												</div>
+												<div class="row">
+													<div class="fieldCategoria col s12">
+														Descripción:
+													</div>
+													<div class="col s12">
+														<p>{!! $productos[$i]->descripcion !!}</p>
+													</div>
+												</div>
+											</form>
+								</div>
+
+								<div class="botonesProducto">
+									<form class="col s7" action="index.html" method="post">
+										<input class="btn iniciobtn waves-effect waves-ligth" type="submit" name="quiero" value="Lo quiero">
+									</form>
+									<form class="col s4" action="index.html" method="post">
+										<input style="min-width: 10px" class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
+
+									</form>
 								</div>
 							</div>
-							<div class="productosEspecifico col s12 m12 l3 offset-l1">
-								@for ($j=0; $j < sizeof($usuarios) ; $j++)
-									@if ($productos[$i]->id_usuario == $usuarios[$j]->id)
-										<h4 class="userProduct">{!! $usuarios[$j]->username !!}</h4>
-										<img class="imgUserPd circle" src="{!! $usuarios[$j]->foto !!}" alt="">
-									@endif
-								@endfor
+							@for ($j=0; $j < sizeof($categorias); $j++)
+								@if ($categorias[$j]->id_producto == $id)
+									<script type="text/javascript">
+									<?php $fn = "categoriaProducto(".$categorias[$j].")"; echo $fn;?>
+									</script>
+								@endif
+							@endfor
+							<div class="row">
+								<div class="productosEspecifico rounded col s12 m12 l3 offset-l1">
+									@for ($j=0; $j < sizeof($usuarios) ; $j++)
+										@if ($productos[$i]->id_usuario == $usuarios[$j]->id)
+											<h4 class="userProduct">{!! $usuarios[$j]->username !!}</h4>
+											<img class="imgUserPd circle" src="{!! $usuarios[$j]->foto !!}" alt="">
+											<div class="perfilUsuario">
+												<a href="#perfilUsuario">Ver Perfil</a>
+											</div>
+											<br>
+											<ul class="ratingN">
+												<div style="text-align: center; font-weight: bold;">
+													<h6>Reputación</h6>
+												</div>
+											@if ($usuarios[$j]->calificacion == 0)
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+												</ul>
+												<h6 class="white-text">Sin trueques</h6>
+											@endif
+											@if ($usuarios[$j]->calificacion == 1)
+													<li class="starN colored">&star;</li>
+													<li class="starN">&star;</li>
+													<li class="starN">&star;</li>
+													<li class="starN">&star;</li>
+													<li class="starN">&star;</li>
+												</ul>
+											@endif
+											@if ($usuarios[$j]->calificacion == 2)
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN">&star;</li>
+													<li class="starN">&star;</li>
+													<li class="starN">&star;</li>
+												</ul>
+											@endif
+											@if ($usuarios[$j]->calificacion == 3)
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN">&star;</li>
+													<li class="starN">&star;</li>
+												</ul>
+											@endif
+											@if ($usuarios[$j]->calificacion == 4)
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN">&star;</li>
+												</ul>
+											@endif
+											@if ($usuarios[$j]->calificacion == 5)
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+													<li class="starN colored">&star;</li>
+												</ul>
+											@endif
+										@endif
+									@endfor
+								</div>
 							</div>
 						</div>
 					</div>
@@ -92,9 +190,9 @@
 		@endfor
 	</main>
 @endsection
-@section('Swipper')
+@section('script')
 	<!-- Swiper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js"></script>
+	<script src="{!! 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js'!!}"></script>
 
 	<!-- Initialize Swiper -->
 	<script>
@@ -104,6 +202,9 @@
 			grabCursor: true,
 			centeredSlides: true,
 			slidesPerView: 'auto',
+		  // Navigation arrows
+		  nextButton: '.swiper-button-next',
+		  prevButton: '.swiper-button-prev',
 			coverflow: {
 				rotate: 50,
 				stretch: 0,

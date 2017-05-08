@@ -376,7 +376,7 @@ class ControllerProducto extends Controller
 											->withInput();
 						}
 					}elseif ($c == 'Literatura') {
-						if (Input::has('edicion') && Input::has('edtorial') && Input::has('autor')) {
+						if (Input::has('edicion') && Input::has('editorial') && Input::has('autor')) {
 							$cat->edicion = Input::get('edicion');
 							$cat->editorial = Input::get('editorial');
 							$cat->autor = Input::get('autor');

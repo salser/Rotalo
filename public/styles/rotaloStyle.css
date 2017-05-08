@@ -209,15 +209,15 @@ input[type=color]{
 
 input[type=text].inputbuscar{
 	background-color: #fff;
-	border-radius: 10%;
 	color:black;
 }
 
 .productosEspecifico{
 	border: 1px solid rgba(255, 151, 0, 0.63);
-	height: 500px;
+	height: auto;
 	margin-top: 50px;
-	border-radius: 10%;
+	padding-bottom: 100px;
+	/*background-color: rgba(255, 151, 0, 0.38);*/
 }
 
 .userProduct{
@@ -231,6 +231,52 @@ input[type=text].inputbuscar{
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+}
+.imgSola{
+	border: 0.5px solid black;
+	border-radius: 5%;
+	width: 400px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+input[type=text]:disabled {
+	color: black;
+	border-bottom: 0.5px dot rgb(112, 112, 112);
+	height: 1rem;
+}
+
+.fieldCategoria{
+	margin-top: 2px;
+	font-weight: 900;
+}
+
+.perfilUsuario{
+  text-align: center;
+}
+
+.rounded{
+	border-radius: 5%;
+}
+
+form.col.s7{
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+form.col.s4{
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+textarea:disabled.txtProducto{
+	color: yellow;
+}
+label.txtProducto.active{
+	color: black !important;
+	font-weight: bold;
 }
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
 
@@ -257,6 +303,8 @@ input[type=text].inputbuscar{
 	background-size: cover;
 	width: 50%;
 	height: 250px;
+	border: 0.5px solid black;
+	border-radius: 5%;
 }
 
 /*================================== w3s ==============================================*/
@@ -369,4 +417,50 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 footer.page-footer{
 	background-color: #fd7b00;
+}
+/*---------------------------------- stars rating --------------------------------------------*/
+li.star {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 50px;
+  list-style-type: none;
+}
+li.starN {
+  cursor: default;
+  display: inline-block;
+  font-size: 50px;
+  list-style-type: none;
+}
+li.starNegra {
+  cursor: default;
+  display: inline-block;
+  font-size: 50px;
+  list-style-type: none;
+}
+.star,
+.rating:not(.vote-cast):hover .star:hover ~ .star,
+.rating.vote-cast .star.selected ~ .star {
+  /* normal state */
+  color: white;
+}
+
+.starN
+ {
+	/* normal state */
+	color: white;
+}
+.starNegra{
+	color: black;
+}
+.rating:hover .star,
+.rating.vote-cast .star {
+  /* highlighted state */
+  color: orange;
+}
+.starN.colored{
+	color: rgb(255, 245, 0);
+}
+
+.ratingN{
+	text-align: center;
 }
