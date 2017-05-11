@@ -26,15 +26,15 @@
 
 
 	<!-- Own sources -->
-	<script src="{!! 'js/rotaloScript.js' !!}"></script>
-	<link rel="stylesheet" href="{!! 'styles/rotaloStyle.css' !!}"> @yield('title')
+	<script src="{!! '/js/rotaloScript.js' !!}"></script>
+	<link rel="stylesheet" href="{!! '/styles/rotaloStyle.css' !!}"> @yield('title')
 </head>
 
 <body>
 	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="/" class="brand-logo"><img src="{!! 'imgs/rotalo-icono.png' !!}" alt=""></a>
+				<a href="/" class="brand-logo"><img src="{!! '/imgs/rotalo-icono.png' !!}" alt=""></a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li>
@@ -72,15 +72,15 @@
 					@endif
 
 					<ul id="dropdownProductosM" class="dropdown-content">
-						<li><a href="categoriasENproductos/Electrodomesticos">Electrodomésticos</a></li>
-						<li><a href="categoriasENproductos/Vehiculos">Vehículos</a></li>
-						<li><a href="categoriasENproductos/Inmuebles">Inmuebles</a></li>
-						<li><a href="categoriasENproductos/Literatura">Literatura</a></li>
-						<li><a href="categoriasENproductos/Musica">Música</a></li>
-						<li><a href="categoriasENproductos/Arte">Arte</a></li>
-						<li><a href="categoriasENproductos/Tablets-Telefonos">Tablets-Teléfonos</a></li>
-						<li><a href="categoriasENproductos/Computadores">Computadores</a></li>
-						<li><a href="categoriasENproductos/Consolas de Video Juegos">VidéoJuegos</a></li>
+						<li><a href="/categoriasENproductos/Electrodomesticos">Electrodomésticos</a></li>
+						<li><a href="/categoriasENproductos/Vehiculos">Vehículos</a></li>
+						<li><a href="/categoriasENproductos/Inmuebles">Inmuebles</a></li>
+						<li><a href="/categoriasENproductos/Literatura">Literatura</a></li>
+						<li><a href="/categoriasENproductos/Musica">Música</a></li>
+						<li><a href="/categoriasENproductos/Arte">Arte</a></li>
+						<li><a href="/categoriasENproductos/Tablets-Telefonos">Tablets-Teléfonos</a></li>
+						<li><a href="/categoriasENproductos/Computadores">Computadores</a></li>
+						<li><a href="/categoriasENproductos/Consolas de Video Juegos">VidéoJuegos</a></li>
 					</ul>
 					<li>
 						<a href="/todosProductos" class="dropdown-button" data-activates="dropdownProductosM">
@@ -125,15 +125,15 @@
 					<li><a href="/inicio">Iniciar Sesi&oacuten</a></li>
 					@endif
 					<ul id="dropdownProductos" class="dropdown-content">
-						<li><a href="categoriasENproductos/Electrodomesticos">Electrodomésticos</a></li>
-						<li><a href="categoriasENproductos/Vehiculos">Vehículos</a></li>
-						<li><a href="categoriasENproductos/Inmuebles">Inmuebles</a></li>
-						<li><a href="categoriasENproductos/Literatura">Literatura</a></li>
-						<li><a href="categoriasENproductos/Musica">Música</a></li>
-						<li><a href="categoriasENproductos/Arte">Arte</a></li>
-						<li><a href="categoriasENproductos/Tablets-Telefonos">Tablets-Teléfonos</a></li>
-						<li><a href="categoriasENproductos/Computadores">Computadores</a></li>
-						<li><a href="categoriasENproductos/VideoJuegos">VideoJuegos</a></li>
+						<li><a href="/categoriasENproductos/Electrodomesticos">Electrodomésticos</a></li>
+						<li><a href="/categoriasENproductos/Vehiculos">Vehículos</a></li>
+						<li><a href="/categoriasENproductos/Inmuebles">Inmuebles</a></li>
+						<li><a href="/categoriasENproductos/Literatura">Literatura</a></li>
+						<li><a href="/categoriasENproductos/Musica">Música</a></li>
+						<li><a href="/categoriasENproductos/Arte">Arte</a></li>
+						<li><a href="/categoriasENproductos/Tablets-Telefonos">Tablets-Teléfonos</a></li>
+						<li><a href="/categoriasENproductos/Computadores">Computadores</a></li>
+						<li><a href="/categoriasENproductos/VideoJuegos">VideoJuegos</a></li>
 					</ul>
 					<li>
 						<a href="/todosProductos" class="dropdown-button" data-activates="dropdownProductos">

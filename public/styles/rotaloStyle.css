@@ -1,466 +1,493 @@
 /*
 * Estilos que usa rotalo en su interfaz en su parte de frontend
 */
+
 body {
-	background-repeat: no-repeat;
-	background-size: 100%;
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-	background-color: white;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: white;
 }
 
 main {
-	flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-li{
-	list-style: none;
-}
-.brand-logo img{
-	padding-left: 10px;
-	width: 60px;
-	height: 68px;
+li {
+  list-style: none;
 }
 
-.parallax-container{
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
+.brand-logo img {
+  padding-left: 10px;
+  width: 60px;
+  height: 68px;
 }
 
-.bordeModalbtn{
-	border: black solid 0.3px;
-	border-radius: 5%;
+.parallax-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.card .card-image .card-title{
-	color: rgb(0, 0, 0);
-}
-.card .card-image{
-	margin-left: 4px;
-	margin-bottom: 4px;
-	margin-top: 6px;
-	margin-right: 4px;
-}
-.card{
-	height: 500px;
+.bordeModalbtn {
+  border: black solid 0.3px;
+  border-radius: 5%;
 }
 
-.card-content{
-	overflow-y: auto;
-}
-.formas{
-	margin: 50px 10px 10px 50px;
-	padding: 50px 50px 50px 50px;
-	border: 2px solid;
-	border-color: rgba(0, 137, 236, 0.46);
-	border-radius: 5%;
+.card .card-image .card-title {
+  color: rgb(0, 0, 0);
 }
 
-a.btn{
-	background: rgba(0, 137, 236, 0.46);
-	margin-bottom: 5em;
-	border: 2px solid;
-	line-height: 2em;
-	width: 300px;
+.card .card-image {
+  margin-left: 4px;
+  margin-bottom: 4px;
+  margin-top: 6px;
+  margin-right: 4px;
 }
 
-img.imgCard{
-	height: 300px;
-	width: 400px;
+.card {
+  height: 500px;
 }
 
-img.logoIntro{
-	width: 500px;
-	height: 150px;
-	display: flex;
-	align-items: center;
+.card-content {
+  overflow-y: auto;
 }
 
-
-.iniciobtn{
-	color: black !important;
-	background-color: rgba(210,255,82,1);
-}
-.btnreg:hover{
-	background-color: rgba(0, 137, 236, 0.80) !important;
-	color: rgba(0, 0, 0, 0.66) !important;
-}
-.dropdown-content{
-	background: rgba(252, 123, 0, 0.93);
-	background: -moz-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252, 123, 0, 1)), color-stop(100%, rgba(252, 123, 0, 0.66)));
-	background: -webkit-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: -o-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: -ms-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: linear-gradient(to bottom, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7b00', endColorstr='#fc7b00', GradientType=0 );
-	min-height: auto;
-	min-width: 200px;
-	max-height: auto;
-	overflow-x: hidden;
-	overflow-y: hidden;
+.formas {
+  margin: 50px 10px 10px 50px;
+  padding: 50px 50px 50px 50px;
+  border: 2px solid;
+  border-color: rgba(0, 137, 236, 0.46);
+  border-radius: 5%;
 }
 
-.indd{
-	min-height: 100px;
-	overflow-x: hidden;
-	overflow-y: hidden;
+a.btn {
+  background: rgba(0, 137, 236, 0.46);
+  margin-bottom: 5em;
+  border: 2px solid;
+  line-height: 2em;
+  width: 300px;
 }
 
-.dropdown-content li > a:hover, .dropdown-content li > span:hover{
-	background-color: #b65a02;
+img.imgCard {
+  height: 300px;
+  width: 400px;
 }
 
-label.archivolbl{
-	color:  black;
-	font-size: inherit;
-}
-.collection li.collection-item:hover:not(.active){
-	background-color: rgba(255, 184, 0, 0.5);
-}
-.btn, .btn-large{
-	background-color: rgba(0, 137, 236, 0.46);
-}
-.btn:hover{
-	background-color: rgba(0, 137, 236, 0.80);
-}
-a.btn-mine{
-	background-color: rgba(0, 137, 236, 0.46);
-	border: 0.3px solid;
-}
-a.btn-mine:hover{
-	background-color: rgba(0, 137, 236, 0.80);
+img.logoIntro {
+  width: 500px;
+  height: 150px;
+  display: flex;
+  align-items: center;
 }
 
-.imgCambio{
-	height: 100px;
-	width: 100px;
-	border-radius: 5%;
-	border: 0.8px solid rgba(113, 113, 113, 0.83);
+.iniciobtn {
+  color: black !important;
+  background-color: rgba(210, 255, 82, 1);
 }
 
-.change{
-	color: black;
-	background-color: rgba(82, 151, 255, 0.73);
-	border: 2px solid;
-	border-color: rgba(33, 118, 245, 1);
-	border-radius: 10%;
-	padding: 8px 3px 8px 10px;
-	text-align: center;
-	opacity: 0;
+.btnreg:hover {
+  background-color: rgba(0, 137, 236, 0.80) !important;
+  color: rgba(0, 0, 0, 0.66) !important;
 }
 
-.nChange{
-	color: black;
-	background-color: rgba(252, 0, 0, 0.73);
-	border: 2px solid;
-	border-color: rgba(252, 0, 0, 1);
-	border-radius: 10%;
-	padding: 8px 3px 8px 10px;
-	text-align: center;
-	opacity: 0;
+.dropdown-content {
+  background: rgba(252, 123, 0, 0.93);
+  background: -moz-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252, 123, 0, 1)), color-stop(100%, rgba(252, 123, 0, 0.66)));
+  background: -webkit-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
+  background: -o-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
+  background: -ms-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
+  background: linear-gradient(to bottom, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7b00', endColorstr='#fc7b00', GradientType=0);
+  min-height: auto;
+  min-width: 200px;
+  max-height: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-input[type=file].cFotoP{
-	display: none
+.indd {
+  min-height: 100px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-.archivos{
-	width: 100px;
-	height: 100px;
-	cursor: pointer;
-	color: rgba(0, 0, 0, 0.74);
-}
-.archivos:hover{
-	color: rgb(48, 255, 23)
+.dropdown-content li>a:hover, .dropdown-content li>span:hover {
+  background-color: #b65a02;
 }
 
-.cat{
-	margin: 5px 5px 5px 5px;
-}
-input[type=color]{
-	width: 100%;
-	background-color: rgba(142, 142, 142, 0.3);
-	border: 1px solid black;
-	cursor: pointer;
+label.archivolbl {
+  color: black;
+  font-size: inherit;
 }
 
-[type="checkbox"]+label{
-	margin-top: 38px;
-	margin-left: 5px;
-	color: black;
+.collection li.collection-item:hover:not(.active) {
+  background-color: rgba(255, 184, 0, 0.5);
 }
 
-.cambioFoto{
-	cursor: pointer;
+.btn, .btn-large {
+  background-color: rgba(0, 137, 236, 0.46);
 }
 
-.categoriaNombre{
-	font-size: 35px;
-	margin-top: 50px;
-	color: white;
+.btn:hover {
+  background-color: rgba(0, 137, 236, 0.80);
 }
 
-.input-field .prefix.active{
-	color: #999;
+a.btn-mine {
+  background-color: rgba(0, 137, 236, 0.46);
+  border: 0.3px solid;
 }
 
-input[type=text].inputbuscar{
-	background-color: #fff;
-	color:black;
+a.btn-mine:hover {
+  background-color: rgba(0, 137, 236, 0.80);
 }
 
-.productosEspecifico{
-	border: 1px solid rgba(255, 151, 0, 0.63);
-	height: auto;
-	margin-top: 50px;
-	padding-bottom: 100px;
-	/*background-color: rgba(255, 151, 0, 0.38);*/
+.imgCambio {
+  height: 100px;
+  width: 100px;
+  border-radius: 5%;
+  border: 0.8px solid rgba(113, 113, 113, 0.83);
 }
 
-.userProduct{
-	text-align: center;
-	margin-top: 50px;
-	color: white;
+.change {
+  color: black;
+  background-color: rgba(82, 151, 255, 0.73);
+  border: 2px solid;
+  border-color: rgba(33, 118, 245, 1);
+  border-radius: 10%;
+  padding: 8px 3px 8px 10px;
+  text-align: center;
+  opacity: 0;
 }
 
-.imgUserPd{
-	border: 1px solid rgba(255, 151, 0, 0.63);
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+.nChange {
+  color: black;
+  background-color: rgba(252, 0, 0, 0.73);
+  border: 2px solid;
+  border-color: rgba(252, 0, 0, 1);
+  border-radius: 10%;
+  padding: 8px 3px 8px 10px;
+  text-align: center;
+  opacity: 0;
 }
-.imgSola{
-	border: 0.5px solid black;
-	border-radius: 5%;
-	width: 400px;
-	height: 400px;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+
+input[type=file].cFotoP {
+  display: none
+}
+
+.archivos {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.74);
+}
+
+.archivos:hover {
+  color: rgb(48, 255, 23)
+}
+
+.cat {
+  margin: 5px 5px 5px 5px;
+}
+
+input[type=color] {
+  width: 100%;
+  background-color: rgba(142, 142, 142, 0.3);
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+[type="checkbox"]+label {
+  margin-top: 38px;
+  margin-left: 5px;
+  color: black;
+}
+
+.cambioFoto {
+  cursor: pointer;
+}
+
+.categoriaNombre {
+  font-size: 35px;
+  margin-top: 50px;
+  color: white;
+}
+
+.input-field .prefix.active {
+  color: #999;
+}
+
+input[type=text].inputbuscar {
+  background-color: #fff;
+  color: black;
+}
+
+.productosEspecifico {
+  border: 1px solid rgba(255, 151, 0, 0.63);
+  height: auto;
+  margin-top: 50px;
+  padding-bottom: 100px;
+  /*background-color: rgba(255, 151, 0, 0.38);*/
+}
+
+.userProduct {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.imgUserPd {
+  border: 1px solid rgba(255, 151, 0, 0.63);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.imgSola {
+  border: 0.5px solid black;
+  border-radius: 5%;
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 input[type=text]:disabled {
-	color: black;
-	border-bottom: 0.5px dot rgb(112, 112, 112);
-	height: 1rem;
+  color: black;
+  border-bottom: 0.5px dot rgb(112, 112, 112);
+  height: 1rem;
 }
 
-.fieldCategoria{
-	margin-top: 2px;
-	font-weight: 900;
+.fieldCategoria {
+  margin-top: 2px;
+  font-weight: 900;
 }
 
-.perfilUsuario{
+.perfilUsuario {
   text-align: center;
 }
 
-.rounded{
-	border-radius: 5%;
+.rounded {
+  border-radius: 5%;
 }
 
-form.col.s7{
-	padding-bottom: 20px;
-	padding-top: 10px;
+form.col.l6 {
+  padding-bottom: 20px;
+  padding-top: 10px;
 }
 
-form.col.s4{
-	padding-bottom: 20px;
-	padding-top: 10px;
+form.col.m12 {
+  padding-bottom: 20px;
 }
 
-textarea:disabled.txtProducto{
-	color: yellow;
+textarea:disabled.txtProducto {
+  color: yellow;
 }
-label.txtProducto.active{
-	color: black !important;
-	font-weight: bold;
+
+label.txtProducto.active {
+  color: black !important;
+  font-weight: bold;
 }
+
+form.botones {
+  display: flex;
+}
+
+.comentario {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+img.circle.imgcom {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: auto;
+  margin-left: 10px;
+	float: left;
+}
+h6 b{
+	margin-left: 5px;
+}
+
+p.detalleComent{
+	margin-left: 5px;
+}
+
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
 
-.image-upload > input
-{
-		display: none;
+.image-upload>input {
+  display: none;
 }
 
-.image-upload img
-{
-		width: 80px;
-		cursor: pointer;
+.image-upload img {
+  width: 80px;
+  cursor: pointer;
 }
+
 
 /*================================== Swipper ==============================================*/
+
 .swiper-container {
-	width: 100%;
-	padding-top: 50px;
-	padding-bottom: 50px;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .swiper-slide {
-	background-position: center;
-	background-size: cover;
-	width: 50%;
-	height: 250px;
-	border: 0.5px solid black;
-	border-radius: 5%;
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 250px;
+  border: 0.5px solid black;
+  border-radius: 5%;
 }
+
 
 /*================================== w3s ==============================================*/
 
 .tooltipW {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .tooltipW .tooltiptextW {
-    visibility: hidden;
-    width: 250px;
-    background-color: rgba(252, 123, 0, 0.86);
-    color: #ffffff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 1s;
+  visibility: hidden;
+  width: 250px;
+  background-color: rgba(252, 123, 0, 0.86);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .tooltipW .tooltiptextW::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: rgba(252, 123, 0, 0.63) transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(252, 123, 0, 0.63) transparent transparent transparent;
 }
 
 .tooltipW:hover .tooltiptextW {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
+
 
 /*================================== materialize changes ==============================================*/
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
-	text-transform: none;
-	color: #fd7b00;
-}
-[type="checkbox"]:checked+label:before{
-	border-right: 2px solid #a7d72d;
-	border-bottom: 2px solid #a7d72d;
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  text-transform: none;
+  color: #fd7b00;
 }
 
-
-.dropdown-content li > a, .dropdown-content li > span{
-	color: #000000;
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #a7d72d;
+  border-bottom: 2px solid #a7d72d;
 }
 
-.secondary-content{
-	color: #175d7e;
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #000000;
 }
 
-input:not([type]):focus:not([readonly]),
-input[type=text]:focus:not([readonly]),
-input[type=password]:focus:not([readonly]),
-input[type=email]:focus:not([readonly]),
-input[type=url]:focus:not([readonly]),
-input[type=time]:focus:not([readonly]),
-input[type=date]:focus:not([readonly]),
-input[type=datetime]:focus:not([readonly]),
-input[type=datetime-local]:focus:not([readonly]),
-input[type=tel]:focus:not([readonly]),
-input[type=number]:focus:not([readonly]),
-input[type=search]:focus:not([readonly]),
-textarea.materialize-textarea:focus:not([readonly]) {
+.secondary-content {
+  color: #175d7e;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   /*Color change*/
   border-bottom: 1px solid #000000;
   box-shadow: 0 1px 0 0 #000000;
 }
 
-input:not([type]):focus:not([readonly]) + label,
-input[type=text]:focus:not([readonly]) + label,
-input[type=password]:focus:not([readonly]) + label,
-input[type=email]:focus:not([readonly]) + label,
-input[type=url]:focus:not([readonly]) + label,
-input[type=time]:focus:not([readonly]) + label,
-input[type=date]:focus:not([readonly]) + label,
-input[type=datetime]:focus:not([readonly]) + label,
-input[type=datetime-local]:focus:not([readonly]) + label,
-input[type=tel]:focus:not([readonly]) + label,
-input[type=number]:focus:not([readonly]) + label,
-input[type=search]:focus:not([readonly]) + label,
-textarea.materialize-textarea:focus:not([readonly]) + label {
+input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
   color: #000000;
 }
 
-.input-field label{
-	color: black;
+.input-field label {
+  color: black;
 }
 
-@media only screen and (min-width: 200px){
-	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
-		height: 70px;
-		line-height: 70px;
-	}
-	nav{
-		background-color: #fd7b00 !important;
-	}
+@media only screen and (min-width: 200px) {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 70px;
+    line-height: 70px;
+  }
+  nav {
+    background-color: #fd7b00 !important;
+  }
 }
 
-footer.page-footer{
-	background-color: #fd7b00;
+footer.page-footer {
+  background-color: #fd7b00;
 }
+
+
 /*---------------------------------- stars rating --------------------------------------------*/
+
 li.star {
   cursor: pointer;
   display: inline-block;
   font-size: 50px;
   list-style-type: none;
 }
+
 li.starN {
   cursor: default;
   display: inline-block;
   font-size: 50px;
   list-style-type: none;
 }
+
 li.starNegra {
   cursor: default;
   display: inline-block;
   font-size: 50px;
   list-style-type: none;
 }
-.star,
-.rating:not(.vote-cast):hover .star:hover ~ .star,
-.rating.vote-cast .star.selected ~ .star {
+
+.star, .rating:not(.vote-cast):hover .star:hover~.star, .rating.vote-cast .star.selected~.star {
   /* normal state */
   color: white;
 }
 
-.starN
- {
-	/* normal state */
-	color: white;
+.starN {
+  /* normal state */
+  color: white;
 }
-.starNegra{
-	color: black;
+
+.starNegra {
+  color: black;
 }
-.rating:hover .star,
-.rating.vote-cast .star {
+
+.rating:hover .star, .rating.vote-cast .star {
   /* highlighted state */
   color: orange;
 }
-.starN.colored{
-	color: rgb(255, 245, 0);
+
+.starN.colored {
+  color: rgb(255, 245, 0);
 }
 
-.ratingN{
-	text-align: center;
+.ratingN {
+  text-align: center;
 }

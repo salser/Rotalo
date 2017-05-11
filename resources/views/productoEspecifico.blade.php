@@ -1,11 +1,4 @@
 @extends('rotaloLayout')
-<?php
-	$productos = Session::get('productos');
-	$id = Session::get('id');
-	$id = substr($id, 1, sizeof($id)-2);
-	$usuarios = Session::get('usuarios');
-	$categorias = Session::get('categorias');
- ?>
  @for ($i=0; $i < sizeof($productos); $i++)
  	@if ($productos[$i]->id == $id)
 		@section('title')
@@ -14,7 +7,7 @@
  	@endif
  @endfor
 @section('content')
-	<main style="background-repeat: round; background-image: url({!! 'imgs/pdtodos.jpg' !!})">
+	<main style="background-repeat: round; background-image: url({!! '/imgs/pdtodos.jpg' !!})">
 		@for ($i=0; $i < sizeof($productos) ; $i++)
 			@if ($productos[$i]->id == $id)
 			<div class="container">
@@ -52,24 +45,24 @@
 												 $productos[$i]->foto4 == "" &&
 												 $productos[$i]->foto5 == "" &&
 												 $productos[$i]->foto6 == ""))
-									 		 <img class="imgSola" src="{!! $productos[$i]->foto !!}" alt="">
+									 		 <img class="imgSola" src="/{!! $productos[$i]->foto !!}" alt="">
 										@elseif ($productos[$i]->foto != "")
-											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto !!})"></div>
+											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto !!})"></div>
 										@endif
 										@if ($productos[$i]->foto2 != "")
-											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto2 !!})"></div>
+											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto2 !!})"></div>
 										@endif
 										@if ($productos[$i]->foto3 != "")
-											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto3 !!})"></div>
+											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto3 !!})"></div>
 										@endif
 										@if ($productos[$i]->foto4 != "")
-											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto4 !!})"></div>
+											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto4 !!})"></div>
 										@endif
 										@if ($productos[$i]->foto5 != "")
-											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto5 !!})"></div>
+											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto5 !!})"></div>
 										@endif
 										@if ($productos[$i]->foto6 != "")
-											<div class="swiper-slide" style="background-image:url({!! $productos[$i]->foto6 !!})"></div>
+											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto6 !!})"></div>
 										@endif
 									</div>
 									<!-- Add Pagination -->
@@ -97,15 +90,24 @@
 												</div>
 											</form>
 								</div>
-
 								<div class="botonesProducto">
-									<form class="col s7" action="index.html" method="post">
+									<form class="botones col l6 m12 s12" action="index.html" method="post">
 										<input class="btn iniciobtn waves-effect waves-ligth" type="submit" name="quiero" value="Lo quiero">
 									</form>
-									<form class="col s4" action="index.html" method="post">
-										<input style="min-width: 10px" class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
-
+									<form class="botones col l6 m12 s12" action="index.html" method="post">
+										<input class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
 									</form>
+								</div>
+								<div class="">
+									@if (Auth::check())
+										<h4>Comentarios</h4>
+										<div class="comentario">
+											<img class="circle imgcom" src="{!! 'https://pythoniza.me/static/app/img/default.gif' !!}" alt="">
+											<h6><b>NombreAutor</b></h6>
+											<br>
+											<p class="detalleComent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										</div>
+									@endif
 								</div>
 							</div>
 							@for ($j=0; $j < sizeof($categorias); $j++)
@@ -120,7 +122,7 @@
 									@for ($j=0; $j < sizeof($usuarios) ; $j++)
 										@if ($productos[$i]->id_usuario == $usuarios[$j]->id)
 											<h4 class="userProduct">{!! $usuarios[$j]->username !!}</h4>
-											<img class="imgUserPd circle" src="{!! $usuarios[$j]->foto !!}" alt="">
+											<img class="imgUserPd circle" src="/{!! $usuarios[$j]->foto !!}" alt="">
 											<div class="perfilUsuario">
 												<a href="#perfilUsuario">Ver Perfil</a>
 											</div>

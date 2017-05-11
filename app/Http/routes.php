@@ -86,7 +86,7 @@ Route::get('todosProductos', function(){
 });
 Route::post('eliminarP/{idE}', 'ControllerProducto@eliminar');
 
-Route::get('categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
+Route::get('/categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
 {
 		$productos = Producto::all();
 		if ($categoriaBuscar == "Tablets-Telefonos") {
@@ -107,30 +107,16 @@ Route::get('categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar)
 		if ($categoriaBuscar == "Consolas de Video Juegos") {
 			$categoriaBuscar = 'Consolas de Vidéo Juegos';
 		}
-		// $categorias = array();
 		$cat = Categoria::all();
 		$user = User::all();
-		return Redirect::to('productoXcategoria')
-								->with('categorias',$cat)
-								->with('nombre_cat', $categoriaBuscar)
-								->with('usuarios', $user)
-								->with('productos', $productos)->withInput();
+		$data = [
+							"categorias"	=> $cat ,
+							"nombre_cat"	=> $categoriaBuscar,
+							"usuarios" 		=> $user,
+							"productos" 	=> $productos
+						];
+		return View::make('productoXcategoria')
+								->with($data);
 });
 
-Route::get('productoXcategoria', function()
-{
-	return view("productoXcategoria");
-});
-Route::get('productoEspecifico/{id}', function($id){
-	$productos = Producto::all();
-	$users =User::all();
-	$categorias = Categoria::all();
-	return Redirect::to('productoEspecifico')
-								->with('id', $id)
-								->with('productos', $productos)
-								->with('usuarios', $users)
-								->with('categorias', $categorias);
-});
-Route::get('productoEspecifico', function(){
-	return view('productoEspecifico');
-});
+Route::get('productoEspecifico/{id}', "ControllerProducto@cXp");
