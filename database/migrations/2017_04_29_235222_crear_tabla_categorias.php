@@ -21,6 +21,7 @@ class CrearTablaCategorias extends Migration
             $table->string('color');
             $table->string('combustible');
             $table->string('edicion');
+            $table->string('editorial');
 						$table->string('autor');
 						$table->string('album');
 						$table->string('genero');

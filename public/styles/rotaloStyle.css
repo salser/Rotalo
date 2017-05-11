@@ -239,6 +239,8 @@ input[type=text].inputbuscar {
   margin-left: auto;
   margin-right: auto;
   display: block;
+	width: 200px;
+	height: 200px
 }
 
 .imgSola {
