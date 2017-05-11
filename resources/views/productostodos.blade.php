@@ -4,7 +4,7 @@
 <title>Productos|Todos</title>
 @endsection
 @section('content')
-<main style="background-repeat: round; background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url({!! 'imgs/pdtodos.jpg' !!})">
+<main style="background-repeat: round; background-image: url({!! 'imgs/pdtodos.jpg' !!})">
 
   <div class="container">
     <h1>Productos en Rótalo</h1>
@@ -12,12 +12,11 @@
       <div class="col s12">
         <div class="row">
           @foreach ($productos as $p)
-
           <div class="col s12 m6 l4">
             <div class="card">
               <div class="card-image">
                 <img class="imgCard responsive-img" src="{!! $p->foto !!}">
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a href="/productoEspecifico/{!! $p->id !!}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
               </div>
               <div class="card-content">
                 <span class="card-title">{!! $p->nombre !!}</span>
@@ -30,7 +29,7 @@
                     <?php $usuario = $u ?>
                   @endif
                 @endforeach
-                <a href="#">Usuario: {!! $usuario->nombre !!}</a>
+                <a href="#">Usuario: {!! $usuario->username !!}</a>
               </div>
             </div>
           </div>

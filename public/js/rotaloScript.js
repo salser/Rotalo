@@ -24,7 +24,7 @@ $(document).ready(function(){
 		var str = "";
 		$( "select.selectCat option:selected" ).each(function() {
 			$('.cat').empty();
-			if ($( this ).val() === "Electrodomésticos") {
+			if ($( this ).val() == "Electrodomésticos") {
 				str =
 				"<div class='input-field col offset-l1 s12 m6 l5'>"+
            "<input type='text' name='marca' id='marca'>"+
@@ -35,7 +35,7 @@ $(document).ready(function(){
             "<label for='tipo'>Tipo</label>"+
         "</div>";
 			}
-			else if ($( this ).val() === "Vehículos") {
+			else if ($( this ).val() == "Vehículos") {
 				str =
 				"<div class='input-field col offset-l1 s12 m6 l3'>"+
 					 "<input type='text' name='placa' id='placa'>"+
@@ -67,7 +67,7 @@ $(document).ready(function(){
 			    "<label>Combustible</label>"+
 			  "</div>";
 			}
-			else if ($( this ).val() === "Literatura") {
+			else if ($( this ).val() == "Literatura") {
 				str =
 				"<div class='input-field col offset-l1 s12 m4 l3'>"+
 					 "<input type='number' name='edicion' id='edicion'>"+
@@ -82,7 +82,7 @@ $(document).ready(function(){
 						"<label for='autor'>Autor</label>"+
 				"</div>";
 			}
-			else if ($( this ).val() === "Arte") {
+			else if ($( this ).val() == "Arte") {
 				str=
 				"<div class='input-field col offset-l1 s12 m4 l3'>"+
 					 "<input type='number' name='anio' id='anio'>"+
@@ -97,7 +97,7 @@ $(document).ready(function(){
 						"<label for='autor'>Autor</label>"+
 				"</div>";
 			}
-			else if ($( this ).val() === "Música") {
+			else if ($( this ).val() == "Música") {
 				str =
 				"<div class='input-field col offset-l1 s12 m4 l3'>"+
 					"<input type='text' name='album' id='album'>"+
@@ -112,7 +112,7 @@ $(document).ready(function(){
 					"<label for='autor'>Autor</label>"+
 				"</div>";
 			}
-			else if ($( this ).val() === "Inmuebles") {
+			else if ($( this ).val() == "Inmuebles") {
 				str =
 				"<div class='input-field col offset-l1 s12 m12 l5'>"+
 					"<input type='text' name='dir' id='dir'>"+
@@ -131,7 +131,7 @@ $(document).ready(function(){
 					"<label for='anio'>Año</label>"+
 				"</div>";
 			}
-			else if ($( this ).val() === "Tablets-Teléfonos") {
+			else if ($( this ).val() == "Tablets-Teléfonos") {
 				str =
 				"<div class='input-field col offset-l1 s12 m4 l3'>"+
 					"<input type='text' name='marca' id='marca'>"+
@@ -146,7 +146,7 @@ $(document).ready(function(){
 					"<label for='referencia'>Referencia</label>"+
 				"</div>";
 			}
-			else if ($( this ).val() === "Computadores") {
+			else if ($( this ).val() == "Computadores") {
 				str =
 				"<div class='input-field col offset-l1 s12 m4 l3'>"+
 					"<input type='text' name='marca' id='marca'>"+
@@ -161,7 +161,7 @@ $(document).ready(function(){
 					"<label for='referencia'>Referencia</label>"+
 				"</div>";
 			}
-			else if ($( this ).val() === "Consolas de Vidéo Juegos") {
+			else if ($( this ).val() == "Consolas de Vidéo Juegos") {
 				str =
 				"<div class='input-field offset-l1 col s12 m4 l3'>"+
 					"<input type='text' name='marca' id='marca'>"+
@@ -194,7 +194,7 @@ function mensajeSesion(mensaje){
 function mostrarCat(c)
 {
 	$('.catedit'+c.id_producto).empty();
-	if (c.nombre_cat === "Electrodomésticos") {
+	if (c.nombre_cat == "Electrodomésticos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l5'>"+
 			 "<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
@@ -205,7 +205,7 @@ function mostrarCat(c)
 				"<label class='active' for='tipoM"+ c.id_producto +"'>Tipo</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Vehículos") {
+	else if (c.nombre_cat == "Vehículos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
 			 "<input type='text' name='placaM"+ c.id_producto + "' id='placaM"+ c.id_producto +"' value='"+ c.placa +"'>"+
@@ -228,7 +228,7 @@ function mostrarCat(c)
 		"</div>"+
 		"<div class='input-field col s12 m6 l4'>"+
 			"<select class='comb' name='combM"+ c.id_producto + "' id='combM"+ c.id_producto +"'>";
-			if (c.comb === 'Gasolina'){
+			if (c.comb == 'Gasolina'){
 				str = str +
 				"<option value='' disabled selected>Choose your option</option>"+
 				"<option value='Gasolina' selected='selected'>Gasolina</option>"+
@@ -238,7 +238,7 @@ function mostrarCat(c)
 				"</select>"+
 				"<label>Combustible</label>"+
 				"</div>";
-			}else if (c.comb === 'Gas') {
+			}else if (c.comb == 'Gas') {
 				str = str +
 				"<option value='' disabled selected>Choose your option</option>"+
 				"<option value='Gasolina'>Gasolina</option>"+
@@ -248,7 +248,7 @@ function mostrarCat(c)
 				"</select>"+
 				"<label>Combustible</label>"+
 				"</div>";
-			} else if (c.comb === 'Diesel') {
+			} else if (c.comb == 'Diesel') {
 				str = str +
 				"<option value='' disabled selected>Choose your option</option>"+
 				"<option value='Gasolina'>Gasolina</option>"+
@@ -258,7 +258,7 @@ function mostrarCat(c)
 				"</select>"+
 				"<label>Combustible</label>"+
 				"</div>";
-			}else if (c.comb === 'ACPM') {
+			}else if (c.comb == 'ACPM') {
 				str = str +
 				"<option value='' disabled selected>Choose your option</option>"+
 				"<option value='Gasolina'>Gasolina</option>"+
@@ -270,7 +270,7 @@ function mostrarCat(c)
 				"</div>";
 			}
 	}
-	else if (c.nombre_cat === "Literatura") {
+	else if (c.nombre_cat == "Literatura") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
 			 "<input type='number' name='edicionM"+ c.id_producto + "' id='edicionM"+ c.id_producto +"' value='"+ c.edicion +"'>"+
@@ -285,7 +285,7 @@ function mostrarCat(c)
 				"<label class='active' for='autorM"+ c.id_producto +"'>Autor</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Arte") {
+	else if (c.nombre_cat == "Arte") {
 		str=
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
 			 "<input type='number' name='anioM"+ c.id_producto + "' id='anioM"+ c.id_producto +"' value='"+ c.año +"'>"+
@@ -300,7 +300,7 @@ function mostrarCat(c)
 				"<label class='active' for='autorM"+ c.id_producto +"'>Autor</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Música") {
+	else if (c.nombre_cat == "Música") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
 			"<input type='text' name='albumM"+ c.id_producto + "' id='albumM"+ c.id_producto +"' value='"+ c.album +"'>"+
@@ -315,7 +315,7 @@ function mostrarCat(c)
 			"<label class='active' for='autorM"+ c.id_producto +"'>Autor</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Inmuebles") {
+	else if (c.nombre_cat == "Inmuebles") {
 		str =
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
 			"<input type='text' name='dirM"+ c.id_producto + "' id='dirM"+ c.id_producto +"' value='"+ c.direccion +"'>"+
@@ -334,7 +334,7 @@ function mostrarCat(c)
 			"<label class='active' for='anioM"+ c.id_producto +"'>Año</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Tablets-Teléfonos") {
+	else if (c.nombre_cat == "Tablets-Teléfonos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
 			"<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
@@ -349,7 +349,7 @@ function mostrarCat(c)
 			"<label class='active' for='referenciaM"+ c.id_producto +"'>Referencia</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Computadores") {
+	else if (c.nombre_cat == "Computadores") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
 			"<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
@@ -364,7 +364,7 @@ function mostrarCat(c)
 			"<label class='active' for='referenciaM"+ c.id_producto +"'>Referencia</label>"+
 		"</div>";
 	}
-	else if (c.nombre_cat === "Consolas de Vidéo Juegos") {
+	else if (c.nombre_cat == "Consolas de Vidéo Juegos") {
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
 			"<input type='text' name='marcaM"+ c.id_producto + "' id='marcaM"+ c.id_producto +"' value='"+ c.marca +"'>"+
@@ -386,7 +386,7 @@ $('select').material_select();
 
 function cambioCategoria(p){
 	var c = $('.selectCatEdit'+p).find(':selected').text();
-	if (c === "Electrodomésticos") {
+	if (c == "Electrodomésticos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l5'>"+
@@ -398,7 +398,7 @@ function cambioCategoria(p){
 				"<label for='tipoC"+ p +"'>Tipo</label>"+
 		"</div>";
 	}
-	else if (c === "Vehículos") {
+	else if (c == "Vehículos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m6 l3'>"+
@@ -431,7 +431,7 @@ function cambioCategoria(p){
 			"<label>Combustible</label>"+
 		"</div>";
 	}
-	else if (c === "Literatura") {
+	else if (c == "Literatura") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
@@ -447,7 +447,7 @@ function cambioCategoria(p){
 				"<label for='autorC"+ p +"'>Autor</label>"+
 		"</div>";
 	}
-	else if (c === "Arte") {
+	else if (c == "Arte") {
 		$( ".cambioCat"+p ).empty();
 		str=
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
@@ -463,7 +463,7 @@ function cambioCategoria(p){
 				"<label for='autorC"+ p +"'>Autor</label>"+
 		"</div>";
 	}
-	else if (c === "Música") {
+	else if (c == "Música") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
@@ -479,7 +479,7 @@ function cambioCategoria(p){
 			"<label for='autorC"+ p +"'>Autor</label>"+
 		"</div>";
 	}
-	else if (c === "Inmuebles") {
+	else if (c == "Inmuebles") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m12 l5'>"+
@@ -499,7 +499,7 @@ function cambioCategoria(p){
 			"<label for='anioC"+ p +"'>Año</label>"+
 		"</div>";
 	}
-	else if (c === "Tablets-Teléfonos") {
+	else if (c == "Tablets-Teléfonos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
@@ -515,7 +515,7 @@ function cambioCategoria(p){
 			"<label for='referenciaC"+ p +"'>Referencia</label>"+
 		"</div>";
 	}
-	else if (c === "Computadores") {
+	else if (c == "Computadores") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field col offset-l1 s12 m4 l3'>"+
@@ -531,7 +531,7 @@ function cambioCategoria(p){
 			"<label for='referenciaC"+ p +"'>Referencia</label>"+
 		"</div>";
 	}
-	else if (c === "Consolas de Vidéo Juegos") {
+	else if (c == "Consolas de Vidéo Juegos") {
 		$( ".cambioCat"+p ).empty();
 		str =
 		"<div class='input-field offset-l1 col s12 m4 l3'>"+
@@ -551,3 +551,239 @@ function cambioCategoria(p){
 	// console.log($('.cambioCat'+p).text());
 	$('select').material_select();
 }
+function categoriaProducto(c)
+{
+	var str = "";
+	var cat = "";
+	//$('.categoriaProducto').empty();
+	if (c.nombre_cat == "Electrodomésticos") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 m1 l1">' +
+			'Marca:'+
+		'</div>'+
+		'<div class="col s12 m5 l5">' +
+			'<input disabled value=" '+ c.marca +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 m1 l1">' +
+			'Tipo:'+
+		'</div>'+
+		'<div class="col s12 m5 l5">' +
+			'<input disabled value=" '+ c.tipo +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Vehículos") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 m2 l1">' +
+			'Placa:'+
+		'</div>'+
+		'<div class="col s12 m4 l3">' +
+			'<input disabled value="*****'+ c.placa[c.placa.length-1] +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 m2 l1">' +
+			'Modelo:'+
+		'</div>'+
+		'<div class="col  s12 m4 l3">' +
+			'<input disabled value=" '+ c.modelo +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 m2 l1">' +
+			'Marca:'+
+		'</div>'+
+		'<div class="col s12 m4 l3">' +
+			'<input disabled value="'+ c.marca +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 m2 l2">' +
+			'Kilometraje:'+
+		'</div>'+
+		'<div class="col s12 m4 l2">' +
+			'<input disabled value="'+ c.km +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 m2 l1">' +
+			'Color:'+
+		'</div>'+
+		'<div class="col s3 m2 l2">' +
+			'<input disabled value="'+ c.color +'" type="color">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 m3 offset-m2 l2 offset-l1">' +
+			'Combustible:'+
+		'</div>'+
+		'<div class="col s12 m3 l2">' +
+			'<input disabled value="'+ c.combustible +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Literatura") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 l1">' +
+			'Edición:'+
+		'</div>'+
+		'<div class="col s12 l2">' +
+			'<input disabled value="   '+ c.edicion +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l2">' +
+			'Editorial:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value=" '+ c.editorial +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l1">' +
+			'Autor:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value="'+ c.autor +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Arte") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 l1">' +
+			'Año:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value=" '+ c.año +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l1">' +
+			'Tipo:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value=" '+ c.tipo +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l1">' +
+			'Autor:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value="'+ c.autor +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Música") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 l1">' +
+			'Album:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value=" '+ c.album +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l1">' +
+			'Género:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value=" '+ c.genero +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l1">' +
+			'Autor:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value="'+ c.autor +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Inmuebles") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 l2">' +
+			'Dirección:'+
+		'</div>'+
+		'<div class="col s12 l6">' +
+			'<input disabled value=" '+ c.direccion +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l1">' +
+			'#Baños:'+
+		'</div>'+
+		'<div class="col s12 l3">' +
+			'<input disabled value=" '+ c.bano +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l2">' +
+			'#Alcobas:'+
+		'</div>'+
+		'<div class="col s12 l4">' +
+			'<input disabled value=" '+ c.alcobas +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l1">' +
+			'Año:'+
+		'</div>'+
+		'<div class="col s12 l5">' +
+			'<input disabled value=" '+ c.año +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Tablets-Teléfonos") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 l1">' +
+			'Marca:'+
+		'</div>'+
+		'<div class="col s12 l4">' +
+			'<input disabled value=" '+ c.marca +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l2">' +
+			'Referencia:'+
+		'</div>'+
+		'<div class="col s12 l5">' +
+			'<input disabled value=" '+ c.referencia +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l3">' +
+			'Sistema Operativo:'+
+		'</div>'+
+		'<div class="col s12 l9">' +
+			'<input disabled value="'+ c.os +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Computadores") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 l1">' +
+			'Marca:'+
+		'</div>'+
+		'<div class="col s12 l4">' +
+			'<input disabled value=" '+ c.marca +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l2">' +
+			'Referencia:'+
+		'</div>'+
+		'<div class="col s12 l5">' +
+			'<input disabled value=" '+ c.referencia +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l3">' +
+			'Sistema Operativo:'+
+		'</div>'+
+		'<div class="col s12 l9">' +
+			'<input disabled value="'+ c.os +'" type="text">'+
+		'</div>';
+	}
+	else if (c.nombre_cat == "Consolas de Vidéo Juegos") {
+		cat = '<h5><b>Categoría: '+ c.nombre_cat +'</b></h5>';
+		str =
+		'<div class="fieldCategoria col s12 l1">' +
+			'Marca:'+
+		'</div>'+
+		'<div class="col s12 l4">' +
+			'<input disabled value=" '+ c.marca +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l2">' +
+			'Referencia:'+
+		'</div>'+
+		'<div class="col s12 l5">' +
+			'<input disabled value=" '+ c.referencia +'" type="text">'+
+		'</div>'+
+		'<div class="fieldCategoria col s12 l3">' +
+			'Almacenamiento:'+
+		'</div>'+
+		'<div class="col s12 l9">' +
+			'<input disabled value="'+ c.almacenamiento +'" type="text">'+
+		'</div>';
+	}
+	$('.nombreCategoria').append( cat );
+	$( ".categoriaProducto" ).append( str );
+}
+$(
+  function () {
+    $('li').on('click', function() {
+      var selectedCssClass = 'selected';
+      var $this = $(this);
+      $this.siblings('.' + selectedCssClass).removeClass(selectedCssClass);
+      $this
+        .addClass(selectedCssClass)
+        .parent().addClass('vote-cast');
+    });
+  }
+);

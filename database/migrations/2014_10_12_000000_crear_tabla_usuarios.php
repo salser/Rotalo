@@ -26,6 +26,7 @@ class CrearTablaUsuarios extends Migration
 						$table->string('telefono');
             $table->string('password');
             $table->string('foto');
+						$table->unsignedInteger('calificacion');	
             $table->rememberToken();
             $table->timestamps();
         });

@@ -8,11 +8,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Producto;
 use App\Categoria;
+use App\User;
 use Input;
 use Redirect;
 use Auth;
 use File;
 use Crypt;
+use View;
 
 /*
 * Controlador que maneja todos los post y gets en cuanto
@@ -376,7 +378,7 @@ class ControllerProducto extends Controller
 											->withInput();
 						}
 					}elseif ($c == 'Literatura') {
-						if (Input::has('edicion') && Input::has('edtorial') && Input::has('autor')) {
+						if (Input::has('edicion') && Input::has('editorial') && Input::has('autor')) {
 							$cat->edicion = Input::get('edicion');
 							$cat->editorial = Input::get('editorial');
 							$cat->autor = Input::get('autor');
@@ -524,5 +526,18 @@ class ControllerProducto extends Controller
 			public function categoria($id)
 			{
 				$cat = Categoria::find($id);
+			}
+			public function cXp($id){
+				$productos = Producto::all();
+				$users = User::all();
+				$categorias = Categoria::all();
+				$data = [
+									'id' 				=> $id,
+									'productos' => $productos,
+									'usuarios'  => $users,
+									'categorias'=> $categorias
+								];
+				return View::make('productoEspecifico')
+											->with($data);
 			}
     }
