@@ -294,7 +294,7 @@
   						</div>
   					</div>
 						<img src="{!! $p->foto !!}" alt="" class="circle">
-            <b>{!! $p->nombre !!}</b><br><i>Descripción: </i>{!! $p->descripcion !!}
+            <b>{!! $p->nombre !!}</b><br><b>Descripción:</b> {!! $p->descripcion !!}
 						@foreach($categorias as $c)
 							@if($c->id_producto == $p->id)
 							<a style="margin-right: 30px" onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
@@ -387,7 +387,7 @@
 				<a class="bordeModalbtn modal-action modal-close waves-effect waves-green btn-flat" onclick="$('#agregarP').submit()">Agregar</a>
 			</div>
     </div>
-    <a href="#modalAgregarProducto" class="btn-mine btn iniciobtn waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit">Agregar Producto</a>
+    <a href="#modalAgregarProducto" class="btn iniciobtn waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit">Agregar Producto</a>
     </form>
     </div>
   </div>

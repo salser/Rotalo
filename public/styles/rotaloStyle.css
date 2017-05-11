@@ -89,13 +89,14 @@ img.logoIntro{
 }
 .dropdown-content{
 	background: rgba(20, 155, 90, 0.93);
+	/*background: rgba(20, 155, 90, 0.93);
 	background: -moz-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(20, 155, 90, 1)), color-stop(100%, rgba(20, 155, 90, 0.66)));
 	background: -webkit-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
 	background: -o-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
 	background: -ms-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
 	background: linear-gradient(to bottom, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7b00', endColorstr='#fc7b00', GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7b00', endColorstr='#fc7b00', GradientType=0 );*/
 	min-height: auto;
 	min-width: 200px;
 	max-height: auto;
@@ -110,7 +111,7 @@ img.logoIntro{
 }
 
 .dropdown-content li > a:hover, .dropdown-content li > span:hover{
-	background-color: #ffffff;
+	background-color: #d35a49;
 }
 
 label.archivolbl{
@@ -118,7 +119,7 @@ label.archivolbl{
 	font-size: inherit;
 }
 .collection li.collection-item:hover:not(.active){
-	background-color: rgba(255, 184, 0, 0.5);
+	background-color: rgba(20, 155, 90,0.5);
 }
 .btn, .btn-large{
 	background-color: rgba(91, 93, 92, 0.45);
@@ -271,7 +272,7 @@ input[type=text].inputbuscar{
 
 
 .dropdown-content li > a, .dropdown-content li > span{
-	color: #000000;
+	color: #fff;
 }
 
 .secondary-content{

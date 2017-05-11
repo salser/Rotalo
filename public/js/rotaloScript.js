@@ -12,7 +12,7 @@ $(document).ready(function(){
 	 $(".button-collapse").sideNav();
 	 $('.modal').modal();
 	 $('.dropdown-button').dropdown({
-		 hover: true, // Activate on hover
+		 hover: false, // Activate on hover
 		 belowOrigin: true, // Displays dropdown below the button
  	 });
 	 $('select').material_select();
