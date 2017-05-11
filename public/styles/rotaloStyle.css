@@ -59,7 +59,7 @@ li{
 }
 
 a.btn{
-	background: rgba(0, 137, 236, 0.46);
+	background: rgba(92, 95, 97, 0.46);
 	margin-bottom: 5em;
 	border: 2px solid;
 	line-height: 2em;
@@ -80,21 +80,21 @@ img.logoIntro{
 
 
 .iniciobtn{
-	color: black !important;
+	color: white !important;
 	background-color: rgba(210,255,82,1);
 }
 .btnreg:hover{
-	background-color: rgba(0, 137, 236, 0.80) !important;
-	color: rgba(0, 0, 0, 0.66) !important;
+	background-color: rgba(213, 91, 74) !important;
+	color: rgba(255, 255, 255, 0.66) !important;
 }
 .dropdown-content{
-	background: rgba(252, 123, 0, 0.93);
-	background: -moz-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252, 123, 0, 1)), color-stop(100%, rgba(252, 123, 0, 0.66)));
-	background: -webkit-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: -o-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: -ms-linear-gradient(top, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
-	background: linear-gradient(to bottom, rgba(252, 123, 0, 1) 0%, rgba(252, 123, 0, 0.66) 100%);
+	background: rgba(20, 155, 90, 0.93);
+	background: -moz-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(20, 155, 90, 1)), color-stop(100%, rgba(20, 155, 90, 0.66)));
+	background: -webkit-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
+	background: -o-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
+	background: -ms-linear-gradient(top, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
+	background: linear-gradient(to bottom, rgba(20, 155, 90, 1) 0%, rgba(20, 155, 90, 0.66) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7b00', endColorstr='#fc7b00', GradientType=0 );
 	min-height: auto;
 	min-width: 200px;
@@ -110,7 +110,7 @@ img.logoIntro{
 }
 
 .dropdown-content li > a:hover, .dropdown-content li > span:hover{
-	background-color: #b65a02;
+	background-color: #ffffff;
 }
 
 label.archivolbl{
@@ -121,10 +121,10 @@ label.archivolbl{
 	background-color: rgba(255, 184, 0, 0.5);
 }
 .btn, .btn-large{
-	background-color: rgba(0, 137, 236, 0.46);
+	background-color: rgba(91, 93, 92, 0.45);
 }
 .btn:hover{
-	background-color: rgba(0, 137, 236, 0.80);
+	background-color: rgba(213, 91, 74, 1);
 }
 a.btn-mine{
 	background-color: rgba(0, 137, 236, 0.46);
@@ -322,10 +322,10 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 		line-height: 70px;
 	}
 	nav{
-		background-color: #fd7b00 !important;
+		background-color: #149b5a !important;
 	}
 }
 
 footer.page-footer{
-	background-color: #fd7b00;
+	background-color: #236483;
 }
