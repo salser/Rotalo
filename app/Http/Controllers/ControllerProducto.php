@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Producto;
 use App\Categoria;
 use App\User;
+use App\Comentario;
 use Input;
 use Redirect;
 use Auth;
@@ -527,15 +528,17 @@ class ControllerProducto extends Controller
 			{
 				$cat = Categoria::find($id);
 			}
-			public function cXp($id){
+			public function especifico($id){
 				$productos = Producto::all();
 				$users = User::all();
 				$categorias = Categoria::all();
+        $comentarios = Comentario::all();
 				$data = [
-									'id' 				=> $id,
-									'productos' => $productos,
-									'usuarios'  => $users,
-									'categorias'=> $categorias
+									'id' 				  => $id,
+									'productos'   => $productos,
+									'usuarios'    => $users,
+									'categorias'  => $categorias,
+                  'comentarios' => $comentarios
 								];
 				return View::make('productoEspecifico')
 											->with($data);

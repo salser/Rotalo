@@ -6,13 +6,15 @@ $(document).ready(function(){
 	// var str = $('.productos').text();
 	// var p = JSON.stringify(eval("("+str+")"));
 	//  p = JSON.parse(str);
+	 $('#comentario').val('aquí va el comentario');
+	 $('#comentario').trigger('autoresize');
 	 $('.change').fadeTo(2000, 1);
 	 $('.nChange').fadeTo(2000, 1);
 	 $('.parallax').parallax();
 	 $(".button-collapse").sideNav();
 	 $('.modal').modal();
 	 $('.dropdown-button').dropdown({
-		 hover: false, // Activate on hover
+		 hover: true, // Activate on hover
 		 belowOrigin: true, // Displays dropdown below the button
  	 });
 	 $('select').material_select();
@@ -188,7 +190,6 @@ $(document).ready(function(){
 */
 function mensajeSesion(mensaje){
 	alert(mensaje);
-	console.log("cerró sesión");
 }
 
 function mostrarCat(c)

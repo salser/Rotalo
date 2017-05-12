@@ -4,12 +4,12 @@
 	<title>Productos</title>
 @endsection
 @section('content')
-	<main style="background-repeat: round; background-image: url(/{!! 'imgs/pdtodos.jpg' !!})">
+	<main style="background: rgb(213, 213, 213)">
 		<?php
 			$cont = 0;
 		 ?>
 		 <div class="container">
-			 <h3 class="categoriaNombre white-text">{!! $nombre_cat !!}</h3>
+			 <h4 class="categoriaNombre">{!! $nombre_cat !!}</h4>
 			 <div class="row">
 				 <div class="col s12">
 					 <div class="row">
@@ -44,7 +44,10 @@
 								 @endif
 							 @endfor
 							 @if ($cont == 0)
-							 	<h1 class="categoriaNombre">No hay productos de la categoría {!! $nombre_cat !!}</h1>
+							 	<script type="text/javascript">
+							 		mensajeSesion('{!! "No hay productos en la categoria ".$nombre_cat !!}')
+									window.location = "{!! url('/') !!}";
+							 	</script>
 							 @endif
 						 </div>
 					 </div>

@@ -4,7 +4,7 @@
 <title>Productos|Todos</title>
 @endsection
 @section('content')
-<main style="background-repeat: round; background-image: url({!! 'imgs/pdtodos.jpg' !!})">
+<main style="background: rgb(213, 213, 213)">
 
   <div class="container">
     <h1>Productos en Rótalo</h1>

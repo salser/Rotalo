@@ -119,4 +119,6 @@ Route::get('/categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar
 								->with($data);
 });
 
-Route::get('productoEspecifico/{id}', "ControllerProducto@cXp");
+Route::get('productoEspecifico/{id}', "ControllerProducto@especifico");
+
+Route::post('agregarComentario/{id_u}/{id_p}', 'ControllerComentario@agregarComentario');
