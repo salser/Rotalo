@@ -57,7 +57,7 @@
 								<h6 style="color: rgb(0, 0, 0)">Publicado: {!! $mes.' '.$dia.' del '.$anio !!}</h6>
 								<!-- Swiper -->
 								<div class="swiper-container">
-									<div class="swiper-wrapper">
+									<div style="display:block" class="swiper-wrapper">
 										@if ($productos[$i]->foto != "" &&
 												($productos[$i]->foto2 == "" &&
 												 $productos[$i]->foto3 == "" &&
