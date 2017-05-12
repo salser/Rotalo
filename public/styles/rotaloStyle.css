@@ -75,11 +75,18 @@ img.imgCard {
   height: 300px;
   width: 400px;
 }
+.centralizadoLogo{
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
 
 img.logoIntro {
   width: 500px;
   height: 150px;
-  display: flex;
+  /*margin-left: auto;
+  margin-right: auto;
+  display: block;*/
   align-items: center;
 }
 

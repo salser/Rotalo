@@ -50,7 +50,7 @@
 							<a style="color: black; font-size: 3em;">No lo usas</a>
 						</div>
 						<br><br><br><br>
-						<div class="col l8 offset-l3 s12" style="">
+						<div class=" centralizadoLogo col l8 offset-l3 s12" style="">
 							<img class="logoIntro responsive-img" src="{!! 'imgs/logoRotalo.png' !!}" alt="">
 						</div>
 					</div>
