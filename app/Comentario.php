@@ -14,6 +14,6 @@ class Comentario extends Model
   /*
   *Atributos que son modificable por el usuario
   */
-  protected $fillable = ['descripcion', 'id_producto', 'id_autor' ];
+  protected $fillable = ['estado', 'id_producto', 'id_usuario' ];
 
 }

@@ -47,6 +47,7 @@
 				        </div>
 								<br>
 								<div class="modal-footer">
+									<a style="margin-left: 5px" class="bordeModalbtn modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
 									<input class="bordeModalbtn modal-action modal-close waves-effect waves-green btn-flat" onclick="" type="submit" name="submit" id="submit" value="Cambiar">
 								</div>
 								<input type="hidden" name="_token" value="{!! csrf_token() !!}">
@@ -89,6 +90,7 @@
 				        </div>
 								<br>
 								<div class="modal-footer">
+									<a style="margin-left: 5px" class="bordeModalbtn modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
 									<input class="bordeModalbtn modal-action modal-close waves-effect waves-green btn-flat" onclick="" type="submit" name="submit" id="submit" value="Cambiar">
 								</div>
 								<input type="hidden" name="_token" value="{!! csrf_token() !!}">

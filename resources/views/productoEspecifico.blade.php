@@ -66,22 +66,22 @@
 												 $productos[$i]->foto6 == ""))
 									 		 <img class="imgSola" src="/{!! $productos[$i]->foto !!}" alt="">
 										@elseif ($productos[$i]->foto != "")
-											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto !!})"></div>
+											<div class="swiper-slide" style="display: block; background-image:url(/{!! $productos[$i]->foto !!});"></div>
 										@endif
 										@if ($productos[$i]->foto2 != "")
-											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto2 !!})"></div>
+											<div class="swiper-slide" style="display: block; background-image:url(/{!! $productos[$i]->foto2 !!});"></div>
 										@endif
 										@if ($productos[$i]->foto3 != "")
-											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto3 !!})"></div>
+											<div class="swiper-slide" style="display: block; background-image:url(/{!! $productos[$i]->foto3 !!});"></div>
 										@endif
 										@if ($productos[$i]->foto4 != "")
-											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto4 !!})"></div>
+											<div class="swiper-slide" style="display: block; background-image:url(/{!! $productos[$i]->foto4 !!});"></div>
 										@endif
 										@if ($productos[$i]->foto5 != "")
-											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto5 !!})"></div>
+											<div class="swiper-slide" style="display: block; background-image:url(/{!! $productos[$i]->foto5 !!});"></div>
 										@endif
 										@if ($productos[$i]->foto6 != "")
-											<div class="swiper-slide" style="background-image:url(/{!! $productos[$i]->foto6 !!})"></div>
+											<div class="swiper-slide" style="display: block; background-image:url(/{!! $productos[$i]->foto6 !!});"></div>
 										@endif
 									</div>
 									<!-- Add Pagination -->
