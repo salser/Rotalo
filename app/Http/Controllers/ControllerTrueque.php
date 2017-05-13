@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 
 use App\Trueque;
 
+use Redirect;
+
 
 class ControllerTrueque extends Controller
 {
@@ -20,7 +22,14 @@ class ControllerTrueque extends Controller
      */
     public function crearTrueque($idP, $idU)
     {
-
+      $t = new Trueque;
+      $t->estado = 3;
+      $t->id_usuario1 = $idU;
+      $t->id_producto1 = $idP;
+      $t->id_usuario2 = $idU;
+      $t->id_producto2 = $idP;
+      $t->save();
+      return Redirect::to('productoEspecifico/'.$idP);
     }
 
 }

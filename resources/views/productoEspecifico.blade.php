@@ -71,7 +71,7 @@
 										@if ($productos[$i]->foto2 != "")
 											<img class="swiper-slide" src="/{!! $productos[$i]->foto2 !!}">
 										@endif
-										
+
 										@if ($productos[$i]->foto3 != "")
 											<img class="swiper-slide" src="/{!! $productos[$i]->foto3 !!}">
 										@endif
@@ -110,16 +110,19 @@
 												</div>
 											</form>
 								</div>
-								<div class="botonesProducto">
-									<form class="botones col l6 m12 s12" action="index.html" method="post">
-										<input class="btn iniciobtn waves-effect waves-ligth" type="submit" name="quiero" value="Lo quiero">
-									</form>
-									<form class="botones col l6 m12 s12" action="index.html" method="post">
-										<input class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
-									</form>
-								</div>
+                @if (App\User::find($productos[$i]->id_usuario)->id != Auth::user()->id)
+                  <div class="botonesProducto">
+                    <form class="botones col l6 m12 s12" action="/crearTrueque/{!! $productos[$i]->id !!}/{!! App\User::find($productos[$i]->id_usuario)->id !!}" method="post">
+                      <input class="btn iniciobtn waves-effect waves-ligth" type="submit" value="Lo quiero">
+                      <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                    </form>
+                    <form class="botones col l6 m12 s12" action="index.html" method="post">
+                      <input class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
+                    </form>
+                  </div>
+                @endif
 								<div style="margin-top: 100px"class="">
-                  <br><br><br><br><br><br>
+                  <br><br>
                   <?php
                     $cont = 0;
                   ?>

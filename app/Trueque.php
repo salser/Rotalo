@@ -13,7 +13,8 @@ class Trueque extends Model
 
 	/*
 	*Atributos que son modificable por el usuario
+	*estado <===> 1 => aceptado ---- 2 => rechazado ---- 3 = espera
 	*/
-	protected $fillable = ['descripcion', 'id_producto', 'id_autor' ];
+	protected $fillable = ['estado', 'id_producto1', 'id_usuario1', 'id_producto2', 'id_usuario2' ];
 
 }
