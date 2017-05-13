@@ -110,17 +110,30 @@
 												</div>
 											</form>
 								</div>
-                @if (App\User::find($productos[$i]->id_usuario)->id != Auth::user()->id)
-                  <div class="botonesProducto">
-                    <form class="botones col l6 m12 s12" action="/crearTrueque/{!! $productos[$i]->id !!}/{!! App\User::find($productos[$i]->id_usuario)->id !!}" method="post">
-                      <input class="btn iniciobtn waves-effect waves-ligth" type="submit" value="Lo quiero">
-                      <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                    </form>
-                    <form class="botones col l6 m12 s12" action="index.html" method="post">
-                      <input class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
-                    </form>
-                  </div>
-                @endif
+								@if (Auth::check())
+									@if (App\User::find($productos[$i]->id_usuario)->id != Auth::user()->id)
+										<div class="botonesProducto">
+											<div id="modalLoQuiero" class="modal">
+										    <div class="modal-content">
+										      <h4>Por que lo cambio?</h4>
+										      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										    </div>
+										    <div class="modal-footer">
+										      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+										    </div>
+										  </div>
+											{{-- action="/crearTrueque/{!! $productos[$i]->id !!}/{!! App\User::find($productos[$i]->id_usuario)->id !!}/{!! Auth::user()->id !!}" --}}
+											<form class="botones col l6 m12 s12" action="/#modalLoQuiero" method="">
+												<input class="btn iniciobtn waves-effect waves-ligth" type="submit" value="Lo quiero">
+												<a href="#modalLoQuiero">click</a>
+												<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+											</form>
+											<form class="botones col l6 m12 s12" action="index.html" method="post">
+												<input class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
+											</form>
+										</div>
+									@endif
+								@endif
 								<div style="margin-top: 100px"class="">
                   <br><br>
                   <?php
@@ -173,20 +186,22 @@
                           </div>
                         @endif
                       @endforeach
-                      @if (Auth::user()->id != $productos[$i]->id_usuario)
-                        <div class="row">
-                          <form style="background-color: white; margin-top: 15px; border-radius: 5px;" class="col s12" action="/agregarComentario/{!! Auth::user()->id !!}/{!! $id!!}" method="post">
-                            <div class="row">
-                              <div class="input-field col s12">
-                                <textarea id="comentario" name="comentario" class=""></textarea>
-                                <label for="comentario">Nuevo Comentario</label>
-                              </div>
-                              <input style="margin-left: 10px; height: 30px"class="btn iniciobtn waves-effect waves-ligth" type="submit" name="" value="Enviar">
-                              <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                            </div>
-                          </form>
-                        </div>
-                      @endif
+											@if (!Auth::check())
+												@if (Auth::user()->id != $productos[$i]->id_usuario)
+													<div class="row">
+														<form style="background-color: white; margin-top: 15px; border-radius: 5px;" class="col s12" action="/agregarComentario/{!! Auth::user()->id !!}/{!! $id!!}" method="post">
+															<div class="row">
+																<div class="input-field col s12">
+																	<textarea id="comentario" name="comentario" class=""></textarea>
+																	<label for="comentario">Nuevo Comentario</label>
+																</div>
+																<input style="margin-left: 10px; height: 30px"class="btn iniciobtn waves-effect waves-ligth" type="submit" name="" value="Enviar">
+																<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+															</div>
+														</form>
+													</div>
+												@endif
+											@endif
                       @if ($cont == 0)
                         <h6>Sin comentarios</h6>
                       @endif

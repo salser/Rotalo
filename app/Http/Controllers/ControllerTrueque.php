@@ -20,13 +20,13 @@ class ControllerTrueque extends Controller
      *
      * @return Redirect to a existing view
      */
-    public function crearTrueque($idP, $idU)
+    public function crearTrueque($idP, $idU1, $idU2)
     {
       $t = new Trueque;
       $t->estado = 3;
-      $t->id_usuario1 = $idU;
+      $t->id_usuario1 = $idU1;
       $t->id_producto1 = $idP;
-      $t->id_usuario2 = $idU;
+      $t->id_usuario2 = $idU2;
       $t->id_producto2 = $idP;
       $t->save();
       return Redirect::to('productoEspecifico/'.$idP);

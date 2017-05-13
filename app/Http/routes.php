@@ -122,4 +122,4 @@ Route::get('/categoriasENproductos/{categoriaBuscar}', function($categoriaBuscar
 Route::get('productoEspecifico/{id}', "ControllerProducto@especifico");
 
 Route::post('agregarComentario/{id_u}/{id_p}', 'ControllerComentario@agregarComentario');
-Route::post('crearTrueque/{idP}/{idU}', 'ControllerTrueque@crearTrueque');
+Route::post('crearTrueque/{idP}/{idU1}/{idU2}', 'ControllerTrueque@crearTrueque');
