@@ -3,6 +3,7 @@
 use App\Producto;
 use App\User;
 use App\Categoria;
+use App\Trueque;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,3 +124,14 @@ Route::get('productoEspecifico/{id}', "ControllerProducto@especifico");
 
 Route::post('agregarComentario/{id_u}/{id_p}', 'ControllerComentario@agregarComentario');
 Route::post('crearTrueque/{idP}/{idU1}/{idU2}', 'ControllerTrueque@crearTrueque');
+Route::get('historialTrueques/{id}', function($id){
+  $trueques = Trueque::all();
+  $productos = Producto::all();
+  $users = User::all();
+  $data = [
+            'trueques'  => $trueques,
+            'productos' => $productos,
+            'usuarios'  => $users
+          ];
+  return View::make('historialTrueques')->with($data);
+});

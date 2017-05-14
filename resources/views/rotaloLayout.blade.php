@@ -54,7 +54,7 @@
 					<!-- Dropdown Structure -->
 					<ul id="dropdownSesionM" class="dropdown-content">
 						<li><a href="/perfil">Perfil</a></li>
-						<li><a href="">Historial de trueques</a></li>
+						<li><a href="/historialTrueques/{!! Auth::user()->id !!}">Historial de trueques</a></li>
 						<li><a href="/misProductos">Mis productos</a></li>
 
 						<li class="divider"></li>
@@ -109,7 +109,7 @@
 					<!-- Dropdown Structure -->
 					<ul id="dropdownSesion" class="dropdown-content">
 						<li><a href="/perfil">Perfil</a></li>
-						<li><a href="">Historial de trueques</a></li>
+						<li><a href="/historialTrueques/{!! Auth::user()->id !!}">Historial de trueques</a></li>
 						<li><a href="/misProductos">Mis productos</a></li>
 						<li class="divider"></li>
 						<li><a href="/cerrar">Cerrar Sesión</a></li>

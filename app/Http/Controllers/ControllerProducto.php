@@ -10,6 +10,7 @@ use App\Producto;
 use App\Categoria;
 use App\User;
 use App\Comentario;
+use App\Trueque;
 use Input;
 use Redirect;
 use Auth;
@@ -533,12 +534,14 @@ class ControllerProducto extends Controller
 				$users = User::all();
 				$categorias = Categoria::all();
         $comentarios = Comentario::all();
+        $trueques = Trueque::all();
 				$data = [
 									'id' 				  => $id,
 									'productos'   => $productos,
 									'usuarios'    => $users,
 									'categorias'  => $categorias,
-                  'comentarios' => $comentarios
+                  'comentarios' => $comentarios,
+                  'trueques'    => $trueques
 								];
 				return View::make('productoEspecifico')
 											->with($data);

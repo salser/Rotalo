@@ -12,6 +12,24 @@
 		@for ($i=0; $i < sizeof($productos) ; $i++)
 			@if ($productos[$i]->id == $id)
 			<div class="container">
+        @if(Session::has('trueque'))
+        <div class="row">
+          <div class="col s12">
+            <div class="col s12 l3 m6">
+              <p class="change">{!! Session::get('trueque') !!}</p>
+            </div>
+          </div>
+        </div>
+        @endif
+        @if(Session::has('nTrueque'))
+        <div class="row">
+          <div class="col s12">
+            <div class="col s12 l4 m6">
+              <p class="nChange">{!! Session::get('nTrueque') !!}</p>
+            </div>
+          </div>
+        </div>
+        @endif
         @if(Session::has('comentario'))
     		<div class="row">
     			<div class="col s12">
@@ -110,31 +128,56 @@
 												</div>
 											</form>
 								</div>
-								@if (Auth::check())
+                <?php
+                $ya = true;
+                foreach ($trueques as $t) {
+                  if ($t->id_usuario2 == Auth::user()->id && $productos[$i]->id == $t->id_producto1) {
+                    $ya = false;
+                  }
+                }
+                ?>
+								@if (Auth::check() && $ya)
 									@if (App\User::find($productos[$i]->id_usuario)->id != Auth::user()->id)
 										<div class="botonesProducto">
 											<div id="modalLoQuiero" class="modal">
 										    <div class="modal-content">
-										      <h4>Por que lo cambio?</h4>
-										      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										      <h4>Por que producto lo cambio?</h4>
+                          <form id="quiero" class="" action="/crearTrueque/{!! $productos[$i]->id !!}/{!! App\User::find($productos[$i]->id_usuario)->id !!}/{!! Auth::user()->id !!}" method="post">
+                            <ul class="collection">
+                              @foreach ($productos as $pu)
+                                @if ($pu->id_usuario == Auth::user()->id)
+                                  <div class="col s12 m6 l11">
+                                    <li class="collection-item"><div>{!! $pu->nombre !!}</div></li>
+                                  </div>
+                                  <div class="col s12 m6 l1">
+                                    <p>
+                                      <input name="group1" type="radio" id="pd{!! $pu->id !!}" value="{!! $pu->id !!}"/>
+                                      <label for="pd{!! $pu->id !!}"></label>
+                                    </p>
+                                  </div>
+                                @endif
+                              @endforeach
+                            </ul>
+                            <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                          </form>
 										    </div>
 										    <div class="modal-footer">
-										      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+										      <a onclick="$('#quiero').submit()" class="modal-action modal-close waves-effect waves-green btn-flat">Ofrece</a>
 										    </div>
 										  </div>
-											{{-- action="/crearTrueque/{!! $productos[$i]->id !!}/{!! App\User::find($productos[$i]->id_usuario)->id !!}/{!! Auth::user()->id !!}" --}}
-											<form class="botones col l6 m12 s12" action="/#modalLoQuiero" method="">
-												<input class="btn iniciobtn waves-effect waves-ligth" type="submit" value="Lo quiero">
-												<a href="#modalLoQuiero">click</a>
-												<input type="hidden" name="_token" value="{!! csrf_token() !!}">
-											</form>
-											<form class="botones col l6 m12 s12" action="index.html" method="post">
-												<input class="btn iniciobtn waves-effect waves-ligth"  type="submit" name="quiero" value="Añade a la lista de deseos">
-											</form>
+                      <div class="col l6 s12 m12">
+                        <a style="width: auto; border: none;" class="btn iniciobtn waves-effect waves-ligth" href="#modalLoQuiero">Lo quiero</a>
+                      </div>
+                      <div class="col l6 s12 m12">
+                        <a style="width: auto; border: none;" class="btn iniciobtn waves-effect waves-ligth" href="#modalLoQuiero">Añadir a la lista de deseos</a>
+                      </div>
 										</div>
 									@endif
 								@endif
-								<div style="margin-top: 100px"class="">
+                @if (!$ya)
+                  <h3>El producto ya está en tu lista de trueques! <a href="#historial">Historial de trueques</a></h3>
+                @endif
+								<div style="margin-top: 0px"class="">
                   <br><br>
                   <?php
                     $cont = 0;
@@ -186,7 +229,7 @@
                           </div>
                         @endif
                       @endforeach
-											@if (!Auth::check())
+											@if (Auth::check())
 												@if (Auth::user()->id != $productos[$i]->id_usuario)
 													<div class="row">
 														<form style="background-color: white; margin-top: 15px; border-radius: 5px;" class="col s12" action="/agregarComentario/{!! Auth::user()->id !!}/{!! $id!!}" method="post">

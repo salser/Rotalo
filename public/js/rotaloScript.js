@@ -18,9 +18,6 @@ $(document).ready(function(){
 		 belowOrigin: true, // Displays dropdown below the button
  	 });
 	 $('select').material_select();
-	//  $('div[class^="btnfile"]').click(function () {
-	// 	 $('input[class^="cFotoP"]').click();
-	//  });
 	$( "select.selectCat" )
 	.change(function () {
 		var str = "";

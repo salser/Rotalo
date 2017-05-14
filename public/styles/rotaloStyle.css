@@ -283,15 +283,6 @@ input[type=text]:disabled {
   border-radius: 5px;
 }
 
-form.col.l6 {
-  padding-bottom: 20px;
-  padding-top: 10px;
-}
-
-form.col.m12 {
-  padding-bottom: 20px;
-}
-
 textarea:disabled.txtProducto {
   color: yellow;
 }
@@ -299,10 +290,6 @@ textarea:disabled.txtProducto {
 label.txtProducto.active {
   color: black !important;
   font-weight: bold;
-}
-
-form.botones {
-  display: flex;
 }
 
 .comentario {
@@ -331,6 +318,7 @@ img.circle.imgcom {
 p.detalleComent{
 	padding-left: 20px;
 }
+
 
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
 
@@ -413,6 +401,14 @@ p.detalleComent{
 [type="checkbox"]:checked+label:before {
   border-right: 2px solid #a7d72d;
   border-bottom: 2px solid #a7d72d;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after{
+  background-color: #d35a49 !important;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+  border: 2px solid #b1dcfb !important;
 }
 
 .dropdown-content li > a, .dropdown-content li > span{
