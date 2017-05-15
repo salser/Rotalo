@@ -13,7 +13,7 @@
         <div class="col s12 m12 l12">
           <div class="row">
             <div class="col 12 m12 l12">
-              <ul class="collection with-header">
+              <ul style="background-color: white;" class="collection with-header">
                 <li class="collection-header">
                   <h4>Cambios ofrecidos</h4>
                   <h6>Mi Producto-----------------------------Lo que quiero</h6>
@@ -71,7 +71,7 @@
             </div>
             <div class="row">
               <div class="col 12 m12 l12">
-                <ul class="collection with-header">
+                <ul style="background-color: white;" class="collection with-header">
                   <li class="collection-header">
                     <h4>Cambios que me ofrecen</h4>
                     <h6>Lo que ofrecen-----------------------Lo que quieren</h6>
@@ -132,7 +132,7 @@
             </div>
             <div class="row">
               <div class="col 12 m12 l12">
-                <ul class="collection with-header">
+                <ul style="background-color: white;" class="collection with-header">
                   <li class="collection-header">
                     <h4>Historial</h4>
                     <h6>Mi Producto-----------------------------Intercambio</h6>
@@ -168,9 +168,16 @@
                        @if ($t->id_usuario2 == $user->id || $t->id_usuario1 == $user->id)
                          <div class="listItem">
                            <li class="col s12 m12 l5">
-                             <img src="/{!! $producto2->foto !!}" alt="" class="circle truequeMuestra">
-                             <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestra">
-                             <img src="/{!! $producto1->foto !!}" alt="" class="circle truequeMuestra">
+                             @if ($producto1->id_usuario == $user->id)
+                               <img src="/{!! $producto1->foto !!}" alt="" class="circle truequeMuestra">
+                               <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestra">
+                               <img src="/{!! $producto2->foto !!}" alt="" class="circle truequeMuestra">
+                             @endif
+                             @if ($producto2->id_usuario == $user->id)
+                               <img src="/{!! $producto2->foto !!}" alt="" class="circle truequeMuestra">
+                               <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestra">
+                               <img src="/{!! $producto1->foto !!}" alt="" class="circle truequeMuestra">
+                             @endif
                            </li>
                            <li style="height:100%"class="col s12 m12 l4">
                              <p>
