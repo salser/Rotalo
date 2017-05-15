@@ -314,11 +314,48 @@ img.circle.imgcom {
 	float: left;
 }
 
-
 p.detalleComent{
 	padding-left: 20px;
 }
 
+.truequeMuestra{
+  height: 100px;
+  margin-top: 30px;
+}
+
+.btnTrueque
+{
+  background-color: rgba(12, 227, 40, 0.42);
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border-radius: 10px 3px 3px 3px;
+  border: 0.5px solid rgba(128, 173, 241, 0.74);
+  color: black;
+  margin-right: 5px;
+}
+
+
+@media only screen and (min-width: 1000px){
+  .botonesHT{
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+  .listItem{
+    border: 1px solid rgba(171, 171, 171, 0.5);
+    border-radius: 5px;
+    height: 150px;
+    background-color: white;
+  }
+  .listItem:hover{
+    background-color: rgba(20, 155, 90,0.5);
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .botonesHT{
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+}
 
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
 
