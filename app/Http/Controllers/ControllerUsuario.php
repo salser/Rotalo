@@ -80,16 +80,7 @@ class ControllerUsuario extends Controller
 	      $subject = "Bienvenido A Rotalo";
 
 	      //Este es el formato del correo electronico
-	      $message = '<html>
-	                    <body>
-	                        <img src="http://rotalo.online/imgs/logoRotalo.png" alt="Rótalo" style="width: 100%;"/>
-	                          <p style="font-size:2.5em;">
-	                            Bievenido a rotalo, ahora eres un Usuario dentro de nuestra plataforma
-	                          </p><a href="http://rotalo.online" style="font-size:2em;">Haz click aquí para ir a la plataforma nuevamente</a>
-	                          <div style="width:100%; background-color:#2C001E; height:30px; margin-top:10px;">
-	                          </div>
-	                    </body>
-	                  </html>';
+	      $message = file_get_contents('mailHTML/bienvenido.html');
 	      //Este es el header del mail
 	      $headers = 'From: noreply@rotalo.online' . "\r\n" .
 	      'Reply-To: henry.salaza@rotalo.online' . "\r\n" .
