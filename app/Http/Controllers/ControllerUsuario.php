@@ -148,7 +148,7 @@ class ControllerUsuario extends Controller
 												</div>
 											</main>
 										</body>
-										</html>'
+										</html>';
 	      //Este es el header del mail
 	      $headers = 'From: noreply@rotalo.online' . "\r\n" .
 	      'Reply-To: henry.salaza@rotalo.online' . "\r\n" .
