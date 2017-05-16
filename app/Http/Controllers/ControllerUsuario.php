@@ -73,6 +73,30 @@ class ControllerUsuario extends Controller
         $foto->move('fotos', 'USER_'.$usuario->username.".".$foto->getClientOriginalExtension());
         $usuario->foto = 'fotos/USER_'.$usuario->username.".".$foto->getClientOriginalExtension();
         $usuario->save();
+
+				//Correo donde se le va a mandar el correo del usuario
+	      $to = $usuario->correo;
+	      //subject del correo al usuario
+	      $subject = "Bienvenido A Rotalo";
+
+	      //Este es el formato del correo electronico
+	      $message = '<html>
+	                    <body>
+	                        <img src="http://eat-mall.com/imgs/eat-letra.png" alt="Eat-'."'".'Mall" style="width: 100%;"/>
+	                          <p style="font-size:2.5em;">
+	                            Para continuar con el registro de tu cuenta, por favor haz click en el siguiente enlace:
+	                          </p>'.'<a href="/" style="font-size:2em;">hola</a>
+	                          <div style="width:100%; background-color:#2C001E; height:30px; margin-top:10px;">
+	                          </div>
+	                    </body>
+	                  </html>';
+	      //Este es el header del mail
+	      $headers = 'From: noreply@rotalo.online' . "\r\n" .
+	      'Reply-To: henry.salaza@rotalo.online' . "\r\n" .
+	      'MIME-Version: 1.0' . "\r\n".'Content-type:text/html;charset=ISO-8859-1'."\r\n";
+	      //Manda el correo
+	      mail($to, $subject, $message, $headers);
+
         return Redirect::to('inicio')
                   ->with('registrado', 'Usuario Registrado satisfatoriamente')
                   ->withInput();
