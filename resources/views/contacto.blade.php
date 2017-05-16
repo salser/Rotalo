@@ -27,9 +27,9 @@
                   <label for="contenido">Contenido</label>
                 </div>
               </div>
-              <input style="margin-bottom: 10px" class="btn iniciobtn waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit" value="Enviar">
-              <input type="hidden" name="_token" value="{!! csrf_token() !!}">
               <div class="g-recaptcha" data-sitekey="6LdFiyEUAAAAAOlD20SxrIsS48PH7Lni6faHiRyV"></div>
+              <input style="margin-top: 10px" class="btn iniciobtn waves-effect waves-ligth" onclick="" type="submit" name="submit" id="submit" value="Enviar">
+              <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             </form>
             <div class="col s12 m6 l6">
               <img class="responsive-img"src="{!! '/imgs/pqr.jpg' !!}" alt="">
