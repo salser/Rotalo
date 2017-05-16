@@ -141,7 +141,7 @@ class ControllerUsuario extends Controller
 													<p class="contenido">Para el equipo de Rótalo es todo un placer darte la bienveida a esta tu plataforma preferida, podras hacer cambios como tu quieras, <b>Si no lo usas, RÓTALO</b></p>
 													<h6>Haz Click para empezar a hacer cambios</h6>
 													<a href="http://rotalo.online" class="btn-mine">Rótalo</a>
-													<img src="https://ibb.co/fAVtbQ" class="responsive-img" alt="">
+													<img src="https://preview.ibb.co/cMkgVk/logo_Rotalo.png" class="responsive-img" alt="">
 												</div>
 												<div class="footerMine">
 
