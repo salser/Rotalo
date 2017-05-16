@@ -82,10 +82,10 @@ class ControllerUsuario extends Controller
 	      //Este es el formato del correo electronico
 	      $message = '<html>
 	                    <body>
-	                        <img src="http://eat-mall.com/imgs/eat-letra.png" alt="Eat-'."'".'Mall" style="width: 100%;"/>
+	                        <img src="http://rotalo.online/imgs/logoRotalo.png" alt="Rótalo" style="width: 100%;"/>
 	                          <p style="font-size:2.5em;">
-	                            Para continuar con el registro de tu cuenta, por favor haz click en el siguiente enlace:
-	                          </p>'.'<a href="/" style="font-size:2em;">hola</a>
+	                            Bievenido a rotalo, ahora eres un Usuario dentro de nuestra plataforma
+	                          </p><a href="http://rotalo.online" style="font-size:2em;">Haz click aquí para ir a la plataforma nuevamente</a>
 	                          <div style="width:100%; background-color:#2C001E; height:30px; margin-top:10px;">
 	                          </div>
 	                    </body>
