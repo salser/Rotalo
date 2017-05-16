@@ -177,7 +177,7 @@
 									@endif
 								@endif
                 @if (!$ya)
-                  <h3>El producto ya está en tu lista de trueques! <a href="#historial">Historial de trueques</a></h3>
+                  <h3>El producto ya está en tu lista de trueques! <a href="/historialTrueques/{!! Auth::user()->username !!}">Historial de trueques</a></h3>
                 @endif
 								<div style="margin-top: 0px"class="">
                   <br><br>
