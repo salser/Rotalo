@@ -8,6 +8,15 @@
   ?>
   <main style="background-color: rgb(213, 213, 213)">
     <div class="container">
+      @if(Session::has('accion'))
+  		<div class="row">
+  			<div class="col s12">
+  				<div class="col s12 l3 m6">
+  					<p class="change">{!! Session::get('accion') !!}</p>
+  				</div>
+  			</div>
+  		</div>
+      @endif
       <h4>Historial de Trueques</h4>
       <div class="row">
         <div class="col s12 m12 l12">
@@ -62,7 +71,7 @@
                         </p>
                       </li>
                       <li class="botonesHT col s12 m12 l3">
-                        <a href="#" style="background-color: red; color: white;" class="btnTrueque">Cancelar</a>
+                        <a href="/cancelarT/{!! $t->id !!}/{!! $user->username !!}" style="background-color: red; color: white;" class="btnTrueque">Cancelar</a>
                       </li>
                     </div>
                   @endif
@@ -121,8 +130,8 @@
                           </p>
                         </li>
                         <li class="botonesHT col s12 m12 l3">
-                          <a href="#" class="btnTrueque">Aceptar</a>
-                          <a href="#" style="background-color: red; color: white;" class="btnTrueque">Rechazar</a>
+                          <a href="/aceptar/{!! $t->id !!}/{!! $user->username !!}" class="btnTrueque">Aceptar</a>
+                          <a href="/rechazar/{!! $t->id !!}/{!! $user->username !!}" style="background-color: red; color: white;" class="btnTrueque">Rechazar</a>
                         </li>
                       </div>
                     @endif

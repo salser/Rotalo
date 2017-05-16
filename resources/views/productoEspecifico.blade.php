@@ -130,9 +130,11 @@
 								</div>
                 <?php
                 $ya = true;
-                foreach ($trueques as $t) {
-                  if ($t->id_usuario2 == Auth::user()->id && $productos[$i]->id == $t->id_producto1) {
-                    $ya = false;
+                if (Auth::check()) {
+                  foreach ($trueques as $t) {
+                    if ($t->id_usuario2 == Auth::user()->id && $productos[$i]->id == $t->id_producto1) {
+                      $ya = false;
+                    }
                   }
                 }
                 ?>
@@ -265,9 +267,11 @@
 										@if ($productos[$i]->id_usuario == $usuarios[$j]->id)
 											<h4 class="userProduct">{!! $usuarios[$j]->username !!}</h4>
 											<img class="imgUserPd circle" src="/{!! $usuarios[$j]->foto !!}" alt="">
-											<div class="perfilUsuario">
-												<a href="#perfilUsuario">Ver Perfil</a>
-											</div>
+                      @if (Auth::check())
+                        <div class="perfilUsuario">
+                          <a href="/perfilUsuario/{!! $usuarios[$j]->username !!}/{!! $usuarios[$j]->id !!}">Ver Perfil</a>
+                        </div>
+                      @endif
 											<br>
 											<ul class="ratingN">
 												<div style="text-align: center; font-weight: bold;">

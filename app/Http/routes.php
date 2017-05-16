@@ -124,14 +124,38 @@ Route::get('productoEspecifico/{id}', "ControllerProducto@especifico");
 
 Route::post('agregarComentario/{id_u}/{id_p}', 'ControllerComentario@agregarComentario');
 Route::post('crearTrueque/{idP}/{idU1}/{idU2}', 'ControllerTrueque@crearTrueque');
-Route::get('historialTrueques/{id}', function($id){
+Route::get('historialTrueques/{username}', function($username){
   $trueques = Trueque::all();
   $productos = Producto::all();
   $users = User::all();
   $data = [
             'trueques'  => $trueques,
             'productos' => $productos,
-            'usuarios'  => $users
+            'usuarios'  => $users,
           ];
   return View::make('historialTrueques')->with($data);
+});
+
+/*
+*Rutas oara cambiar el estado de un trueque
+*/
+Route::get('cancelarT/{id}/{username}', 'ControllerTrueque@cancelar');
+Route::get('aceptar/{id}/{username}', 'ControllerTrueque@aceptar');
+Route::get('rechazar/{id}/{username}', 'ControllerTrueque@rechazar');
+
+Route::get('perfilUsuario/{username}/{id}', function($username, $id){
+  $p = Producto::all();
+  $u = User::find($id);
+  $data = [
+          'productos' => $p,
+          'user'      => $u
+          ];
+  Return View::make('perfilusuario')->with($data);
+});
+
+Route::get('rotalo', function(){
+  return View::make('rotalo');
+});
+Route::get('contactanos', function(){
+  return View::make('contacto');
 });

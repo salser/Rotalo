@@ -36,4 +36,33 @@ class ControllerTrueque extends Controller
       return Redirect::to('productoEspecifico/'.$idP1)->with('nTrueque', 'El productono pude ser añadido, seleccione un producto para intercambiar');
     }
 
+    /**
+    * Return a view with retrospective message
+    */
+    public function cancelar($id, $username){
+      $t = Trueque::find($id);
+      $t->estado = 4;
+      $t->save();
+      return Redirect::to('historialTrueques/'.$username)->with('accion', 'Se ha cancelado el trueque');
+    }
+    /**
+    * Return a view with retrospective message
+    */
+    public function aceptar($id, $username){
+      $t = Trueque::find($id);
+      $t->estado = 1;
+      $t->save();
+      return Redirect::to('historialTrueques/'.$username)->with('accion', 'Se ha aceptado el trueque por favor revise su correo electrónico allí encontrará los datos del otro usuario');
+    }
+    /**
+    * Return a view with retrospective message
+    */
+    public function rechazar($id, $username){
+      $t = Trueque::find($id);
+      $t->estado = 2;
+      $t->save();
+      return Redirect::to('historialTrueques/'.$username)->with('accion', 'Se ha rechazado el trueque, ya mismo se le fue notificado a el otro usuario');
+    }
+
+
 }

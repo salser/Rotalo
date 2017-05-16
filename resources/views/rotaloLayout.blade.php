@@ -28,6 +28,13 @@
 	<!-- Own sources -->
 	<script src="{!! '/js/rotaloScript.js' !!}"></script>
 	<link rel="stylesheet" href="{!! '/styles/rotaloStyle.css' !!}"> @yield('title')
+
+	<!-- Fonts -->
+	<link href="{!! 'https://fonts.googleapis.com/css?family=Anton|Baloo|Indie+Flower' !!}" rel="stylesheet">
+
+	<!-- reCaptcha -->
+	<script src="{!! 'https://www.google.com/recaptcha/api.js' !!}"></script>
+
 </head>
 
 <body>
@@ -54,7 +61,7 @@
 					<!-- Dropdown Structure -->
 					<ul id="dropdownSesionM" class="dropdown-content">
 						<li><a href="/perfil">Perfil</a></li>
-						<li><a href="/historialTrueques/{!! Auth::user()->id !!}">Historial de trueques</a></li>
+						<li><a href="/historialTrueques/{!! Auth::user()->username !!}">Historial de trueques</a></li>
 						<li><a href="/misProductos">Mis productos</a></li>
 
 						<li class="divider"></li>
@@ -88,8 +95,8 @@
 								<i class="material-icons right">arrow_drop_down</i>
 							</a>
 					</li>
-					<li><a href="#!">Cont&aacutectanos</a></li>
-					<li><a href="#!">Rótalo</a></li>
+					<li><a href="/contactanos">Cont&aacutectanos</a></li>
+					<li><a href="/rotalo">Rótalo</a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
 					<li>
@@ -109,7 +116,7 @@
 					<!-- Dropdown Structure -->
 					<ul id="dropdownSesion" class="dropdown-content">
 						<li><a href="/perfil">Perfil</a></li>
-						<li><a href="/historialTrueques/{!! Auth::user()->id !!}">Historial de trueques</a></li>
+						<li><a href="/historialTrueques/{!! Auth::user()->username !!}">Historial de trueques</a></li>
 						<li><a href="/misProductos">Mis productos</a></li>
 						<li class="divider"></li>
 						<li><a href="/cerrar">Cerrar Sesión</a></li>
@@ -141,8 +148,8 @@
   	          	<i class="material-icons right"> arrow_drop_down</i>
   	          </a>
 					</li>
-					<li><a href="#!">Cont&aacutectanos</a></li>
-					<li><a href="#!">Rótalo</a></li>
+					<li><a href="/contactanos">Cont&aacutectanos</a></li>
+					<li><a href="/rotalo">Rótalo</a></li>
 					@if (!Auth::check())
 					<li><a href="/registro">Registrarse</a></li>
 					@endif
@@ -164,9 +171,9 @@
 						@if(!Auth::check())
 						<li><a class="grey-text text-lighten-3" href="#!">Iniciar Sesión</a></li>
 						@endif
-						<li><a class="grey-text text-lighten-3" href="#!">Productos en trueque</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Contáctanos</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Rótalo</a></li>
+						<li><a class="grey-text text-lighten-3" href="/todosProductos">Productos en trueque</a></li>
+						<li><a class="grey-text text-lighten-3" href="/contactanos">Contáctanos</a></li>
+						<li><a class="grey-text text-lighten-3" href="/rotalo">Rótalo</a></li>
 						@if(Auth::check())
 						<li><a class="grey-text text-lighten-3" href="/cerrar">Cerrar sesión.</a></li>
 						@endif

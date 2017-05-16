@@ -132,6 +132,9 @@ label.archivolbl {
 .collection li.collection-item:hover:not(.active){
 	background-color: rgba(20, 155, 90,0.5);
 }
+.collection li.collection-item.perfil:hover:not(.active){
+	background-color: rgba(0, 137, 236, 0.82);
+}
 .btn, .btn-large{
 	background-color: rgba(91, 93, 92, 0.45);
 }
@@ -355,6 +358,19 @@ p.detalleComent{
     margin-top: 10px;
     margin-bottom: 40px;
   }
+}
+
+.tituloPerfil{
+  font-family: 'Anton', sans-serif;
+  margin-top: 50px;
+}
+
+.collection.perfil{
+  border: none;
+}
+
+.collection-item.perfil{
+  background-color: rgba(0, 137, 236, 0.46);
 }
 
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/

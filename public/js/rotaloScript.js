@@ -6,6 +6,7 @@ $(document).ready(function(){
 	// var str = $('.productos').text();
 	// var p = JSON.stringify(eval("("+str+")"));
 	//  p = JSON.parse(str);
+	 $('.collapsible').collapsible();
 	 $('#comentario').val('aquí va el comentario');
 	 $('#comentario').trigger('autoresize');
 	 $('.change').fadeTo(2000, 1);
