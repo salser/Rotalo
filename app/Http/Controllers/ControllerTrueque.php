@@ -133,9 +133,9 @@ class ControllerTrueque extends Controller
 
         </html>';
 	      //Este es el header del mail
-	      $headers = 'From: nuevoTrueque@rotalo.online' . "\r\n" .
-	      'Reply-To: henry.salazar@rotalo.online' . "\r\n" .
-	      'MIME-Version: 1.0' . "\r\n".'Content-type:text/html;charset=ISO-8859-1'."\r\n";
+	      $headers = 'From: nuevoTrueque@rotalo.online' . "\n" .
+	      'Reply-To: henry.salazar@rotalo.online' . "\n" .
+	      'MIME-Version: 1.0' . "\n".'Content-type:text/html;charset=ISO-8859-1'."\n";
 	      //Manda el correo
 	      mail($to, $subject, $message, $headers);
         return Redirect::to('productoEspecifico/'.$idP1)
