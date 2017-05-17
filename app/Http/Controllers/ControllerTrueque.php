@@ -41,7 +41,7 @@ class ControllerTrueque extends Controller
         //Correo donde se le va a mandar el correo del usuario
 	      $to = $u1->correo;
 	      //subject del correo al usuario
-	      $subject = "Nuevo Trueque";
+	      $subject = "Notificación Nuevo Trueque Rótalo";
 
 	      //Este es el formato del correo electronico
 	      $message =
@@ -135,7 +135,7 @@ class ControllerTrueque extends Controller
 	      //Este es el header del mail
 	      $headers = 'From: nuevoTrueque@rotalo.online' . "\r\n" .
 	      'Reply-To: henry.salazar@rotalo.online' . "\r\n" .
-	      'Content-type:text/html;charset=ISO-8859-1'."\r\n";
+	      'MIME-Version: 1.0' . "\r\n".'Content-type:text/html;charset=ISO-8859-1'."\r\n";
 	      //Manda el correo
 	      mail($to, $subject, $message, $headers);
         return Redirect::to('productoEspecifico/'.$idP1)
