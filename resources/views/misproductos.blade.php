@@ -296,11 +296,13 @@
 						<img src="{!! $p->foto !!}" alt="" class="circle">
             <b>{!! $p->nombre !!}</b><br><b>Descripción:</b> {!! $p->descripcion !!}
 						@foreach($categorias as $c)
-							@if($c->id_producto == $p->id)
+							@if($c->id_producto == $p->id && $p->mostrado == true)
 							<a style="margin-right: 30px" onclick='<?php $fn = "mostrarCat(".$c.")"; echo $fn;  ?>' href="#modalEditarProducto{!! $p->id !!}" class="secondary-content"><i class="material-icons">mode_edit</i></a>
 							@endif
 						@endforeach
-						<a href="#modaleliminarP{!! $p->id !!}" class="secondary-content"><i style="color:red"class="material-icons">delete</i></a>
+            @if ($p->mostrado == true)
+              <a href="#modaleliminarP{!! $p->id !!}" class="secondary-content"><i style="color:red"class="material-icons">delete</i></a>
+            @endif
           </div>
         </li>
       @endif

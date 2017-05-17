@@ -23,6 +23,7 @@ class CrearTablaProductos extends Migration
             $table->string('tiempo_uso');
             $table->string('antiguedad');
             $table->string('descripcion');
+            $table->boolean('mostrado');
             $table->string('foto');
 						$table->string('foto2');
 						$table->string('foto3');

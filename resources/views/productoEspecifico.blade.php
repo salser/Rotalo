@@ -147,7 +147,7 @@
                           <form id="quiero" class="" action="/crearTrueque/{!! $productos[$i]->id !!}/{!! App\User::find($productos[$i]->id_usuario)->id !!}/{!! Auth::user()->id !!}" method="post">
                             <ul class="collection">
                               @foreach ($productos as $pu)
-                                @if ($pu->id_usuario == Auth::user()->id)
+                                @if ($pu->id_usuario == Auth::user()->id && $pu->mostrado == true)
                                   <div class="col s12 m6 l11">
                                     <li class="collection-item"><div>{!! $pu->nombre !!}</div></li>
                                   </div>

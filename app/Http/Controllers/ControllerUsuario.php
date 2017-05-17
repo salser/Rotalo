@@ -128,6 +128,11 @@ class ControllerUsuario extends Controller
 													margin-right: auto;
 													display: block;
 												}
+												img{
+													margin-left: auto;
+													margin-right: auto;
+													display: block;
+												}
 											</style>
 										</head>
 
@@ -138,7 +143,7 @@ class ControllerUsuario extends Controller
 												</div>
 												<div class="container principal">
 													<h2>Hola '.$usuario->username.',</h2>
-													<p class="contenido">Para el equipo de Rótalo es todo un placer darte la bienveida a esta tu plataforma preferida, podras hacer cambios como tu quieras, <b>Si no lo usas, RÓTALO</b></p>
+													<p class="contenido">Para el equipo de Rótalo es todo un placer darte la bienvenida a esta tu plataforma preferida, podras hacer cambios como tu quieras, <b>Si no lo usas, RÓTALO</b></p>
 													<h6>Haz Click para empezar a hacer cambios</h6>
 													<a href="http://rotalo.online" class="btn-mine">Rótalo</a>
 													<img src="https://preview.ibb.co/cMkgVk/logo_Rotalo.png" class="responsive-img" alt="">

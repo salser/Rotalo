@@ -352,6 +352,7 @@ class ControllerProducto extends Controller
           $producto->tiempo_uso= Input::get('tiempo_uso');
           $producto->antiguedad = Input::get('antiguedad');
           $producto->descripcion = Input::get('descripcion');
+          $producto->mostrado = true;
 					$cat = new Categoria();
 					$c = Input::get('categoria');
 					if ($c == 'Electrodomésticos') {
