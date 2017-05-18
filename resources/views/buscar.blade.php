@@ -10,7 +10,11 @@
         <div class="col s12">
           <div class="row">
             @foreach ($productos as $p)
-              @if ($p->mostrado == true && strpos($p->nombre, $patron) !== false)
+              <?php
+                $nom = strtolower($p->nombre);
+                $pat = strtolower($patron);
+               ?>
+              @if ($p->mostrado == true && strpos($nom, $pat) !== false)
                 <div class="col s12 m6 l4">
                   <div class="card">
                     <div class="card-image">
