@@ -177,8 +177,8 @@ class Controller extends BaseController
 	      'MIME-Version: 1.0' . "\r\n".'Content-type:text/html;charset=ISO-8859-1'."\r\n";
 	      //Manda el correo
 	      mail($to, $subject, $message, $headers);
-        Redirect::to('/contactanos')->with('mensaje', 'La PQRS fue enviada con satisfacción');
+        return Redirect::to('/contactanos')->with('mensaje', 'La PQRS fue enviada con satisfacción');
       }
-      Redirect::to('/contactanos')->with('mensajeN', 'No se pudo enviar la petición verifique campos');
+      return Redirect::to('/contactanos')->with('mensajeN', 'No se pudo enviar la petición verifique campos');
     }
 }
