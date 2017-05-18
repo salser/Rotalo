@@ -47,12 +47,13 @@
 					<li>
 						<nav>
 							<div class="nav-wrapper">
-								<form class="row" action="" method="POST">
+								<form class="row" action="/buscar" method="POST">
 									<div class="input-field">
-										<input placeholder="Buscar en Rótalo" class="validate" id="buscar" type="search" required>
+										<input placeholder="Buscar en Rótalo" name="buscar" class="validate" id="buscar" type="search" required>
 										<label for="buscar"><i style="color: rgba(0, 56, 255, 0.81)" class="material-icons prefix">search</i></label>
 										<i class="material-icons">close</i>
 									</div>
+									<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 								</form>
 							</div>
 						</nav>

@@ -161,3 +161,28 @@ Route::get('contactanos', function(){
 });
 
 Route::post('enviarPQR', 'Controller@enviarPQR');
+
+Route::post('buscar', function(){
+  if (Input::has('buscar')) {
+    return Redirect::to('buscar/'.Input::get('buscar'));
+  }
+  return Redirect::to('/')->with('mensaje_error', 'digite algun patron de busqueda');
+});
+
+Route::get('buscar/{patron}', function($patron){
+  $pb = Producto::all();
+  $u = User::all();
+  $data = [
+    'productos' => $pb,
+    'patron'    => $patron,
+    'usuarios'  => $u
+  ];
+  // foreach ($pb as $p) {
+  //   echo($p->nombre);
+  // }
+  if (sizeof($pb)>1) {
+    return View::make('buscar')->with($data);
+  }else {
+    return Redirect::to('/')->with('mensaje_error', 'no hay productos que coincidan con ese patron de busqueda');
+  }
+});
