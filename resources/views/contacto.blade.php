@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col s12 m12 l12">
           <div class="row" style="border: 2px solid rgba(0, 137, 236, 0.46); margin-top: 70px; padding: 20px 10px 20px 10px;">
-            <form class="col s12 m6 l6">
+            <form class="col s12 m6 l6" method="post" action="/enviarPQR">
               <div class="row">
                 <div class="input-field col s12 m6 l6">
                   <input id="nombre" name="nombre" type="text" class="validate">

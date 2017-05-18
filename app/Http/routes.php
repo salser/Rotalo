@@ -159,3 +159,5 @@ Route::get('rotalo', function(){
 Route::get('contactanos', function(){
   return View::make('contacto');
 });
+
+Route::post('enviarPQR', 'Controller@enviarPQR');
