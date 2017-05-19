@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
-	<!-- JQuery CDN Source -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.js"></script>
-
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-
-				<!-- Compiled and minified JavaScript -->
-				<!-- <script src="{!! 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js' !!}"></script>
-				<link href="{!!'https://fonts.googleapis.com/icon?family=Material+Icons' !!}" rel="stylesheet"> -->
 
 	<style media="screen">
 		.headerMine{
@@ -52,15 +43,15 @@
 			text-align: center;
 			font-size: 2em;
 		}
-		a{
+		a.btn-mine{
 			margin-left: auto;
 			margin-right: auto;
 			display: block;
 		}
-    img{
+		img{
 			margin-left: auto;
 			margin-right: auto;
-			display: block;
+			display: flex;
 		}
 	</style>
 </head>
@@ -71,21 +62,23 @@
 
 		</div>
 		<div class="container principal">
-			<h2>Hola Pepe,</h2>
+			<h2>Hola '.$u1->username.',</h2>
 			<p class="contenido">
-        El siguiente mensaje es para notificarte que uno de tus productos fue elegido para hacer un truque,
-        ve a la plataforma inicia sesión y hecha un vistazo a tu historial de trueques con lo ocurrido</p>
-        <b>Detalles</b><br>
-        <p>
-          Producto: el producto <br>
-          Usuario que ofrecio: username withlink <br>
-          Producto que ofrecio: el producto <br>
-        </p>
-        <h5><b>Atentamente: Equipo de soporte de Rótalo</b></h5>
-        <br>
+				El siguiente mensaje es para notificarte que uno de tus productos fue elegido para hacer un truque,
+				ve a la plataforma inicia sesión y hecha un vistazo a tu historial de trueques con lo ocurrido</p>
+				<b>Detalles</b><br>
+				<p>
+					Producto: '.$pd1->nombre.' <br>
+					Usuario que ofrecio: '.$u2->username.' <br>
+					Producto que ofrecio: <a style="color: black" href="/productoEspecifico/'.$pd2->id.'">'.$pd2->nombre.'</a> <br>
+				</p>
+				<h5><b>Atentamente: Equipo de soporte de Rótalo</b></h5>
+				<br>
 			<h6>Haz Click para iniciar sesión</h6>
 			<a href="http://rotalo.online/inicio" class="btn-mine">Iniciar sesión</a>
-			<img src="https://preview.ibb.co/cMkgVk/logo_Rotalo.png" class="responsive-img" alt="">
+			<div class="imageRotalo">
+				<img src="https://preview.ibb.co/cMkgVk/logo_Rotalo.png" class="responsive-img" alt="">
+			</div>
 		</div>
 		<div class="footerMine">
 

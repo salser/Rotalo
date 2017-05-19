@@ -52,7 +52,7 @@
 			img{
 				margin-left: auto;
 				margin-right: auto;
-				display: block;
+				display: flex;
 			}
 		</style>
 	</head>
