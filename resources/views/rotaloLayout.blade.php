@@ -109,6 +109,7 @@
 										<label for="buscar"><i style="color: rgba(0, 56, 255, 0.81)" class="material-icons prefix">search</i></label>
 										<i class="material-icons">close</i>
 									</div>
+									<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 								</form>
 							</div>
 						</nav>
