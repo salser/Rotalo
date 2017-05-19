@@ -3,6 +3,7 @@
   <title>Buscar Producto</title>
 @endsection
 @section('content')
+	<?php $cont = 0; ?>
   <main style="background: rgb(213, 213, 213)">
     <div class="container">
       <h1>Busqueda de "{!! $patron !!}"</h1>
@@ -13,7 +14,6 @@
               <?php
                 $nom = strtolower($p->nombre);
                 $pat = strtolower($patron);
-								$cont = 0;
                ?>
               @if ($p->mostrado == true && strpos($nom, $pat) !== false)
                 <div class="col s12 m6 l4">
