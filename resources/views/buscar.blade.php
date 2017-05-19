@@ -13,6 +13,7 @@
               <?php
                 $nom = strtolower($p->nombre);
                 $pat = strtolower($patron);
+								$cont = 0;
                ?>
               @if ($p->mostrado == true && strpos($nom, $pat) !== false)
                 <div class="col s12 m6 l4">
@@ -60,8 +61,15 @@
                     @endif
                   </div>
                 </div>
+								<?php $cont++; ?>
               @endif
             @endforeach
+						@if ($cont == 0)
+							<script type="text/javascript">
+								mensajeSesion('{!! "No hay productos que coincidan con \"".$patron."\"" !!}')
+								window.location = "{!! url('/') !!}";
+							</script>
+						@endif
           </div>
         </div>
       </div>
