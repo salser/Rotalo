@@ -177,9 +177,6 @@ Route::get('buscar/{patron}', function($patron){
     'patron'    => $patron,
     'usuarios'  => $u
   ];
-  // foreach ($pb as $p) {
-  //   echo($p->nombre);
-  // }
   if (sizeof($pb)>1) {
     return View::make('buscar')->with($data);
   }else {

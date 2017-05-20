@@ -1,5 +1,6 @@
 /*
 * funcion de onload de la página que inicializa todos los objetos de materialize de javascript
+* y pone las relgas de las acciones a las cual esta despierto el dom a recibir
 */
 var json;
 $(document).ready(function(){
@@ -189,7 +190,9 @@ $(document).ready(function(){
 function mensajeSesion(mensaje){
 	alert(mensaje);
 }
-
+/*
+* Función que muestra campos de la categoria segun su nombre
+*/
 function mostrarCat(c)
 {
 	$('.catedit'+c.id_producto).empty();
@@ -383,6 +386,9 @@ $( ".catedit"+c.id_producto ).append( str );
 $('select').material_select();
 }
 
+/*
+* Función que muestra campos de la categoria en el cambio de categoria segun su nombre
+*/
 function cambioCategoria(p){
 	var c = $('.selectCatEdit'+p).find(':selected').text();
 	if (c == "Electrodomésticos") {
@@ -550,6 +556,10 @@ function cambioCategoria(p){
 	// console.log($('.cambioCat'+p).text());
 	$('select').material_select();
 }
+
+/*
+* Función que muestra campos de la categoria segun su nombre en una vista especifica
+*/
 function categoriaProducto(c)
 {
 	var str = "";
@@ -774,6 +784,9 @@ function categoriaProducto(c)
 	$('.nombreCategoria').append( cat );
 	$( ".categoriaProducto" ).append( str );
 }
+/*
+* Inicialización de las estrellas de calificación
+*/
 $(
   function () {
     $('li').on('click', function() {

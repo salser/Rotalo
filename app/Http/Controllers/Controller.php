@@ -62,12 +62,18 @@ class Controller extends BaseController
 									 ->with('mensaje_error', 'Tus datos son incorrectos')
 									 ->withInput();
 		}
+    /*
+    *Función para cerrar sesión
+    */
 		public function cerrar()
     {
         Auth::logout();
         return Redirect::to('/')
                     ->with('mensaje_error', 'Tu sesión ha sido cerrada.');
     }
+    /*
+    * Función que se encarga de enviar el correo al usuario que llena un PQR
+    */
     public function enviarPQR(){
       /*nombre correo asunto contenido*/
       if (Input::has('nombre') && Input::has('correo') && Input::has('asunto') && Input::has('contenido')) {

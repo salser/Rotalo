@@ -31,6 +31,7 @@ class ControllerUsuario extends Controller
 
     /*
     ** Crea el usuario y hace la insersión a la base de datos
+		** Da retro alimentacion al usuario de nuevo registro por medio del correo
     ** @return \Illuminate\Http\Response
     */
     public function crearUsuario(Request $request)

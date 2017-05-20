@@ -61,6 +61,7 @@ class ControllerTrueque extends Controller
 
     /**
     * Return a view with retrospective message
+    * Cancela un trueqe ya existente y hace retro alimentascion a ambos usuarios de que se cancelo trueque
     */
     public function cancelar($id, $username){
       $t = Trueque::find($id);
@@ -276,6 +277,8 @@ class ControllerTrueque extends Controller
     }
     /**
     * Return a view with retrospective message
+    * Acepta un trueqe ya existente y hace retro alimentascion a ambos usuarios de que se acepto el trueque
+    * intercambiando los datos personales a cada uno
     */
     public function aceptar($id, $username){
       $t = Trueque::find($id);
@@ -508,6 +511,7 @@ class ControllerTrueque extends Controller
 
     /**
     * Return a view with retrospective message
+    * Rechaza un trueqe ya existente y hace retro alimentascion a ambos usuarios de que se rechazo trueque
     */
     public function rechazar($id, $username){
       $t = Trueque::find($id);

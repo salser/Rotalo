@@ -512,6 +512,10 @@ class ControllerProducto extends Controller
                 ->with('nAgregarProductos', $cambio)
                 ->withInput();
       }
+
+      /*
+      * Eliminar u producto que se escoge lo busca por id y lo borra
+      */
 			public function eliminar($idE){
 				$id = Crypt::decrypt($idE);
 				$producto = Producto::find($id);
@@ -530,6 +534,10 @@ class ControllerProducto extends Controller
 			{
 				$cat = Categoria::find($id);
 			}
+
+      /*
+      * Retorna una vista de un producto especifico que se quiera ver en la interfaz de usuario
+      */
 			public function especifico($id){
 				$productos = Producto::all();
 				$users = User::all();
