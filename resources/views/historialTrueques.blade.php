@@ -209,6 +209,23 @@
                                <b>Hora:</b> {!! $horas.':'.$min !!}
                              </p>
                            </li>
+                           @if ($t->estado == 1 && Auth::user()->id == $t->id_usuario1 && $t->calificacion1 == 0|| $t->estado == 1 && Auth::user()->id == $t->id_usuario2 && $t->calificacion2 == 0)
+                            <div id="modalCalificacion{!! $t->id !!}" class="modal">
+                              <div class="modal-content">
+                                <h4>Modal Header</h4>
+                                <p>A bunch of text</p>
+                              </div>
+                              <div class="modal-footer">
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                              </div>
+                            </div>
+                             <li class="botonesHT col s12 m12 l3">
+                               <div class="tooltipW">
+                                 <span class="tooltiptextW">Necesita calificación para el otro usuario</span>
+                                 <a href="#modalCalificacion{!! $t->id !!}"class="pulse-button"><i class="material-icons">star</i></a>
+                               </div>
+                             </li>
+                           @endif
                          </div>
                        @endif
                      @endif

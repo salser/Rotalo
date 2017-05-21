@@ -374,6 +374,78 @@ p.detalleComent{
   background-color: rgba(0, 137, 236, 0.46);
 }
 
+.pulse-buttonD {
+  box-shadow: 0 0 0 0 rgba(210, 90, 73, 0.68);
+  -webkit-animation: pulse 1.5s infinite;
+}
+
+li a i.pulse-buttonP {
+  box-shadow: 0 0 0 0 rgba(210, 90, 73, 0.68);
+  border-radius: 50%;
+  -webkit-animation: pulse 1.5s infinite;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #226382;
+}
+
+.pulse-buttonP:hover {
+  -webkit-animation: none;
+}
+
+.pulse-buttonD:hover {
+  -webkit-animation: none;
+}
+
+.pulse-button {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: auto;
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-size: 1.3em;
+  font-weight: light;
+  font-family: 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 60px;
+  letter-spacing: -1px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  background: #d35a49;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(212, 196, 90, 0.5);
+  -webkit-animation: pulse 1.5s infinite;
+  margin-bottom: 10px;
+}
+
+
+@-webkit-keyframes pulse {
+  0% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  70% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+  }
+  100% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+
+
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
 
 .image-upload>input {

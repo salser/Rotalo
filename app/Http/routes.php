@@ -38,7 +38,7 @@ Route::group(array('before' => 'auth'), function()
 
 //Ruta que redirige a la pantalla de inicio de rotalo
 Route::get('/', function () {
-    return view('inicioRotalo');
+    return View::make('inicioRotalo');
 });
 
 Route::group(array('after' => 'auth'), function()

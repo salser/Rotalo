@@ -38,6 +38,19 @@
 </head>
 
 <body>
+	<?php
+	$tr = App\Trueque::all();
+	$notifica = false;
+	if (Auth::check()) {
+		foreach ($tr as $t) {
+			$id = Auth::user()->id;
+			if($id == $t->id_usuario1 && $t->calificacion1 == 0 && $t->estado == 1|| $id == $t->id_usuario2 && $t->calificacion2 == 0 && $t->estado == 1){
+				$notifica = true;
+				break;
+			}
+		}
+	}
+	 ?>
 	<header>
 		<nav>
 			<div class="nav-wrapper">
@@ -62,7 +75,7 @@
 					<!-- Dropdown Structure -->
 					<ul id="dropdownSesionM" class="dropdown-content">
 						<li><a href="/perfil">Perfil</a></li>
-						<li><a href="/historialTrueques/{!! Auth::user()->username !!}">Historial de trueques</a></li>
+						<li><a href="/historialTrueques/{!! Auth::user()->username !!}" class="<?php if($notifica){echo 'pulse-buttonD';}?>">Historial de trueques</a></li>
 						<li><a href="/misProductos">Mis productos</a></li>
 
 						<li class="divider"></li>
@@ -72,7 +85,11 @@
 					<li>
 						<a class="dropdown-button" data-activates="dropdownSesionM">
 									{!! Auth::user()->nombre !!}
-									<i class="material-icons right">arrow_drop_down</i>
+									@if ($notifica)
+										<i class="material-icons right pulse-buttonP">notifications_active</i>
+									@else
+										<i class="material-icons right">arrow_drop_down</i>
+									@endif
 								</a>
 					</li>
 					@endif @if(!Auth::check())
@@ -118,7 +135,7 @@
 					<!-- Dropdown Structure -->
 					<ul id="dropdownSesion" class="dropdown-content">
 						<li><a href="/perfil">Perfil</a></li>
-						<li><a href="/historialTrueques/{!! Auth::user()->username !!}">Historial de trueques</a></li>
+						<li><a class="<?php if($notifica){echo 'pulse-buttonD';}?>" href="/historialTrueques/{!! Auth::user()->username !!}">Historial de trueques</a></li>
 						<li><a href="/misProductos">Mis productos</a></li>
 						<li class="divider"></li>
 						<li><a href="/cerrar">Cerrar Sesión</a></li>
@@ -126,9 +143,9 @@
 					<!-- Dropdown Trigger -->
 					<li>
 						<a class="dropdown-button" href="#!" data-activates="dropdownSesion">
-									{!! Auth::user()->nombre !!}
-									<i class="material-icons right">arrow_drop_down</i>
-								</a>
+							{!! Auth::user()->nombre !!}
+							<i class="material-icons right">arrow_drop_down</i>
+						</a>
 					</li>
 					@endif @if(!Auth::check())
 					<li><a href="/inicio">Iniciar Sesi&oacuten</a></li>

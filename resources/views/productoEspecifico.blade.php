@@ -132,7 +132,7 @@
                 $ya = true;
                 if (Auth::check()) {
                   foreach ($trueques as $t) {
-                    if ($t->id_usuario2 == Auth::user()->id && $productos[$i]->id == $t->id_producto1) {
+                    if ($t->id_usuario2 == Auth::user()->id && $productos[$i]->id == $t->id_producto1 && $t->estado == 1) {
                       $ya = false;
                     }
                   }
