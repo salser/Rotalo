@@ -8,7 +8,7 @@ $(document).ready(function(){
 	// var p = JSON.stringify(eval("("+str+")"));
 	//  p = JSON.parse(str);
 	 $('.collapsible').collapsible();
-	 $('#comentario').val('aquí va el comentario');
+	 $('#comentario').val('Comente aquí por favor');
 	 $('#comentario').trigger('autoresize');
 	 $('.change').fadeTo(2000, 1);
 	 $('.nChange').fadeTo(2000, 1);
@@ -793,9 +793,22 @@ $(
       var selectedCssClass = 'selected';
       var $this = $(this);
       $this.siblings('.' + selectedCssClass).removeClass(selectedCssClass);
-      $this
-        .addClass(selectedCssClass)
-        .parent().addClass('vote-cast');
+      $this.addClass(selectedCssClass).parent().addClass('vote-cast');
+			if ($('#estrella1').hasClass('selected')) {
+				$('.calificacionS').val('1');
+			}
+			if ($('#estrella2').hasClass('selected')) {
+				$('.calificacionS').val('2');
+			}
+			if ($('#estrella3').hasClass('selected')) {
+				$('.calificacionS').val('3');
+			}
+			if ($('#estrella4').hasClass('selected')) {
+				$('.calificacionS').val('4');
+			}
+			if ($('#estrella5').hasClass('selected')) {
+				$('.calificacionS').val('5');
+			}
     });
   }
 );

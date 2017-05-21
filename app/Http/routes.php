@@ -183,3 +183,5 @@ Route::get('buscar/{patron}', function($patron){
     return Redirect::to('/')->with('mensaje_error', 'no hay productos que coincidan con ese patron de busqueda');
   }
 });
+
+Route::post("calificar/{idU}/{idT}", 'ControllerTrueque@calificarUsuario');

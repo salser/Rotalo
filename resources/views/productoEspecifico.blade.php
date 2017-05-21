@@ -232,7 +232,6 @@
                         @endif
                       @endforeach
 											@if (Auth::check())
-												@if (Auth::user()->id != $productos[$i]->id_usuario)
 													<div class="row">
 														<form style="background-color: white; margin-top: 15px; border-radius: 5px;" class="col s12" action="/agregarComentario/{!! Auth::user()->id !!}/{!! $id!!}" method="post">
 															<div class="row">
@@ -245,7 +244,6 @@
 															</div>
 														</form>
 													</div>
-												@endif
 											@endif
                       @if ($cont == 0)
                         <h6>Sin comentarios</h6>

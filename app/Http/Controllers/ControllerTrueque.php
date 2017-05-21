@@ -726,5 +726,41 @@ class ControllerTrueque extends Controller
       return Redirect::to('historialTrueques/'.$username)->with('accion', 'Se ha rechazado el trueque, ya mismo se le fue notificado a el otro usuario');
     }
 
+    /*
+    * Función que califica al usuario
+    */
+    function calificarUsuario($idU, $idT){
+      $user = User::find($idU);
+      $t = Trueque::find($idT);
+      $userC;
+      $cal;
+      if ($idU == $t->id_usuario1) {
+        $cal = 1;
+        $userC = User::find($t->id_usuario2);
+      }else {
+        $userC = User::find($t->id_usuario1);
+        $cal = 2;
+      }
+      if(Input::has('calificacionS') && Input::has('calificacionC'.$t->id)){
+        $calificacionLleva = $userC->calificacion;
+        $calificacionTrueque= Input::get('calificacionS')/10;
+        $promedio = ($calificacionLleva + $calificacionTrueque)/2;
+        $userC->calificacion = floor($promedio);
+        $comentario = $user->username.' :'.Input::get('calificacionC'.$t->id);
+        if($cal == 1)
+          $t->calificacion1 = 1;
+        else
+          $t->calificacion2 = 1;
+
+        $comentarioVa = $t->comentario;
+        $nuevoC = $comentarioVa.' '.$comentario;
+        $t->comentario = $nuevoC;
+        $userC->save();
+        $t->save();
+        return Redirect::to('historialTrueques/'.$user->username)->with('accion', 'Se calificao usuario');
+      }
+      return Redirect::to('historialTrueques/'.$user->username)->with('accionN', 'no se pudo calificar usuario intentelo de nuevo');
+    }
+
 
 }

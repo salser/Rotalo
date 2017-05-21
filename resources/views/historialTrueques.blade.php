@@ -17,6 +17,15 @@
   			</div>
   		</div>
       @endif
+      @if(Session::has('accionN'))
+  		<div class="row">
+  			<div class="col s12">
+  				<div class="col s12 l3 m6">
+  					<p class="nChange">{!! Session::get('accionN') !!}</p>
+  				</div>
+  			</div>
+  		</div>
+      @endif
       <h4>Historial de Trueques</h4>
       <div class="row">
         <div class="col s12 m12 l12">
@@ -210,13 +219,59 @@
                              </p>
                            </li>
                            @if ($t->estado == 1 && Auth::user()->id == $t->id_usuario1 && $t->calificacion1 == 0|| $t->estado == 1 && Auth::user()->id == $t->id_usuario2 && $t->calificacion2 == 0)
-                            <div id="modalCalificacion{!! $t->id !!}" class="modal">
+                            <!-- Modal Structure -->
+                            <div  style="background-color: rgba(0, 137, 236, 0.70)" id="modalCalificacion{!! $t->id !!}" class="modal bottom-sheet">
                               <div class="modal-content">
-                                <h4>Modal Header</h4>
-                                <p>A bunch of text</p>
+                                <h4 style="color: white">Calificar Usuario Trueque</h4>
+                                <div class="row">
+                                  <div class="col s12 m12 l12">
+                                    <div class="row" style="margin-top: 10px">
+                                      @if (Auth::user()->id == $t->id_usuario1)
+                                        <div class="col s12 m6 l2">
+                                          <img src="/{!! App\User::find($t->id_usuario2)->foto !!}" alt="" class="imgCal circle">
+                                        </div>
+                                        <div class="col s12 m6 l3">
+                                          <p style="color: white">
+                                            <b>Nombre de usuario: </b> {!! App\User::find($t->id_usuario2)->username !!}<br>
+                                            <b>Fechade cambio:</b> {!! $mes.' '.$dia.' del '.$anio !!} <br>
+                                            <b>Hora de cambio:</b> {!! $horas.':'.$min !!}
+                                          </p>
+                                        </div>
+                                      @endif
+                                      @if (Auth::user()->id == $t->id_usuario2)
+                                        <div class="col s12 m6 l2">
+                                          <img src="/{!! App\User::find($t->id_usuario1)->foto !!}" alt="" class="imgCal circle">
+                                        </div>
+                                        <div class="col s12 m6 l3">
+                                          <p style="color: white">
+                                            <b>Nombre de usuario: </b> {!! App\User::find($t->id_usuario1)->username !!}<br>
+                                            <b>Fechade cambio:</b> {!! $mes.' '.$dia.' del '.$anio !!} <br>
+                                            <b>Hora de cambio:</b> {!! $horas.':'.$min !!}
+                                          </p>
+                                        </div>
+                                      @endif
+                                      <div class="col s12 m6 l3">
+                                        <ul class="rating">
+                                          <li id="estrella1" style="cursor: pointer" class="star">&star;</li>
+                                          <li id="estrella2" style="cursor: pointer" class="star">&star;</li>
+                                          <li id="estrella3" style="cursor: pointer" class="star">&star;</li>
+                                          <li id="estrella4" style="cursor: pointer" class="star">&star;</li>
+                                          <li id="estrella5"style="cursor: pointer" class="star">&star;</li>
+                                        </ul>
+                                      </div>
+                                      <form class="col s12 m6 l4" id="comentarioTrueque{!! $t->id !!}" action="/calificar/{!! Auth::user()->id !!}/{!! $t->id !!}" method="post">
+                                        <textarea style="background-color: white; height: 100px" id="calificacionC{!! $t->id !!}" name="calificacionC{!! $t->id !!}" class=""></textarea>
+                                        <label style="color: white" for="calificacionC{!! $t->id !!}">Comentario Trueque</label>
+                                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                        <input type="hidden" name="calificacionS" value="" class="calificacionS">
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                              <div class="modal-footer">
-                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                              <div style="background-color: rgba(0, 137, 236, 0.70)" class="modal-footer">
+                                <a href="#!" class="modal-action waves-effect modal-close waves-red btn-flat">Cancelar</a>
+                                <a onclick="$('#comentarioTrueque{!! $t->id !!}').submit()" class="modal-action waves-effect waves-green btn-flat">Calificar</a>
                               </div>
                             </div>
                              <li class="botonesHT col s12 m12 l3">
