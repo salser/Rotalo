@@ -218,7 +218,7 @@
                                <b>Hora:</b> {!! $horas.':'.$min !!}
                              </p>
                            </li>
-                           @if ($t->estado == 1 && Auth::user()->id == $t->id_usuario1 && $t->calificacion1 == 0|| $t->estado == 1 && Auth::user()->id == $t->id_usuario2 && $t->calificacion2 == 0)
+                           @if ($t->estado == 1 && Auth::user()->id == $t->id_usuario1 && $t->calificacion1 == 0 || $t->estado == 1 && Auth::user()->id == $t->id_usuario2 && $t->calificacion2 == 0)
                             <!-- Modal Structure -->
                             <div  style="background-color: rgba(0, 137, 236, 0.70)" id="modalCalificacion{!! $t->id !!}" class="modal bottom-sheet">
                               <div class="modal-content">
