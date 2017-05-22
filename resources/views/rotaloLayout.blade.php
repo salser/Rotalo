@@ -45,7 +45,7 @@
 	if (Auth::check()) {
 		foreach ($tr as $t) {
 			$id = Auth::user()->id;
-			if($id == $t->id_usuario1 && $t->calificacion1 == 0 && $t->estado == 1|| $id == $t->id_usuario2 && $t->calificacion2 == 0 && $t->estado == 1){
+			if($id == $t->id_usuario1 && $t->calificacion1 == 6 && $t->estado == 1 || $id == $t->id_usuario2 && $t->calificacion2 == 6 && $t->estado == 1){
 				$notifica = true;
 				break;
 			}

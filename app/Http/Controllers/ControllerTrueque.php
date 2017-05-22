@@ -32,6 +32,8 @@ class ControllerTrueque extends Controller
         $t->id_producto1 = $idP1;
         $t->id_usuario2 = $idU2;
         $t->id_producto2 = Input::get('group1');
+        $t->calificacion1 = 6;
+        $t->calificacion2 = 6;
         $t->save();
         $u1 = User::find($idU1);
         $pd1 = Producto::find($idP1);
@@ -732,6 +734,7 @@ class ControllerTrueque extends Controller
     function calificarUsuario($idU, $idT){
       $user = User::find($idU);
       $t = Trueque::find($idT);
+      $trueques = Trueque::all();
       $userC;
       $cal;
       if ($idU == $t->id_usuario1) {
@@ -741,16 +744,29 @@ class ControllerTrueque extends Controller
         $userC = User::find($t->id_usuario1);
         $cal = 2;
       }
+      $cont = 0;
+      $suma = 0;
       if(Input::has('calificacionS') && Input::has('calificacionC'.$t->id)){
-        $calificacionLleva = $userC->calificacion;
-        $calificacionTrueque= Input::get('calificacionS')/10;
-        $promedio = ($calificacionLleva + $calificacionTrueque)/2;
+        foreach ($trueques as $tr) {
+          if($tr->id_usuario1 == $userC->id && $tr->calificacion2 != 6){
+            $suma += $tr->calificacion2;
+            $cont++;
+          }
+          if($tr->id_usuario2 == $userC->id && $tr->calificacion1 != 6){
+            $suma += $tr->calificacion1;
+            $cont++;
+          }
+        }
+        $calificacionTrueque= Input::get('calificacionS');
+        $suma += $calificacionTrueque;
+        $cont++;
+        $promedio = floor($suma/$cont);
         $userC->calificacion = floor($promedio);
         $comentario = $user->username.' :'.Input::get('calificacionC'.$t->id);
         if($cal == 1)
-          $t->calificacion1 = 1;
+          $t->calificacion1 = $calificacionTrueque;
         else
-          $t->calificacion2 = 1;
+          $t->calificacion2 = $calificacionTrueque;
 
         $comentarioVa = $t->comentario;
         $nuevoC = $comentarioVa.' '.$comentario;

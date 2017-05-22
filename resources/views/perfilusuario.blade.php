@@ -45,13 +45,21 @@
                   <span class="title"><b>Reputación</b></span>
                   <br>
                   <ul class="ratingN" style="margin-top: 20px; text-align: left;">
-                  @if ($user->calificacion == 0)
+                  @if ($user->calificacion == 6)
                       <li class="starNegra">&star;</li>
                       <li class="starNegra">&star;</li>
                       <li class="starNegra">&star;</li>
                       <li class="starNegra">&star;</li>
                       <li class="starNegra">&star;</li>
                       <span style="margin-left: 5px">0/5 <b>Sin Trueques</b></span>
+                    </ul>
+                  @endif
+                  @if ($user->calificacion == 0)
+                      <li class="starNegra">&star;</li>
+                      <li class="starNegra">&star;</li>
+                      <li class="starNegra">&star;</li>
+                      <li class="starNegra">&star;</li>
+                      <li class="starNegra">&star;</li>
                     </ul>
                   @endif
                   @if ($user->calificacion == 1)

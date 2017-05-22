@@ -73,6 +73,7 @@ class ControllerUsuario extends Controller
 				$foto = Input::file('foto');
         $foto->move('fotos', 'USER_'.$usuario->username.".".$foto->getClientOriginalExtension());
         $usuario->foto = 'fotos/USER_'.$usuario->username.".".$foto->getClientOriginalExtension();
+				$usuario->calificacion = 6;
         $usuario->save();
 
 				//Correo donde se le va a mandar el correo del usuario

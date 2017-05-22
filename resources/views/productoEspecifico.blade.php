@@ -279,14 +279,22 @@
 												<div style="text-align: center; font-weight: bold;">
 													<h6>Reputación</h6>
 												</div>
-											@if ($usuarios[$j]->calificacion == 0)
+											@if ($usuarios[$j]->calificacion == 6)
 													<li class="starNegra">&star;</li>
 													<li class="starNegra">&star;</li>
 													<li class="starNegra">&star;</li>
 													<li class="starNegra">&star;</li>
 													<li class="starNegra">&star;</li>
 												</ul>
-												<h6 class="white-text">Sin trueques</h6>
+												<h6 class="white-text" style="text-align: center">Sin trueques</h6>
+											@endif
+                      @if ($usuarios[$j]->calificacion == 0)
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+													<li class="starNegra">&star;</li>
+												</ul>
 											@endif
 											@if ($usuarios[$j]->calificacion == 1)
 													<li class="starN colored">&star;</li>
