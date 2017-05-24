@@ -51,7 +51,7 @@
 				<div class="row">
 					<div class="col s12">
 						<div class="row">
-							<div style="border: 2px solid rgba(0, 137, 236, 0.46); border-radius: 5px" class="productosEspecifico col s12 m12 l8">
+							<div style="border: 2px solid black; border-radius: 5px" class="productosEspecifico col s12 m12 l8">
 								<h1 class="categoriaNombre" style="background-color: rgba(0, 0, 0, 0); border: none">{!! $productos[$i]->nombre !!}</h1>
 								<?php
 									$aux = explode(" ", $productos[$i]->created_at)[0];
@@ -172,10 +172,10 @@
 										    </div>
 										  </div>
                       <div class="col l6 s12 m12">
-                        <a style="width: auto; border: none;" class="btn iniciobtn waves-effect waves-ligth" href="#modalLoQuiero">Lo quiero</a>
+                        <a style="width: auto; border: none;" class="btn btnq waves-effect waves-ligth" href="#modalLoQuiero">Lo quiero</a>
                       </div>
                       <div class="col l6 s12 m12">
-                        <a style="width: auto; border: none;" class="btn iniciobtn waves-effect waves-ligth" href="#modalLoQuiero">Añadir a la lista de deseos</a>
+                        <a style="width: auto; border: none;" class="btn btnq waves-effect waves-ligth" href="#modalLoQuiero">Añadir a la lista de deseos</a>
                       </div>
 										</div>
 									@endif
@@ -237,10 +237,10 @@
                       @endforeach
 											@if (Auth::check())
 													<div class="row">
-														<form style="background-color: white; margin-top: 15px; border-radius: 5px;" class="col s12" action="/agregarComentario/{!! Auth::user()->id !!}/{!! $id!!}" method="post">
+														<form style="background-color: rgb(213, 213, 213); margin-top: 15px; border-radius: 5px;" class="col s12" action="/agregarComentario/{!! Auth::user()->id !!}/{!! $id!!}" method="post">
 															<div class="row">
 																<div class="input-field col s12">
-																	<textarea id="comentario" name="comentario" class=""></textarea>
+																	<textarea id="comentario" name="comentario" class="" style="background-color:white"></textarea>
 																	<label for="comentario">Nuevo Comentario</label>
 																</div>
 																<input style="margin-left: 10px; height: 30px"class="btn iniciobtn waves-effect waves-ligth" type="submit" name="" value="Enviar">
@@ -286,7 +286,7 @@
 													<li class="starNegra">&star;</li>
 													<li class="starNegra">&star;</li>
 												</ul>
-												<h6 class="white-text" style="text-align: center">Sin trueques</h6>
+												<h6 class="black-text" style="text-align: center">Sin trueques</h6>
 											@endif
                       @if ($usuarios[$j]->calificacion == 0)
 													<li class="starNegra">&star;</li>

@@ -235,17 +235,17 @@ input[type=text].inputbuscar {
 }
 
 .productosEspecifico {
-  border: 1px solid rgb(34, 99, 130);
+  border: 1px solid black;
   height: auto;
   margin-top: 50px;
   padding-bottom: 100px;
-  background-color: rgba(34, 99, 130, 0.69);
+  background-color: white;
 }
 
 .userProduct {
   text-align: center;
   margin-top: 50px;
-  color: white;
+  color: black;
 }
 
 .imgUserPd {
@@ -325,6 +325,19 @@ p.detalleComent{
   height: 100px;
   width: 100px;
   margin-top: 30px;
+}
+
+.truequeMuestraCambio{
+  height: 100px;
+  width: 60px;
+  margin-top: 30px;
+}
+
+div a.btncal{
+  border: 2px solid black;
+  margin-right: 5px !important;
+  color: white;
+  font-weight: bold;
 }
 
 .btnTrueque
@@ -450,6 +463,16 @@ li a i.pulse-buttonP {
   height: 100px;
 }
 
+div a.btnq{
+  background-color: rgba(20, 156, 90, 1);
+  color: white;
+  padding-top: 2px;
+}
+
+.btnq:hover{
+  background-color: rgba(210, 91, 74, 1);
+}
+
 
 /*================================== https://jsfiddle.net/c5s42vdz/ ==============================================*/
 
@@ -527,6 +550,10 @@ li a i.pulse-buttonP {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   text-transform: none;
   color: #fd7b00;
+}
+
+.row .col.nopad{
+  padding: 0;
 }
 
 [type="checkbox"]:checked+label:before {
@@ -608,11 +635,11 @@ li.starNegra {
 
 .starN {
   /* normal state */
-  color: white;
+  color: black;
 }
 
 .starNegra {
-  color: black;
+  color: rgb(163, 163, 163);
 }
 
 .rating:hover .star, .rating.vote-cast .star {
@@ -620,7 +647,7 @@ li.starNegra {
   color: orange;
 }
 .starN.colored {
-  color: rgb(255, 245, 0);
+  color: rgb(255, 130, 0);
 }
 
 .ratingN {

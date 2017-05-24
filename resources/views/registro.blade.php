@@ -4,7 +4,7 @@
 <title>Registro</title>
 @endsection
 @section('content')
-<main style="background-repeat: round; background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url({!! 'imgs/registroBG.JPG' !!})">
+<main style="background-repeat: round; background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url({!! 'imgs/registroBG.JPG' !!})">
   <div class="row">
     <div class="col s12 l6 m6 offset-m3 offset-l3">
       <div class="row formas">

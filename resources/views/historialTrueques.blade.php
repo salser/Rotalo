@@ -67,7 +67,7 @@
                     <div class="listItem">
                       <li class="col s12 m12 l5">
                         <img src="/{!! $producto2->foto !!}" alt="" class="circle truequeMuestra">
-                        <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestra">
+                        <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestraCambio">
                         <img src="/{!! $producto1->foto !!}" alt="" class="circle truequeMuestra">
                       </li>
                       <li style="height:100%"class="col s12 m12 l4">
@@ -126,7 +126,7 @@
                       <div class="listItem">
                         <li class="col s12 m12 l5">
                           <img src="/{!! $producto2->foto !!}" alt="" class="circle truequeMuestra">
-                          <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestra">
+                          <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestraCambio">
                           <img src="/{!! $producto1->foto !!}" alt="" class="circle truequeMuestra">
                         </li>
                         <li style="height:100%"class="col s12 m12 l4">
@@ -188,7 +188,7 @@
                            <li class="col s12 m12 l5">
                              @if ($producto1->id_usuario == $user->id)
                                <img src="/{!! $producto1->foto !!}" alt="" class="circle truequeMuestra">
-                               <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestra">
+                               <img src="{!! '/imgs/rotalo-icono.png' !!}" alt="" class="circle truequeMuestraCambio">
                                <img src="/{!! $producto2->foto !!}" alt="" class="circle truequeMuestra">
                              @endif
                              @if ($producto2->id_usuario == $user->id)
@@ -270,8 +270,8 @@
                                 </div>
                               </div>
                               <div style="background-color: rgba(0, 137, 236, 0.70)" class="modal-footer">
-                                <a href="#!" class="modal-action waves-effect modal-close waves-red btn-flat">Cancelar</a>
-                                <a onclick="$('#comentarioTrueque{!! $t->id !!}').submit()" class="modal-action waves-effect waves-green btn-flat">Calificar</a>
+                                <a href="#!" class="btncal modal-action waves-effect modal-close waves-red btn-flat">Cancelar</a>
+                                <a onclick="$('#comentarioTrueque{!! $t->id !!}').submit()" class="btncal modal-action waves-effect waves-green btn-flat">Calificar</a>
                               </div>
                             </div>
                              <li class="botonesHT col s12 m12 l3">
